@@ -1,2 +1,0 @@
-# APIs
-Aviatrix API Docs
