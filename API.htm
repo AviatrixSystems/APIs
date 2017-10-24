@@ -6180,6 +6180,24 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
+ <tr style='height:12.75pt'>
+  <td width=177 valign=top style='width:132.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal>allocate_new_eip</p>
+  </td>
+  <td width=450 valign=top style='width:337.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal>When value is off, reuse an idle address in Elastic IP pool for this gateway. Otherwise, allocate a new Elastic IP and use it for this gateway.
+  <span style='font-size:9.0pt;font-family:
+  Consolas;color:#DF5000;background:white'>Available in 2.7 or later release</span></p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: "off" .</p>
+  <p class=MsoNormal>default is "on".</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
 </table>
 
 <h2><a name="_Toc489305085"></a><a name="_Toc469202799">22.3<span
@@ -13015,7 +13033,7 @@ color:#365F91'>&nbsp;</span></b></p>
 "Courier New"'>  "CID": "55e7af8e4beb8",</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>  "action": "setup_account_profile",</span></p>
+"Courier New"'>  "action": "restore_cloudx_config",</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>  "cloud_type": "1",</span></p>
@@ -13045,7 +13063,7 @@ color:#365F91'>&nbsp;</span></b></p>
 "Courier New"'>&nbsp;</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>curl —k —data "CID=55e7af8e4beb8" —data "action=setup_account_profile"
+"Courier New"'>curl —k —data "CID=55e7af8e4beb8" —data "action=restore_cloudx_config"
 —data "cloud_type=1" —data "access_key=AKIAIWDAABCPKKKWQA" —data "secret_key=9ttSeSnQvb\/OlWZKCjyPsbcdYgamthksK2+1G"
 —data "bucket_name=b1" —data "file_name=backup_file" https://52.25.2.137/v1/api</span></p>
 
