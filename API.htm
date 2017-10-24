@@ -1572,6 +1572,7 @@ Parameters</a></h2>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   <p class=MsoNormal>e.g.: When you create an account for AWS and Azure,
   cloud_type should be 3(1+2).</p>
   </td>
@@ -1678,7 +1679,7 @@ Parameters</a></h2>
   <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure subscription id</p>
+  <p class=MsoNormal>Azure subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -1725,7 +1726,7 @@ Parameters</a></h2>
   <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure RM subscription id</p>
+  <p class=MsoNormal>Azure RM subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -1755,7 +1756,7 @@ Parameters</a></h2>
   <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure RM  Application client ID</p>
+  <p class=MsoNormal>Azure RM Application client ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -1850,7 +1851,7 @@ Parameters</a></h2>
   <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure China subscription id</p>
+  <p class=MsoNormal>Azure China subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -1903,6 +1904,70 @@ Parameters</a></h2>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes when creating an account for AWS China</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_subscription_id</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China subscription ID</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_endpoint</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application Endpoint</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_client_id</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application client ID</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_client_secret</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application client secret</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
 </table>
@@ -2125,6 +2190,7 @@ account can be used to login to CloudN console or UserConnect controller.</p>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   <p class=MsoNormal>e.g.: When you create an account for AWS and Azure,
   cloud_type should be 3(1+2).</p>
   </td>
@@ -2231,7 +2297,7 @@ account can be used to login to CloudN console or UserConnect controller.</p>
   <td width=459 valign=top style='width:344.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure subscription id</p>
+  <p class=MsoNormal>Azure subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -2278,7 +2344,7 @@ account can be used to login to CloudN console or UserConnect controller.</p>
   <td width=459 valign=top style='width:344.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure RM subscription id</p>
+  <p class=MsoNormal>Azure RM subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -2403,7 +2469,7 @@ account can be used to login to CloudN console or UserConnect controller.</p>
   <td width=459 valign=top style='width:344.55pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Azure China subscription id</p>
+  <p class=MsoNormal>Azure China subscription ID</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -2456,6 +2522,70 @@ account can be used to login to CloudN console or UserConnect controller.</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes when creating an account for AWS China</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_subscription_id</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China subscription ID</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_endpoint</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application Endpoint</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_client_id</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application client ID</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=178 valign=top style='width:133.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>arm_china_application_client_secret</p>
+  <p class=MsoNormal>(UCC only)</p>
+  </td>
+  <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Azure RM China Application client secret</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
 </table>
@@ -5413,6 +5543,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   </td>
  </tr>
  <tr style='height:35.25pt'>
@@ -6483,6 +6614,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   </td>
  </tr>
  <tr>
@@ -12424,6 +12556,7 @@ color:#365F91'>&nbsp;</span></b></p>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   </td>
  </tr>
  <tr>
@@ -12632,6 +12765,7 @@ color:#365F91'>&nbsp;</span></b></p>
   <p class=MsoNormal>256: AWS GOV (UCC only)</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
   <p class=MsoNormal>1024: AWS China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   </td>
  </tr>
  <tr>
@@ -13001,6 +13135,7 @@ color:#365F91'>&nbsp;</span></b></p>
   <p class=MsoNormal>2: Azure</p>
   <p class=MsoNormal>8: ARM</p>
   <p class=MsoNormal>512: Azure China (UCC only)</p>
+  <p class=MsoNormal>2048: ARM China (UCC only)</p>
   </td>
  </tr>
  <tr>
