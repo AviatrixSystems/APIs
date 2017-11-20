@@ -12964,7 +12964,7 @@ color:#365F91'>&nbsp;</span></b></p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes when cloud_type is 1, 256 or 1024.</p>
+  <p class=MsoNormal>Required: Yes when cloud_type is 1(except when account_name is provided), 256 or 1024.</p>
   </td>
  </tr>
  <tr>
@@ -12979,7 +12979,22 @@ color:#365F91'>&nbsp;</span></b></p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes when cloud_type is 1, 256 or 1024.</p>
+  <p class=MsoNormal>Required: Yes when cloud_type is 1(except when account_name is provided), 256 or 1024.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>account_name</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Cloud account name. Valid only when cloud_type is 1. When cloud_type is 1(AWS), you can provide cloud account name directly or access key and secret key combination.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes when cloud_type is 1 and access_key and secret_key are not provided.</p>
   </td>
  </tr>
  <tr>
