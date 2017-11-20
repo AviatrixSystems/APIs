@@ -5774,7 +5774,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <p class=MsoNormal>A VPC Network address range selected from one of the
   available network ranges.</p>
   <p class=MsoNormal>Method: POST</p>
-  <p class=MsoNormal>Type: String, e.g.: "172.16.32.0/20"</p>
+  <p class=MsoNormal>Type: String, , in a format of "Subnet_CIDR~~Subnet_AZ~~Subnet_name". e.g.: "172.16.32.0/20~~us-west-1a~~Subnet"</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes</p>
   </td>
@@ -6409,10 +6409,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>curl —k —data "CID=55d26cc728d70" —data "action=connect_container"
-–-data "cloud_type=1" –-data "account_name=devtest" –-data "gw_name=gw1" –-data
-"vpc_id=vpc-5da61c38" –-data "vpc_reg=us-west-2" –-data "vpc_size=t2.micro" –-data
-"vpc_net=10.0.0.0/24—us-west-2b" –-data "save_template=yes" "https://192.168.0.251/v1/api"</span></p>
+"Courier New"'>curl —k —data "CID=55d26cc728d70" —data "action=connect_container" –-data "cloud_type=1" –-data "account_name=devtest" –-data "gw_name=gw1" –-data "vpc_id=vpc-5da61c38" –-data "vpc_reg=us-west-2" –-data "vpc_size=t2.micro" –-data "vpc_net=10.0.0.0/20~~us-west-2b~~Subnet" –-data "save_template=yes" "https://192.168.0.251/v1/api"</span></p>
 
 </div>
 
