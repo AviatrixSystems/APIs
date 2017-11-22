@@ -17691,14 +17691,154 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 </div>
 
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<h1 style='page-break-before:always'><a name="_Toc489305334"></a><a
+name="_Toc469202820_72"></a><a name="_Toc436169081">72<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span>List Allowed Subnets for VPC</a></h1>
+
+<h2><a name="_Toc489305335"></a><a name="_Toc469202821"></a><a
+name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+
+<p class=MsoNormal>List all the allowed subnets for a datacenter extension VPC. Only available in CloudN.</p>
+
+<h2>72.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CID</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The session id (API Key) returned during the login.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>action</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Indicating type of API to call.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid value: "list_allowed_subnet"</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>vpc_name</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Name of datacenter extension VPC whose allowed subnets to be listed.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
+
+<h2>72.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>return</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>API return</p>
+  <p class=MsoNormal>Type: String ("true" or "false")</p>
+  <p class=MsoNormal>Valid Values: true | false</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>reason</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Reason of failed request if return is "false". </p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: reason is empty String if return is "true"</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results if return is true</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: result is empty String if return is "false"</p>
+  </td>
+ </tr>
+</table>
+
+<h2>72.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=list_allowed_subnet&amp;CID=54557b087a48a&amp;vpc_name=vpc1</span></p>
+
+</div>
+
+<h2>72.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "return": true,</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "result": [</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "192.168.1.0\/24",</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "10.200.0.0\/16"</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  ]</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>}</span></p>
+
+</div>
+
 <h1 style='page-break-before:always'><a name="_Toc489305352"></a><a
-name="_Toc469202838">72<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202838">73<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Create </a>Datacenter Extension</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305353"></a><a name="_Toc469202839"></a><a
-name="_Toc462062614"></a><a name="_Toc436169088">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062614"></a><a name="_Toc436169088">73.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Create a datacenter extension. Only available in CloudN.</p>
@@ -17706,7 +17846,7 @@ name="_Toc462062614"></a><a name="_Toc436169088">72.1<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305354"></a><a name="_Toc469202840"></a><a
-name="_Toc462062615"></a><a name="_Toc436169089">72.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062615"></a><a name="_Toc436169089">73.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=626
@@ -18339,7 +18479,7 @@ name="_Toc462062615"></a><a name="_Toc436169089">72.2<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305355"></a><a name="_Toc469202841"></a><a
-name="_Toc462062616"></a><a name="_Toc436169090">72.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062616"></a><a name="_Toc436169090">73.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -18387,7 +18527,7 @@ name="_Toc462062616"></a><a name="_Toc436169090">72.3<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305356"></a><a name="_Toc469202842"></a><a
-name="_Toc462062617"></a><a name="_Toc436169091">72.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062617"></a><a name="_Toc436169091">73.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -18404,7 +18544,7 @@ name="_Toc462062617"></a><a name="_Toc436169091">72.4<span style='font:7.0pt "Ti
 
 <h2 style='margin-left:.4in'>&nbsp;</h2>
 
-<h2><a name="_Toc489305357"></a><a name="_Toc469202843">72.5<span
+<h2><a name="_Toc489305357"></a><a name="_Toc469202843">73.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
