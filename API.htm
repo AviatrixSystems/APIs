@@ -3449,7 +3449,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>curl —k —data "CID=55d26cc728d70" —data "action=add_account_user" –-data "username=api_user1" –-data "account_name=devtest" –-data "email=api_user1@example.com" –-data "password=p@ssw0rd" "https://192.168.0.251/v1/api"</span></p>
+"Courier New"'>curl —k --data "CID=55d26cc728d70" --data "action=add_account_user" –-data "username=api_user1" –-data "account_name=devtest" –-data "email=api_user1@example.com" –-data "password=p@ssw0rd" "https://192.168.0.251/v1/api"</span></p>
 
 </div>
 
@@ -3475,14 +3475,14 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <h1 style='page-break-before:always'><a name="_Toc436169051"></a><a
 name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span>Change Account User Password</a></h1>
+</span>Edit Account User</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305011">12.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
-<p class=MsoNormal>Change account user password, including admin user.</p>
+<p class=MsoNormal>Change account user's account name, email or password.</p>
 
 <h2><a name="_Toc489305012">12.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
@@ -3497,8 +3497,9 @@ name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
   <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal>Indicating type of API to call.</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
-  <p class=MsoNormal>Valid value: "change_password"</p>
+  <p class=MsoNormal>Valid value: "edit_account_user"</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes</p>
   </td>
@@ -3512,7 +3513,39 @@ name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal>API session ID</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>username</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The name of user whose info is to be changed</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>what</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Type of change, indicating what info of user to be changed.</p>
+  <p class=MsoNormal>Method: POST</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid values: "account_name", "email", "password"</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes</p>
   </td>
@@ -3525,24 +3558,26 @@ name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>User’s account name whose password is to be changed</p>
+  <p class=MsoNormal>New account name.</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: Yes when what is "account_name"</p>
   </td>
  </tr>
  <tr>
   <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>user_name</p>
+  <p class=MsoNormal>email</p>
   </td>
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>The name of user whose password is to be changed</p>
+  <p class=MsoNormal>New email address of user.</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: Yes when what is "email"</p>
   </td>
  </tr>
  <tr>
@@ -3553,24 +3588,26 @@ name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>User’s current password</p>
+  <p class=MsoNormal>Old password of user for authentication.</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: Yes when what is "password"</p>
   </td>
  </tr>
  <tr>
   <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>password</p>
+  <p class=MsoNormal>new_password</p>
   </td>
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>User’s new password</p>
+  <p class=MsoNormal>New password of user.</p>
+  <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: Yes when what is "password"</p>
   </td>
  </tr>
 </table>
@@ -3627,9 +3664,8 @@ name="_Toc489305010">12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
-<p class=MsoNormal style='border:none;padding:0in'><a
-href="https://192.168.0.251/v1/api?CID=54557b087a48a&amp;action=change_password&amp;account_name=admin&amp;user_name=user2&amp;old_password=12345&amp;password=password"><span
-style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a&amp;action=change_password&amp;account_name=admin&amp;user_name=user2&amp;old_password=12345&amp;password=password</span></a></p>
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>curl -k --data "CID=55d26cc728d70" --data "action=edit_account_user" –-data "username=api_user1" –-data "what=account_name" --data "account_name=devtest" "https://192.168.0.251/v1/api"</span></p>
 
 </div>
 
@@ -3645,25 +3681,311 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 "Courier New"'>  "return": true,</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>  "results": "User login:admin password has been changed
-successfully — Please check email confirmation."</span></p>
+"Courier New"'>  "results": "Account:devtest has been added to user login:api_user1 successfully - Please check email confirmation."</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>}</span></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305016">13<span
+
+<h1 style='page-break-before:always'><a name="_Toc489304998_13">13<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Delete Account User</a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc489304999">13.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Description</a></h2>
+
+<p class=MsoNormal>Delete an account user.</p>
+
+<h2><a name="_Toc489305000">13.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Request Parameters</a></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>action</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Indicating type of API to call.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid value: "delete_account_user"</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CID</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>API session ID</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>username</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The name of account user to be deleted</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc489305001">13.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Response Elements</a></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>return</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>API return</p>
+  <p class=MsoNormal>Type: String ("true" or "false")</p>
+  <p class=MsoNormal>Valid Values: true | false</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>reason</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Reason of failed request if return is "false". </p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: reason is empty string if return is "true"</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results if return is true</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: result is empty string if return is "false"</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc489305002">13.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Example Request</a></h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span
+style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a&amp;action=delete_account_user&amp;username=api_user2</span></p>
+
+</div>
+
+<h2><a name="_Toc489305003">13.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Example Response</a></h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "return": true,</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "reason": "User login:api_user2 has been deleted successfully - Please check email confirmation."</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>}</span></p>
+
+</div>
+
+<h1 style='page-break-before:always'><a name="_Toc489305004_14">14<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>List Account Users</a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc489305005"></a><a name="_Toc436169064">14.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Description</a></h2>
+
+<p class=MsoNormal>List all the account users.</p>
+
+<h2><a name="_Toc489305006"></a><a name="_Toc436169065">14.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Request
+Parameters</a></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CID</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The session id (API key) that was returned during login.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>action</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Indicating type of API to call.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid value: "list_account_users"</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc436169066">14.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Response Elements</a></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>return</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>API return</p>
+  <p class=MsoNormal>Type: String ("true" or "false")</p>
+  <p class=MsoNormal>Valid Values: true | false</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>reason</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Reason of failed request if return is "false". </p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: reason is empty string if return is "true"</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results</p>
+  </td>
+  <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>results if return is true</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid Values: result is empty string if return is "false"</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>14.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Example Request</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=list_account_users&amp;CID=54557b087a48a</span></p>
+
+</div>
+
+<h2>14.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Example Response</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "return": true,</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  "results": [</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>    {</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "acct_names": "acct1",</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "user_name": "user1",</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "user_email": "user1@example.com"</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>    },</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>    {</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "acct_names": "acct1",</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "user_name": "user2",</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>      "user_email": "user2@example.com"</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>    }</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>  ]</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>}</span></p>
+
+</div>
+
+<h1 style='page-break-before:always'><a name="_Toc489305016">15<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Add VPN User and
 attach it to Profile</a></h1>
 
-<h2><a name="_Toc489305017">13.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305017">15.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Add a VPN user and bind it to a VPC. Attaching the user to a
 profile is possible as well.</p>
 
-<h2><a name="_Toc489305018">13.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305018">15.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -3770,7 +4092,7 @@ profile is possible as well.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305019">13.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305019">15.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -3815,7 +4137,7 @@ profile is possible as well.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305020">13.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305020">15.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -3826,7 +4148,7 @@ style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&
 
 </div>
 
-<h2><a name="_Toc489305021">13.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305021">15.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -3848,15 +4170,15 @@ can not add users."</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h1 style='page-break-before:always'><a name="_Toc489305022">14<span
+<h1 style='page-break-before:always'><a name="_Toc489305022">16<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</a></h1>
 
-<h2><a name="_Toc489305023">14.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305023">16.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Delete a VPN user.</p>
 
-<h2><a name="_Toc489305024">14.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305024">16.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -3919,7 +4241,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
  </tr>
 </table>
 
-<h2><a name="_Toc489305025">14.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305025">16.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -3964,7 +4286,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
  </tr>
 </table>
 
-<h2><a name="_Toc489305026">14.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305026">16.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -3975,7 +4297,7 @@ style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&
 
 </div>
 
-<h2><a name="_Toc489305027">14.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305027">16.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -3998,18 +4320,18 @@ thanks for your support!"</span></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305028">15<span
+<h1 style='page-break-before:always'><a name="_Toc489305028">17<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Profile
 Policies</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305029">15.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305029">17.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the policies set for a profile.</p>
 
-<h2><a name="_Toc489305030">15.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305030">17.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4058,7 +4380,7 @@ Policies</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305031">15.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305031">17.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4105,7 +4427,7 @@ Policies</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305032">15.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305032">17.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4116,7 +4438,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h2><a name="_Toc489305033">15.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305033">17.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4198,18 +4520,18 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305034">16<span
+<h1 style='page-break-before:always'><a name="_Toc489305034">18<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update Profile
 Policy</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305035">16.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305035">18.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Update security policy of an existing profile.</p>
 
-<h2><a name="_Toc489305036">16.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305036">18.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4285,7 +4607,7 @@ Policy</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305037">16.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305037">18.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4332,7 +4654,7 @@ Policy</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305038">16.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305038">18.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4343,7 +4665,7 @@ Policy</a></h1>
 
 </div>
 
-<h2><a name="_Toc489305039">16.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305039">18.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4362,17 +4684,17 @@ Policy</a></h1>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305040">17<span
+<h1 style='page-break-before:always'><a name="_Toc489305040">19<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Add User Profile</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305041">17.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305041">19.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Add a new user profile.</p>
 
-<h2><a name="_Toc489305042">17.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305042">19.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4436,7 +4758,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Add User Profile<
  </tr>
 </table>
 
-<h2><a name="_Toc489305043">17.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305043">19.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4483,7 +4805,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Add User Profile<
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305044">17.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305044">19.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4494,7 +4816,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h2><a name="_Toc489305045">17.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305045">19.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4513,18 +4835,18 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305046">18<span
+<h1 style='page-break-before:always'><a name="_Toc489305046">20<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete User
 Profile</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305047">18.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305047">20.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Delete an existing user profile.</p>
 
-<h2><a name="_Toc489305048">18.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305048">20.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4573,7 +4895,7 @@ Profile</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305049">18.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305049">20.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4620,7 +4942,7 @@ Profile</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305050">18.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305050">20.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4631,7 +4953,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h2><a name="_Toc489305051">18.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305051">20.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4650,18 +4972,18 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305052">19<span
+<h1 style='page-break-before:always'><a name="_Toc489305052">21<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Add Profile
 Member</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305053">19.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305053">21.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Add a user to a profile as a profile member.</p>
 
-<h2><a name="_Toc489305054">19.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305054">21.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4724,7 +5046,7 @@ Member</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305055">19.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305055">21.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4771,7 +5093,7 @@ Member</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305056">19.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305056">21.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4782,7 +5104,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2><a name="_Toc489305057">19.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305057">21.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4801,18 +5123,18 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305058">20<span
+<h1 style='page-break-before:always'><a name="_Toc489305058">22<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete Profile
 Member</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305059">20.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305059">22.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Detach a user from a profile.</p>
 
-<h2><a name="_Toc489305060">20.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305060">22.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4875,7 +5197,7 @@ Member</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305061">20.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305061">22.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4922,7 +5244,7 @@ Member</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305062">20.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305062">22.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4933,7 +5255,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2><a name="_Toc489305063">20.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305063">22.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -4952,18 +5274,18 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305064">21<span
+<h1 style='page-break-before:always'><a name="_Toc489305064">23<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Profiles
 &amp; Members</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305065">21.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305065">23.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List profiles and their members.</p>
 
-<h2><a name="_Toc489305066">21.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305066">23.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -4998,7 +5320,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Profiles
  </tr>
 </table>
 
-<h2><a name="_Toc489305067">21.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305067">23.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -5045,7 +5367,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Profiles
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305068">21.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305068">23.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5056,7 +5378,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2><a name="_Toc489305069">21.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305069">23.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5109,17 +5431,17 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc469202796"></a><a
-name="_Toc489305070">22<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc489305070">24<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Get Supported Gateway Sizes</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305071">22.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305071">24.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all of supported gateway sizes for each cloud type.</p>
 
-<h2><a name="_Toc489305072">22.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305072">24.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -5154,7 +5476,7 @@ name="_Toc489305070">22<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
  </tr>
 </table>
 
-<h2><a name="_Toc489305073">22.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305073">24.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -5201,7 +5523,7 @@ name="_Toc489305070">22<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305074">22.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305074">24.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5212,7 +5534,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2><a name="_Toc489305075">22.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305075">24.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5510,18 +5832,18 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305076">23<span
+<h1 style='page-break-before:always'><a name="_Toc489305076">25<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Get Supported
 Regions</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305077">23.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305077">25.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all of supported regions for each cloud type.</p>
 
-<h2><a name="_Toc489305078">23.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305078">25.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -5556,7 +5878,7 @@ Regions</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305079">23.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305079">25.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -5603,7 +5925,7 @@ Regions</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305080">23.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305080">25.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5614,7 +5936,7 @@ supported_region</span></p>
 
 </div>
 
-<h2><a name="_Toc489305081">23.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305081">25.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -5804,13 +6126,13 @@ supported_region</span></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305082">24<span
+<h1 style='page-break-before:always'><a name="_Toc489305082">26<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Launch an
 Aviatrix Gateway (Connect Legacy VPC/Vnet</a>)</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305083"></a><a name="_Toc469202797">24.1<span
+<h2><a name="_Toc489305083"></a><a name="_Toc469202797">26.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>This API applies to both CloudN (on-prem virtual appliance)
@@ -5823,7 +6145,7 @@ it.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305084"></a><a name="_Toc469202798">24.2<span
+<h2><a name="_Toc489305084"></a><a name="_Toc469202798">26.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=626
@@ -6535,7 +6857,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
  </tr>
 </table>
 
-<h2><a name="_Toc489305085"></a><a name="_Toc469202799">24.3<span
+<h2><a name="_Toc489305085"></a><a name="_Toc469202799">26.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -6582,7 +6904,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305086"></a><a name="_Toc469202800">24.4<span
+<h2><a name="_Toc489305086"></a><a name="_Toc469202800">26.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -6590,13 +6912,13 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>curl —k —data "CID=55d26cc728d70" —data "action=connect_container" –-data "cloud_type=1" –-data "account_name=devtest" –-data "gw_name=gw1" –-data "vpc_id=vpc-5da61c38" –-data "vpc_reg=us-west-2" –-data "vpc_size=t2.micro" –-data "vpc_net=10.0.0.0/20~~us-west-2b~~Subnet" –-data "save_template=yes" "https://192.168.0.251/v1/api"</span></p>
+"Courier New"'>curl —k --data "CID=55d26cc728d70" --data "action=connect_container" –-data "cloud_type=1" –-data "account_name=devtest" –-data "gw_name=gw1" –-data "vpc_id=vpc-5da61c38" –-data "vpc_reg=us-west-2" –-data "vpc_size=t2.micro" –-data "vpc_net=10.0.0.0/20~~us-west-2b~~Subnet" –-data "save_template=yes" "https://192.168.0.251/v1/api"</span></p>
 
 </div>
 
 <h2 style='margin-left:.4in'>&nbsp;</h2>
 
-<h2><a name="_Toc489305087"></a><a name="_Toc469202801">24.5<span
+<h2><a name="_Toc489305087"></a><a name="_Toc469202801">26.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -6620,19 +6942,19 @@ style='font-family:"Courier New"'>"</span></p>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc469202802"></a><a
-name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc489305088">27<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Test LDAP Bind</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305089">25.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305089">27.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Test LDAP connection. </p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305090">25.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305090">27.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=626
@@ -6820,7 +7142,7 @@ name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
  </tr>
 </table>
 
-<h2><a name="_Toc489305091">25.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305091">27.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -6867,7 +7189,7 @@ name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305092">25.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305092">27.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -6875,7 +7197,7 @@ name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>curl —k —data "CID=55d26cc728d70" —data "action=test_ldap_bind" –-data
+"Courier New"'>curl —k --data "CID=55d26cc728d70" --data "action=test_ldap_bind" –-data
 "ldap_server=" –-data "ldap_bind_dn=" –-data "ldap_password=" –-data "ldap_base_dn="
 –-data "ldap_username_attribute=" "https://192.168.0.251/v1/api"</span></p>
 
@@ -6883,7 +7205,7 @@ name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 
 <h2 style='margin-left:.4in'>&nbsp;</h2>
 
-<h2><a name="_Toc489305093">25.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305093">27.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -6904,15 +7226,15 @@ name="_Toc489305088">25<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305094">26<span
+<h1 style='page-break-before:always'><a name="_Toc489305094">28<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete </a>Gateway</h1>
 
-<h2><a name="_Toc489305095"></a><a name="_Toc469202803">26.1<span
+<h2><a name="_Toc489305095"></a><a name="_Toc469202803">28.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>Delete an Aviatrix gateway.</p>
 
-<h2><a name="_Toc489305096"></a><a name="_Toc469202804">26.2<span
+<h2><a name="_Toc489305096"></a><a name="_Toc469202804">28.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -6985,7 +7307,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2><a name="_Toc489305097"></a><a name="_Toc469202805">26.3<span
+<h2><a name="_Toc489305097"></a><a name="_Toc469202805">28.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7030,7 +7352,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
  </tr>
 </table>
 
-<h2><a name="_Toc489305098"></a><a name="_Toc469202806">26.4<span
+<h2><a name="_Toc489305098"></a><a name="_Toc469202806">28.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7041,7 +7363,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=delete_con
 
 </div>
 
-<h2><a name="_Toc489305099"></a><a name="_Toc469202807">26.5<span
+<h2><a name="_Toc489305099"></a><a name="_Toc469202807">28.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7061,18 +7383,18 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305100"></a><a
-name="_Toc470804179"></a><a name="_Toc462062697"></a><a name="_Toc436169171">27<span
+name="_Toc470804179"></a><a name="_Toc462062697"></a><a name="_Toc436169171">29<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create VPC
 Encrypted Peer Pair</a></h1>
 
 <h2><a name="_Toc489305101"></a><a name="_Toc470804180"></a><a
-name="_Toc462062698"></a><a name="_Toc436169172">27.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062698"></a><a name="_Toc436169172">29.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Create one encrypted tunnel between two VPCs.</p>
 
 <h2><a name="_Toc489305102"></a><a name="_Toc470804181"></a><a
-name="_Toc462062699"></a><a name="_Toc436169173">27.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062699"></a><a name="_Toc436169173">29.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7140,7 +7462,7 @@ name="_Toc462062699"></a><a name="_Toc436169173">27.2<span style='font:7.0pt "Ti
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
 <h2><a name="_Toc489305103"></a><a name="_Toc470804182"></a><a
-name="_Toc462062700"></a><a name="_Toc436169174">27.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062700"></a><a name="_Toc436169174">29.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7188,7 +7510,7 @@ name="_Toc462062700"></a><a name="_Toc436169174">27.3<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305104"></a><a name="_Toc470804183"></a><a
-name="_Toc462062701"></a><a name="_Toc436169175">27.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062701"></a><a name="_Toc436169175">29.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7200,7 +7522,7 @@ name="_Toc462062701"></a><a name="_Toc436169175">27.4<span style='font:7.0pt "Ti
 </div>
 
 <h2><a name="_Toc489305105"></a><a name="_Toc470804184"></a><a
-name="_Toc462062702"></a><a name="_Toc436169176">27.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062702"></a><a name="_Toc436169176">29.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7222,18 +7544,18 @@ name="_Toc462062702"></a><a name="_Toc436169176">27.5<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h1 style='page-break-before:always'><a name="_Toc489305106"></a><a
-name="_Toc470804185"></a><a name="_Toc462062703"></a><a name="_Toc436169177">28<span
+name="_Toc470804185"></a><a name="_Toc462062703"></a><a name="_Toc436169177">30<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List VPC Encrypted
 Peer Pair</a></h1>
 
 <h2><a name="_Toc489305107"></a><a name="_Toc470804186"></a><a
-name="_Toc462062704"></a><a name="_Toc436169178">28.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062704"></a><a name="_Toc436169178">30.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all VPC peer pairs that have encrypted tunnels.</p>
 
 <h2><a name="_Toc489305108"></a><a name="_Toc470804187"></a><a
-name="_Toc462062705"></a><a name="_Toc436169179">28.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062705"></a><a name="_Toc436169179">30.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7269,7 +7591,7 @@ name="_Toc462062705"></a><a name="_Toc436169179">28.2<span style='font:7.0pt "Ti
 </table>
 
 <h2><a name="_Toc489305109"></a><a name="_Toc470804188"></a><a
-name="_Toc462062706"></a><a name="_Toc436169180">28.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062706"></a><a name="_Toc436169180">30.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7315,7 +7637,7 @@ name="_Toc462062706"></a><a name="_Toc436169180">28.3<span style='font:7.0pt "Ti
 </table>
 
 <h2><a name="_Toc489305110"></a><a name="_Toc470804189"></a><a
-name="_Toc462062707"></a><a name="_Toc436169181">28.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062707"></a><a name="_Toc436169181">30.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7327,7 +7649,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 </div>
 
 <h2><a name="_Toc489305111"></a><a name="_Toc470804190"></a><a
-name="_Toc462062708"></a><a name="_Toc436169182">28.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062708"></a><a name="_Toc436169182">30.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7436,18 +7758,18 @@ name="_Toc462062708"></a><a name="_Toc436169182">28.5<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h1 style='page-break-before:always'><a name="_Toc489305112"></a><a
-name="_Toc470804191"></a><a name="_Toc462062709"></a><a name="_Toc436169183">29<span
+name="_Toc470804191"></a><a name="_Toc462062709"></a><a name="_Toc436169183">31<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPC
 Encrypted Peer Pair</a></h1>
 
 <h2><a name="_Toc489305113"></a><a name="_Toc470804192"></a><a
-name="_Toc462062710"></a><a name="_Toc436169184">29.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062710"></a><a name="_Toc436169184">31.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Delete an encrypted tunnel between 2 VPCs.</p>
 
 <h2><a name="_Toc489305114"></a><a name="_Toc470804193"></a><a
-name="_Toc462062711"></a><a name="_Toc436169185">29.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062711"></a><a name="_Toc436169185">31.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7515,7 +7837,7 @@ name="_Toc462062711"></a><a name="_Toc436169185">29.2<span style='font:7.0pt "Ti
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
 <h2><a name="_Toc489305115"></a><a name="_Toc470804194"></a><a
-name="_Toc462062712"></a><a name="_Toc436169186">29.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062712"></a><a name="_Toc436169186">31.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7563,7 +7885,7 @@ name="_Toc462062712"></a><a name="_Toc436169186">29.3<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305116"></a><a name="_Toc470804195"></a><a
-name="_Toc462062713"></a><a name="_Toc436169187">29.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062713"></a><a name="_Toc436169187">31.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7575,7 +7897,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 </div>
 
 <h2><a name="_Toc489305117"></a><a name="_Toc470804196"></a><a
-name="_Toc462062714"></a><a name="_Toc436169188">29.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062714"></a><a name="_Toc436169188">31.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7595,16 +7917,16 @@ deleted"</span></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305118">30<span
+<h1 style='page-break-before:always'><a name="_Toc489305118">32<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Peering HA
 Switch Over</a></h1>
 
-<h2><a name="_Toc489305119">30.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305119">32.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Force the fail over to the backup peering tunnel.</p>
 
-<h2><a name="_Toc489305120">30.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305120">32.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7671,7 +7993,7 @@ Switch Over</a></h1>
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2><a name="_Toc489305121">30.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305121">32.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7718,7 +8040,7 @@ Switch Over</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305122">30.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305122">32.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7730,7 +8052,7 @@ Switch Over</a></h1>
 
 </div>
 
-<h2><a name="_Toc489305123">30.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305123">32.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -7754,17 +8076,17 @@ successfully switched to Oregon-DevOps-VPC.Asia-Prod-VPC.peer"</span></p>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305124"></a><a
-name="_Toc479233494">31<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc479233494">33<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Gateway info</a></h1>
 
 <h2 style='margin-left:.65in'><a name="_Toc489305125"></a><a
-name="_Toc479233495">31.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+name="_Toc479233495">33.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>List all the gateways and its info that can be viewed in the
 gateway list page.</p>
 
 <h2 style='margin-left:.65in'><a name="_Toc489305126"></a><a
-name="_Toc479233496">31.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
+name="_Toc479233496">33.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
 Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7834,7 +8156,7 @@ Parameters</a></h2>
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
 <h2 style='margin-left:.65in'><a name="_Toc489305127"></a><a
-name="_Toc479233497">31.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
+name="_Toc479233497">33.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
 Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -7882,7 +8204,7 @@ Elements</a></h2>
 <p class=MsoNormal>&nbsp;</p>
 
 <h2 style='margin-left:.65in'><a name="_Toc489305128"></a><a
-name="_Toc479233498">31.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc479233498">33.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 0in 4.0pt'>
@@ -7894,7 +8216,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 </div>
 
 <h2 style='margin-left:.65in'><a name="_Toc489305129"></a><a
-name="_Toc479233499">31.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc479233499">33.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 0in 4.0pt'>
@@ -8321,16 +8643,16 @@ Response</a></h2>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305130">32<span
+<h1 style='page-break-before:always'><a name="_Toc489305130">34<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List VPC
 Association</a></h1>
 
-<h2 style='margin-left:.65in'><a name="_Toc489305131">32.1<span
+<h2 style='margin-left:.65in'><a name="_Toc489305131">34.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>List all site2cloud tunnels and peering info.</p>
 
-<h2 style='margin-left:.65in'><a name="_Toc489305132">32.2<span
+<h2 style='margin-left:.65in'><a name="_Toc489305132">34.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -8367,7 +8689,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2 style='margin-left:.65in'><a name="_Toc489305133">32.3<span
+<h2 style='margin-left:.65in'><a name="_Toc489305133">34.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -8414,7 +8736,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2 style='margin-left:.65in'><a name="_Toc489305134">32.4<span
+<h2 style='margin-left:.65in'><a name="_Toc489305134">34.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 0in 4.0pt'>
@@ -8425,7 +8747,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2 style='margin-left:.65in'><a name="_Toc489305135">32.5<span
+<h2 style='margin-left:.65in'><a name="_Toc489305135">34.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 0in 4.0pt'>
@@ -10076,18 +10398,18 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305136">33<span
+<h1 style='page-break-before:always'><a name="_Toc489305136">35<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Upgrade</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305137">33.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305137">35.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Upgrade the controller to a specific release or to the
 latest.</p>
 
-<h2><a name="_Toc489305138">33.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305138">35.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10138,7 +10460,7 @@ latest.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305139">33.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305139">35.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10185,7 +10507,7 @@ latest.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305140">33.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305140">35.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10196,7 +10518,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
 
 </div>
 
-<h2><a name="_Toc489305141">33.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305141">35.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10217,12 +10539,12 @@ Please log out and login again for the new changes to take effect."</span></p>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305142"></a><a
-name="_Toc479955367">34<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc479955367">36<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Upload Trace logs</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305143">34.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305143">36.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Upload Trace logs. Valid for UCC and CloudN. <a
@@ -10230,7 +10552,7 @@ name="OLE_LINK5">If vpc_name is specified we upload the gateway specified and
 the controller tracelog. If vpc_name is not specified, we upload the controller
 tracelog.</a></p>
 
-<h2><a name="_Toc489305144">34.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305144">36.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10282,7 +10604,7 @@ tracelog.</a></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305145">34.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305145">36.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10329,7 +10651,7 @@ tracelog.</a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305146">34.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305146">36.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10340,7 +10662,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305147">34.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305147">36.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10366,17 +10688,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><a name="_Toc483229689"><b><span style='font-size:14.0pt;
 font-family:"Cambria","serif";color:#365F91'>&nbsp;</span></b></a></p>
 
-<h1><a name="_Toc489305148">35<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305148">37<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Resize Gateway</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305149"></a><a name="_Toc483229690">35.1<span
+<h2><a name="_Toc489305149"></a><a name="_Toc483229690">37.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>Change gateway size.</p>
 
-<h2><a name="_Toc489305150"></a><a name="_Toc483229691">35.2<span
+<h2><a name="_Toc489305150"></a><a name="_Toc483229691">37.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10441,7 +10763,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
  </tr>
 </table>
 
-<h2><a name="_Toc489305151"></a><a name="_Toc483229692">35.3<span
+<h2><a name="_Toc489305151"></a><a name="_Toc483229692">37.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10488,7 +10810,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305152"></a><a name="_Toc483229693">35.4<span
+<h2><a name="_Toc489305152"></a><a name="_Toc483229693">37.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10519,7 +10841,7 @@ href="https://52.25.2.137/v1/api"><span style='font-family:"Courier New"'>https:
 
 </div>
 
-<h2><a name="_Toc489305153"></a><a name="_Toc483229694">35.5<span
+<h2><a name="_Toc489305153"></a><a name="_Toc483229694">37.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10546,18 +10868,18 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305154">36<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305154">38<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Version Info</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305155">36.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305155">38.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List the latest available version and current version of the
 controller.</p>
 
-<h2><a name="_Toc489305156">36.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305156">38.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10592,7 +10914,7 @@ controller.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305157">36.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305157">38.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10639,7 +10961,7 @@ controller.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305158">36.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305158">38.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10649,7 +10971,7 @@ controller.</p>
 
 </div>
 
-<h2><a name="_Toc489305159">36.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305159">38.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10680,17 +11002,17 @@ controller.</p>
 
 </div>
 
-<h1><a name="_Toc489305160">37<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305160">39<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List VPN Users</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305161">37.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305161">39.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the VPN users in the controller.</p>
 
-<h2><a name="_Toc489305162">37.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305162">39.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10725,7 +11047,7 @@ controller.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305163">37.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305163">39.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10772,7 +11094,7 @@ controller.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305164">37.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305164">39.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10782,7 +11104,7 @@ controller.</p>
 
 </div>
 
-<h2><a name="_Toc489305165">37.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305165">39.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10896,17 +11218,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305166">38<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305166">40<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Live VPN Users</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305167">38.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305167">40.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the live VPN users.</p>
 
-<h2><a name="_Toc489305168">38.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305168">40.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10941,7 +11263,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305169">38.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305169">40.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -10988,7 +11310,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305170">38.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305170">40.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -10998,7 +11320,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305171">38.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305171">40.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11078,17 +11400,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305172">39<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305172">41<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List VPCs</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305173">39.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305173">41.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the VPCs.</p>
 
-<h2><a name="_Toc489305174">39.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305174">41.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11138,7 +11460,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305175">39.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305175">41.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11185,7 +11507,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305176">39.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305176">41.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11195,7 +11517,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305177">39.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305177">41.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11233,17 +11555,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305178">40<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305178">42<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List LB Names</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305179">40.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305179">42.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the load balancer names attached to a gateway.</p>
 
-<h2><a name="_Toc489305180">40.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305180">42.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11292,7 +11614,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305181">40.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305181">42.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11339,7 +11661,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305182">40.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305182">42.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11350,7 +11672,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305183">40.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305183">42.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11382,17 +11704,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305184">41<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305184">43<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Modify Split Tunnel</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305185">41.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305185">43.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Modify split tunnel configuration.</p>
 
-<h2><a name="_Toc489305186">41.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305186">43.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11527,7 +11849,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305187">41.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305187">43.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11574,7 +11896,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305188">41.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305188">43.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11590,7 +11912,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305189">41.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305189">43.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11648,17 +11970,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305190">42<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305190">44<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Show LDAP Conf</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305191">42.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305191">44.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Show LDAP configuration.</p>
 
-<h2><a name="_Toc489305192">42.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305192">44.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11721,7 +12043,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305193">42.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305193">44.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11768,7 +12090,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305194">42.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305194">44.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11778,7 +12100,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305195">42.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305195">44.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -11842,17 +12164,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305196">43<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305196">45<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Edit VPN Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305197">43.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305197">45.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Edit VPN configuration.</p>
 
-<h2><a name="_Toc489305198">43.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305198">45.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -11958,7 +12280,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305199">43.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305199">45.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12005,7 +12327,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305200">43.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305200">45.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12021,7 +12343,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305201">43.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305201">45.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12109,17 +12431,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305202">44<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305202">46<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Reload DHCP Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305203">44.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305203">46.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Reload DHCP configuration.</p>
 
-<h2><a name="_Toc489305204">44.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305204">46.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12182,7 +12504,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305205">44.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305205">46.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12229,7 +12551,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305206">44.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305206">46.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12239,7 +12561,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305207">44.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305207">46.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12266,17 +12588,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305208">45<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305208">47<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Modify LDAP Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305209">45.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305209">47.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Modify LDAP configuration.</p>
 
-<h2><a name="_Toc489305210">45.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305210">47.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12483,7 +12805,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305211">45.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305211">47.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12530,7 +12852,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305212">45.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305212">47.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12540,7 +12862,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305213">45.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305213">47.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12567,17 +12889,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305214">46<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305214">48<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Get Backup Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305215">46.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305215">48.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Get backup configuration.</p>
 
-<h2><a name="_Toc489305216">46.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305216">48.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12612,7 +12934,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305217">46.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305217">48.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12659,7 +12981,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305218">46.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305218">48.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12669,7 +12991,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305219">46.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305219">48.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12715,17 +13037,17 @@ clear=all style='page-break-before:always'>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h1><a name="_Toc489305220">47<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305220">49<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Disable Backup Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305221">47.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305221">49.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Disable backup configuration.</p>
 
-<h2><a name="_Toc489305222">47.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305222">49.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12760,7 +13082,7 @@ clear=all style='page-break-before:always'>
  </tr>
 </table>
 
-<h2><a name="_Toc489305223">47.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305223">49.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12807,7 +13129,7 @@ clear=all style='page-break-before:always'>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305224">47.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305224">49.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12817,7 +13139,7 @@ clear=all style='page-break-before:always'>
 
 </div>
 
-<h2><a name="_Toc489305225">47.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305225">49.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -12844,17 +13166,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305226">48<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305226">50<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Enable Backup Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305227">48.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305227">50.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Enable backup configuration.</p>
 
-<h2><a name="_Toc489305228">48.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305228">50.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -12997,7 +13319,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305229">48.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305229">50.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13044,7 +13366,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305230">48.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305230">50.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13054,7 +13376,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305231">48.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305231">50.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13080,17 +13402,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305232">49<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305232">51<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Restore Configuration</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305233">49.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305233">51.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Restore configuration.</p>
 
-<h2><a name="_Toc489305234">49.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305234">51.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13345,7 +13667,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305235">49.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305235">51.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13392,7 +13714,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305236">49.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305236">51.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13446,7 +13768,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305237">49.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305237">51.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13472,17 +13794,17 @@ clear=all style='page-break-before:always'>
 <p class=MsoNormal><b><span style='font-size:14.0pt;font-family:"Cambria","serif";
 color:#365F91'>&nbsp;</span></b></p>
 
-<h1><a name="_Toc489305238">50<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<h1><a name="_Toc489305238">52<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Get Azure Storage Accounts</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305239">50.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305239">52.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Get Azure storage accounts.</p>
 
-<h2><a name="_Toc489305240">50.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305240">52.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13579,7 +13901,7 @@ color:#365F91'>&nbsp;</span></b></p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305241">50.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305241">52.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13626,7 +13948,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305242">50.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305242">52.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13636,7 +13958,7 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h2><a name="_Toc489305243">50.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305243">52.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13664,17 +13986,17 @@ color:#365F91'>&nbsp;</span></b></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="vpc_access_policy">51<span
+<h1 style='page-break-before:always'><a name="vpc_access_policy">53<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>VPC Access Policy</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305029">51.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305029">53.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the access policy items for a gateway.</p>
 
-<h2><a name="_Toc489305030">51.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305030">53.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13723,7 +14045,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>VPC Access Policy
  </tr>
 </table>
 
-<h2><a name="_Toc489305031">51.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305031">53.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13770,7 +14092,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>VPC Access Policy
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305032">51.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305032">53.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13781,7 +14103,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?action=vpc_access_
 
 </div>
 
-<h2><a name="_Toc489305033">51.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305033">53.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13839,17 +14161,17 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?action=vpc_access_
 </div>
 s_ip and d_ip returned could be cidrs or tag names.
 
-<h1 style='page-break-before:always'><a name="set_vpc_base_policy">52<span
+<h1 style='page-break-before:always'><a name="set_vpc_base_policy">54<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Set VPC Access Base Policy</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305035">52.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305035">54.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Set/Update base access policy for a gateway.</p>
 
-<h2><a name="_Toc489305036">52.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305036">54.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13928,7 +14250,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Set VPC Access Ba
  </tr>
 </table>
 
-<h2><a name="_Toc489305037">52.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305037">54.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -13975,7 +14297,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Set VPC Access Ba
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305038">52.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305038">54.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -13985,7 +14307,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Set VPC Access Ba
 
 </div>
 
-<h2><a name="_Toc489305039">52.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305039">54.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14004,17 +14326,17 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Set VPC Access Ba
 
 </div>
 
-<h1 style='page-break-before:always'><a name="update_access_policy">53<span
+<h1 style='page-break-before:always'><a name="update_access_policy">55<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update VPC Access Policy</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305035">53.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305035">55.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Update access policy of a gateway.</p>
 
-<h2><a name="_Toc489305036">53.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305036">55.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14092,7 +14414,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update VPC Access
  </tr>
 </table>
 
-<h2><a name="_Toc489305037">53.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305037">55.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14139,7 +14461,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update VPC Access
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305038">53.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305038">55.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14149,7 +14471,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update VPC Access
 
 </div>
 
-<h2><a name="_Toc489305039">53.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305039">55.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14168,19 +14490,19 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update VPC Access
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305244">54<span
+<h1 style='page-break-before:always'><a name="_Toc489305244">56<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List CloudOps
 VPC Pool</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305245">54.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305245">56.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all CloudOps VPC pool in detail or pool names only.
 Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305246">54.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305246">56.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14230,7 +14552,7 @@ Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305247">54.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305247">56.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14275,7 +14597,7 @@ Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305248">54.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305248">56.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14286,7 +14608,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305249">54.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305249">56.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14317,19 +14639,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305250">55<span
+<h1 style='page-break-before:always'><a name="_Toc489305250">57<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete CloudOps
 VPC Pool</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305251">55.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305251">57.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Delete an existing CloudOps VPC pool. Only valid for
 Userconnect.</p>
 
-<h2><a name="_Toc489305252">55.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305252">57.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14392,7 +14714,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305253">55.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305253">57.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14437,7 +14759,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305254">55.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305254">57.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14448,7 +14770,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305255">55.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305255">57.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14467,18 +14789,18 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305256">56<span
+<h1 style='page-break-before:always'><a name="_Toc489305256">58<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create CloudOps
 VPC Pool</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305257">56.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305257">58.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Create a new CloudOps VPC pool. Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305258">56.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305258">58.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14657,7 +14979,7 @@ VPC Pool</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305259">56.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305259">58.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14702,7 +15024,7 @@ VPC Pool</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305260">56.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305260">58.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14713,7 +15035,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305261">56.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305261">58.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14733,19 +15055,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305262">57<span
+<h1 style='page-break-before:always'><a name="_Toc489305262">59<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Access
 Address Pool CIDR</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305263">57.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305263">59.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the available Access Address Pool CIDRs. Only valid
 for Userconnect.</p>
 
-<h2><a name="_Toc489305264">57.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305264">59.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14780,7 +15102,7 @@ for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305265">57.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305265">59.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14825,7 +15147,7 @@ for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305266">57.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305266">59.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14836,7 +15158,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305267">57.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305267">59.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -14867,18 +15189,18 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305268">58<span
+<h1 style='page-break-before:always'><a name="_Toc489305268">60<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>DNS Cname Action</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305269">58.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305269">60.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Add, modify or delete DNS cnames. Only valid for
 Userconnect.</p>
 
-<h2><a name="_Toc489305270">58.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305270">60.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -14956,7 +15278,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305271">58.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305271">60.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15001,7 +15323,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305272">58.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305272">60.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15012,7 +15334,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305273">58.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305273">60.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15032,19 +15354,19 @@ DNS domain"</span></p>
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305274">59<span
+<h1 style='page-break-before:always'><a name="_Toc489305274">61<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List Access Address
 Pool</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305275">59.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305275">61.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List free, mapped or all access address pool. Only valid for
 Userconnect.</p>
 
-<h2><a name="_Toc489305276">59.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305276">61.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15139,7 +15461,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305277">59.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305277">61.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15184,7 +15506,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305278">59.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305278">61.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15195,7 +15517,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305279">59.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305279">61.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15802,18 +16124,18 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305280">60<span
+<h1 style='page-break-before:always'><a name="_Toc489305280">62<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>AWS Domain Name
 System</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305281">60.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305281">62.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Enable or disable AWS DNS. Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305282">60.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305282">62.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15877,7 +16199,7 @@ System</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305283">60.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305283">62.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15922,7 +16244,7 @@ System</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305284">60.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305284">62.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15933,7 +16255,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305285">60.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305285">62.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -15952,19 +16274,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305286">61<span
+<h1 style='page-break-before:always'><a name="_Toc489305286">63<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List
 Non-Management VPCs</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305287">61.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305287">63.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all the non-management VPCs. Only valid for
 Userconnect.</p>
 
-<h2><a name="_Toc489305288">61.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305288">63.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -15999,7 +16321,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305289">61.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305289">63.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16044,7 +16366,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305290">61.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305290">63.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16055,7 +16377,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305291">61.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305291">63.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16086,18 +16408,18 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305292">62<span
+<h1 style='page-break-before:always'><a name="_Toc489305292">64<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Setup Access
 Address Pool</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305293">62.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305293">64.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Setup access address pool. Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305294">62.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305294">64.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16160,7 +16482,7 @@ Address Pool</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305295">62.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305295">64.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16205,7 +16527,7 @@ Address Pool</a></h1>
  </tr>
 </table>
 
-<h2><a name="_Toc489305296">62.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305296">64.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16216,7 +16538,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305297">62.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305297">64.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16235,19 +16557,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305298">63<span
+<h1 style='page-break-before:always'><a name="_Toc489305298">65<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>List CloudOps
 Unmapped Instances</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305299">63.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305299">65.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>List all CloudOps unmapped instances. Only valid for
 Userconnect.</p>
 
-<h2><a name="_Toc489305300">63.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305300">65.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16296,7 +16618,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305301">63.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305301">65.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16341,7 +16663,7 @@ Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305302">63.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305302">65.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16352,7 +16674,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305303">63.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305303">65.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16404,19 +16726,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305304">64<span
+<h1 style='page-break-before:always'><a name="_Toc489305304">66<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>CloudOps Scan
 Map Target</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305305">64.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305305">66.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Automatically map free access addresses or unmap mapped
 addresses. Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305306">64.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305306">66.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16494,7 +16816,7 @@ addresses. Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305307">64.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305307">66.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16539,7 +16861,7 @@ addresses. Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305308">64.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305308">66.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16550,7 +16872,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305309">64.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305309">66.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16569,19 +16891,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305310">65<span
+<h1 style='page-break-before:always'><a name="_Toc489305310">67<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>CloudOps Map
 Target Single Instance</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305311">65.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305311">67.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Manually map a free access address to single instance. Only
 valid for Userconnect.</p>
 
-<h2><a name="_Toc489305312">65.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305312">67.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16686,7 +17008,7 @@ valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305313">65.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305313">67.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16731,7 +17053,7 @@ valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305314">65.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305314">67.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16742,7 +17064,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305315">65.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305315">67.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16761,19 +17083,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h1 style='page-break-before:always'><a name="_Toc489305316">66<span
+<h1 style='page-break-before:always'><a name="_Toc489305316">68<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>CloudOps Unmap
 Target Single Instance</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h2><a name="_Toc489305317">66.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305317">68.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Manually unmap single instance and free mapped access
 address. Only valid for Userconnect.</p>
 
-<h2><a name="_Toc489305318">66.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305318">68.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16836,7 +17158,7 @@ address. Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305319">66.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305319">68.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16881,7 +17203,7 @@ address. Only valid for Userconnect.</p>
  </tr>
 </table>
 
-<h2><a name="_Toc489305320">66.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305320">68.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16892,7 +17214,7 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 </div>
 
-<h2><a name="_Toc489305321">66.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+<h2><a name="_Toc489305321">68.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -16916,19 +17238,19 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 <h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 
 <h1 style='page-break-before:always'><a name="_Toc489305322"></a><a
-name="_Toc469202808"></a><a name="_Toc436169069">67<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202808"></a><a name="_Toc436169069">69<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Setup Maximum number of VP</a>C/Vnets</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305323"></a><a name="_Toc469202809"></a><a
-name="_Toc436169070">67.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+name="_Toc436169070">69.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>Setup number of VPCs that customer is planning to create in
 AWS. This will create VPC CIDRs automatically. Only available in CloudN.</p>
 
 <h2><a name="_Toc489305324"></a><a name="_Toc469202810"></a><a
-name="_Toc436169071">67.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
+name="_Toc436169071">69.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
 Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -16978,7 +17300,7 @@ Parameters</a></h2>
 </table>
 
 <h2><a name="_Toc489305325"></a><a name="_Toc469202811"></a><a
-name="_Toc436169072">67.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
+name="_Toc436169072">69.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
 Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17026,7 +17348,7 @@ Elements</a></h2>
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305326"></a><a name="_Toc469202812"></a><a
-name="_Toc436169073">67.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169073">69.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17037,7 +17359,7 @@ Request</a></h2>
 </div>
 
 <h2><a name="_Toc489305327"></a><a name="_Toc469202813"></a><a
-name="_Toc436169074">67.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169074">69.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17080,17 +17402,17 @@ Response</a></h2>
 <p class=MsoNormal>&nbsp;</p>
 
 <h1 style='page-break-before:always'><a name="_Toc489305328"></a><a
-name="_Toc469202814"></a><a name="_Toc436169075">68<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202814"></a><a name="_Toc436169075">70<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Maximum number of VPC/Vnets</a></h1>
 
 <h2><a name="_Toc489305329"></a><a name="_Toc469202815"></a><a
-name="_Toc436169076">68.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+name="_Toc436169076">70.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>List the configured number of VPCs that customer is planning
 to create in AWS. Only available in CloudN.</p>
 
 <h2><a name="_Toc489305330"></a><a name="_Toc469202816"></a><a
-name="_Toc436169077">68.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
+name="_Toc436169077">70.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
 Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17126,7 +17448,7 @@ Parameters</a></h2>
 </table>
 
 <h2><a name="_Toc489305331"></a><a name="_Toc469202817"></a><a
-name="_Toc436169078">68.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
+name="_Toc436169078">70.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
 Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17172,7 +17494,7 @@ Elements</a></h2>
 </table>
 
 <h2><a name="_Toc489305332"></a><a name="_Toc469202818"></a><a
-name="_Toc436169079">68.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169079">70.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17184,7 +17506,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=list_max_v
 </div>
 
 <h2><a name="_Toc489305333"></a><a name="_Toc469202819"></a><a
-name="_Toc436169080">68.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169080">70.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17212,17 +17534,17 @@ Response</a></h2>
 <p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;</span></p>
 
 <h1 style='page-break-before:always'><a name="_Toc489305334"></a><a
-name="_Toc469202820"></a><a name="_Toc436169081">69<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202820"></a><a name="_Toc436169081">71<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Available CIDRs</a></h1>
 
 <h2><a name="_Toc489305335"></a><a name="_Toc469202821"></a><a
-name="_Toc436169082">69.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+name="_Toc436169082">71.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>List all CIDRs on the CloudN system. One of these CIDRs has
 to be used when creating a VPC container. Only available in CloudN.</p>
 
 <h2><a name="_Toc489305336"></a><a name="_Toc469202822"></a><a
-name="_Toc436169083">69.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
+name="_Toc436169083">71.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request
 Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17260,7 +17582,7 @@ Parameters</a></h2>
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
 <h2><a name="_Toc489305337"></a><a name="_Toc469202823"></a><a
-name="_Toc436169084">69.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
+name="_Toc436169084">71.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response
 Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17306,7 +17628,7 @@ Elements</a></h2>
 </table>
 
 <h2><a name="_Toc489305338"></a><a name="_Toc469202824"></a><a
-name="_Toc436169085">69.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169085">71.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17318,7 +17640,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=list_cidr_
 </div>
 
 <h2><a name="_Toc489305339"></a><a name="_Toc469202825"></a><a
-name="_Toc436169086">69.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
+name="_Toc436169086">71.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example
 Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17359,16 +17681,16 @@ Response</a></h2>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc462062613"></a><a
-name="_Toc436169087"></a><a name="_Toc489305340"></a><a name="_Toc469202826">70<span
+name="_Toc436169087"></a><a name="_Toc489305340"></a><a name="_Toc469202826">72<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Allow Subnets to
 VPC</a></h1>
 
-<h2><a name="_Toc489305341"></a><a name="_Toc469202827">70.1<span
+<h2><a name="_Toc489305341"></a><a name="_Toc469202827">72.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>Allow subnets to VPC. Only available in CloudN.</p>
 
-<h2><a name="_Toc489305342"></a><a name="_Toc469202828">70.2<span
+<h2><a name="_Toc489305342"></a><a name="_Toc469202828">72.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17450,7 +17772,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2><a name="_Toc489305343"></a><a name="_Toc469202829">70.3<span
+<h2><a name="_Toc489305343"></a><a name="_Toc469202829">72.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17495,7 +17817,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
  </tr>
 </table>
 
-<h2><a name="_Toc489305344"></a><a name="_Toc469202830">70.4<span
+<h2><a name="_Toc489305344"></a><a name="_Toc469202830">72.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17506,7 +17828,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=allow_subn
 
 </div>
 
-<h2><a name="_Toc489305345"></a><a name="_Toc469202831">70.5<span
+<h2><a name="_Toc489305345"></a><a name="_Toc469202831">72.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17526,15 +17848,15 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305346"></a><a
-name="_Toc469202832">71<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202832">73<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Delete Subnets from VPC</a></h1>
 
-<h2><a name="_Toc489305347"></a><a name="_Toc469202833">71.1<span
+<h2><a name="_Toc489305347"></a><a name="_Toc469202833">73.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>Delete subnets from VPC. Only available in CloudN.</p>
 
-<h2><a name="_Toc489305348"></a><a name="_Toc469202834">71.2<span
+<h2><a name="_Toc489305348"></a><a name="_Toc469202834">73.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17616,7 +17938,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2><a name="_Toc489305349"></a><a name="_Toc469202835">71.3<span
+<h2><a name="_Toc489305349"></a><a name="_Toc469202835">73.3<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -17661,7 +17983,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</a></h2>
  </tr>
 </table>
 
-<h2><a name="_Toc489305350"></a><a name="_Toc469202836">71.4<span
+<h2><a name="_Toc489305350"></a><a name="_Toc469202836">73.4<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17672,7 +17994,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?action=delete_sub
 
 </div>
 
-<h2><a name="_Toc489305351"></a><a name="_Toc469202837">71.5<span
+<h2><a name="_Toc489305351"></a><a name="_Toc469202837">73.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
@@ -17694,15 +18016,15 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 <p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;</span></p>
 
 <h1 style='page-break-before:always'><a name="_Toc489305334"></a><a
-name="_Toc469202820_72"></a><a name="_Toc436169081">72<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202820_72"></a><a name="_Toc436169081">74<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>List Allowed Subnets for VPC</a></h1>
 
 <h2><a name="_Toc489305335"></a><a name="_Toc469202821"></a><a
-name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
+name="_Toc436169082">74.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Description</a></h2>
 
 <p class=MsoNormal>List all the allowed subnets for a datacenter extension VPC. Only available in CloudN.</p>
 
-<h2>72.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</h2>
+<h2>74.2<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
@@ -17752,7 +18074,7 @@ name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </spa
 
 <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
 
-<h2>72.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</h2>
+<h2>74.3<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Response Elements</h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
  style='border-collapse:collapse;border:none'>
@@ -17796,7 +18118,7 @@ name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </spa
  </tr>
 </table>
 
-<h2>72.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</h2>
+<h2>74.4<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
@@ -17804,7 +18126,7 @@ name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </spa
 
 </div>
 
-<h2>72.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</h2>
+<h2>74.5<span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
@@ -17832,13 +18154,13 @@ name="_Toc436169082">72.1<span style='font:7.0pt "Times New Roman"'>&nbsp; </spa
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305352"></a><a
-name="_Toc469202838">73<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+name="_Toc469202838">75<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span>Create </a>Datacenter Extension</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305353"></a><a name="_Toc469202839"></a><a
-name="_Toc462062614"></a><a name="_Toc436169088">73.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062614"></a><a name="_Toc436169088">75.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Description</a></h2>
 
 <p class=MsoNormal>Create a datacenter extension. Only available in CloudN.</p>
@@ -17846,7 +18168,7 @@ name="_Toc462062614"></a><a name="_Toc436169088">73.1<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305354"></a><a name="_Toc469202840"></a><a
-name="_Toc462062615"></a><a name="_Toc436169089">73.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062615"></a><a name="_Toc436169089">75.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Request Parameters</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=626
@@ -18479,7 +18801,7 @@ name="_Toc462062615"></a><a name="_Toc436169089">73.2<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305355"></a><a name="_Toc469202841"></a><a
-name="_Toc462062616"></a><a name="_Toc436169090">73.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062616"></a><a name="_Toc436169090">75.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Response Elements</a></h2>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
@@ -18527,7 +18849,7 @@ name="_Toc462062616"></a><a name="_Toc436169090">73.3<span style='font:7.0pt "Ti
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489305356"></a><a name="_Toc469202842"></a><a
-name="_Toc462062617"></a><a name="_Toc436169091">73.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+name="_Toc462062617"></a><a name="_Toc436169091">75.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Request</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
@@ -18544,7 +18866,7 @@ name="_Toc462062617"></a><a name="_Toc436169091">73.4<span style='font:7.0pt "Ti
 
 <h2 style='margin-left:.4in'>&nbsp;</h2>
 
-<h2><a name="_Toc489305357"></a><a name="_Toc469202843">73.5<span
+<h2><a name="_Toc489305357"></a><a name="_Toc469202843">75.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
 <p class=MsoNormal>&nbsp;</p>
