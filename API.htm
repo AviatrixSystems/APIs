@@ -4084,10 +4084,11 @@ profile is possible as well.</p>
   <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Optional ELB name.</p>
+  <p class=MsoNormal>IMPORTANT: This argument can also be the name of VPN gateway
+   if ELB doesn't apply in your case.</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: No</p>
+  <p class=MsoNormal>Required: Yes</p>
   </td>
  </tr>
 </table>
@@ -4144,7 +4145,7 @@ profile is possible as well.</p>
 
 <p class=MsoNormal style='border:none;padding:0in'><a
 href="https://54.164.39.64/v1/api?CID=57030512b75b9&amp;action=add_vpn_user&amp;vpc_id=vpc1&amp;username=user1&amp;user_email=test@aviatrix.com&amp;profile_name=profile1"><span
-style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&amp;action=add_vpn_user&amp;vpc_id=vpc1&amp;username=user1&amp;user_email=test@aviatrix.com&amp;profile_name=profile1</span></a></p>
+style='font-family:"Courier New"'>https://10.123.123.123/v1/api?action=add_vpn_user&amp;CID=oMeHsFTu7TnxBVuV0S0y&amp;vpc_id=vpc-12345678~~MyVPCTagName&amp;username=vpn-user-02&amp;user_email=test@aviatrix.com&amp;profile_name=profile-01&amp;lb_name=my_elb_or_gw_name</span></a></p>
 
 </div>
 
@@ -4157,11 +4158,10 @@ style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&
 "Courier New"'>{</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>  "return": false,</span></p>
+"Courier New"'>  "return": true,</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>  "reason": "This VPC has no gateways associated with it, you
-can not add users."</span></p>
+"Courier New"'>  "results": "User vpn-user-02 has been added to vpc vpc-12345678. An email with OpenVPN certificates has been sent to test@aviatrix.com."</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>}</span></p>
