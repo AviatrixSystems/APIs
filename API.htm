@@ -8,6 +8,7 @@
 
 body {
 	word-wrap: break-word;
+	counter-reset: h1counter;
 }
 <!--
  /* Font Definitions */
@@ -157,6 +158,8 @@ body {
 	margin-left:0in;
 	font-size:11.0pt;
 	font-family:"Calibri","sans-serif";}
+h1:before
+	{content: counter(h1counter) "\0000a0\0000a0";}
 h1
 	{mso-style-link:"Heading 1 Char";
 	margin-top:24.0pt;
@@ -169,7 +172,11 @@ h1
 	font-size:14.0pt;
 	font-family:"Cambria","serif";
 	color:#365F91;
-	font-weight:bold;}
+	font-weight:bold;
+	counter-increment: h1counter;
+	counter-reset: h2counter;}
+h2:before
+	{content: counter(h1counter) "." counter(h2counter) "\0000a0\0000a0";}
 h2
 	{mso-style-link:"Heading 2 Char";
 	margin-top:10.0pt;
@@ -182,7 +189,8 @@ h2
 	font-size:13.0pt;
 	font-family:"Cambria","serif";
 	color:#4F81BD;
-	font-weight:bold;}
+	font-weight:bold;
+	counter-increment: h2counter;}
 h3
 	{mso-style-link:"Heading 3 Char";
 	margin-top:10.0pt;
@@ -824,8 +832,6 @@ authorized successfully — Please check email confirmation.",</span></p>
 "Courier New"'>}</span></p>
 
 </div>
-
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 
 <h1 style='page-break-before:always'><a name="_Toc489304962">2<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6917,8 +6923,6 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Request</a></h2>
 
 </div>
 
-<h2 style='margin-left:.4in'>&nbsp;</h2>
-
 <h2><a name="_Toc489305087"></a><a name="_Toc469202801">26.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 
@@ -7203,8 +7207,6 @@ name="_Toc489305088">27<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&n
 --data "ldap_username_attribute=" "https://192.168.0.251/v1/api"</span></p>
 
 </div>
-
-<h2 style='margin-left:.4in'>&nbsp;</h2>
 
 <h2><a name="_Toc489305093">27.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
@@ -7522,8 +7524,6 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 }
   </pre>
 </div>
-
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Enable Gateway HA -->
 
 
@@ -7652,7 +7652,6 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Gateway HA Switch Over -->
 
 
@@ -7778,7 +7777,6 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Disable Gateway HA -->
 
 
@@ -9186,7 +9184,6 @@ Response</a></h2>
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Create Transitive Peering -->
 
 
@@ -9306,7 +9303,6 @@ Response</a></h2>
   </pre>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: List Transitive Peering -->
 
 
@@ -9452,7 +9448,6 @@ Response</a></h2>
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Delete Transitive Peering -->
 
 
@@ -18048,7 +18043,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
 
 <p class=MsoNormal>&nbsp;</p>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 
 
 <!-- START: Create BGP Site2Cloud Connection -->
@@ -18292,7 +18286,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Create BGP Site2Cloud Connection -->
 
 
@@ -18438,7 +18431,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Edit BGP Advertised Neworks of Site2Cloud Connection -->
 
 
@@ -18573,7 +18565,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Modify BGP Gateway's ASN -->
 
 
@@ -18701,7 +18692,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:"Courier New"'>}</span></p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Enable BGP Configuration -->
 
 
@@ -18828,7 +18818,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   </pre>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: List All BGP Gateways -->
 
 
@@ -18958,7 +18947,6 @@ style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&a
   </p>
 </div>
 
-<h1 style='margin-left:0in;text-indent:0in'>&nbsp;</h1>
 <!-- END: Disable BGP Configuration -->
 
 
@@ -20586,8 +20574,6 @@ name="_Toc462062617"></a><a name="_Toc436169091">87.4<span style='font:7.0pt "Ti
 "Courier New"'>$ curl -k --data "action=create_container" --data "CID=4Srzim1rv7K3ZsPPiXG2" --data "cloud_type=1" --data "account_name=my-cloud-accountaws" --data "vpc_name=my-dcx-gw" --data "vpc_reg=us-west-1" --data "vpc_net=10.55.80.0/21" --data "vpc_size=t2.micro" --data "internet_access=yes" --data "public_subnet=yes" --data "tunnel_type=tcp" --data "vpn_access=yes" --data "vpn_cidr=192.168.88.0/24" --data "max_conn=100" --data "split_tunnel=yes" --data "additional_cidrs=10.123.123.123/32" "https://10.55.0.3/v1/api"</span></p>
 
 </div>
-
-<h2 style='margin-left:.4in'>&nbsp;</h2>
 
 <h2><a name="_Toc489305357"></a><a name="_Toc469202843">87.5<span
 style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
