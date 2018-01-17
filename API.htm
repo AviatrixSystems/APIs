@@ -984,8 +984,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 <h2><a name="_Toc489304969"></a><a name="_Toc436169040"><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Description</a></h2>
 
-<p class=MsoNormal>Do the initial setup. This has to be
-done only once during the setup.</p>
+<p class=MsoNormal>Run UCC(cloud Aviatrix controller) initial-setup if the value of "subaction" is "run". Check if initial-setup has been run already or not.</p>
 <span style='font-size:10.0pt;font-family:Consolas;color:#DF5000;background:white'>Available in the version 3.0 or later release.</span>
 
 <h2><a name="_Toc489304970"></a><a name="_Toc436169041"><span
@@ -1462,14 +1461,14 @@ Response</a></h2>
 
 <h1 style='page-break-before:always'><a name="_Toc489304980"><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Upload File</a></h1>
+</span>Upload GCloud project credential File</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <h2><a name="_Toc489304981"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Description</a></h2>
 
-<p class=MsoNormal>Upload a file to the Aviatrix Controller. This API is needed
+<p class=MsoNormal>Upload a GCloud project credential file to the Aviatrix Controller. This API is needed
 for Gcloud account creation to upload credential file. </p>
 
 <h2><a name="_Toc489304982"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6134,8 +6133,7 @@ supported_region</span></p>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305082"><span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Launch an
-Aviatrix Gateway (Connect Legacy VPC/Vnet</a>)</h1>
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Launch an Aviatrix Gateway (Connect Legacy VPC/Vnet</a>)</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -6312,7 +6310,15 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <td width=450 valign=top style='width:337.2pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:69.85pt'>
-  <p class=MsoNormal>ID of legacy VPC/Vnet to be connected</p>
+  <p class=MsoNormal>A string that is consisted of VPC/Vnet name and cloud provider's (AWS/ARM/GCloud) resource name. Examples are below...</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Syntax (AWS): VPC_ID~~VPC_NAME_TAG</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Example (AWS): vpc-abcd1234~~my-vpc-02</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Example (AWS): vpc-abcd1234~~NoName (if the VPC has no name tag)</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Syntax (ARM): VNET_NAME:RESOURCE_GROUP_NAME</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Example (ARM): myVNet01:myResourceGroupInWestUS</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Syntax (GCloud): VPC_NAME  Example: mygcloudvpc01</p>
+  <p class=MsoNormal>&nbsp;&nbsp;&nbsp;&nbsp; Example (GCloud): mygcloudvpc01</p>
+  <p class=MsoNormal>Notes: Please check the "Gateway" page on Aviatrix controller GUI for the precise value if needed.</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
@@ -11207,7 +11213,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Example Response</a></h2>
 </div>
 
 <h1 style='page-break-before:always'><a name="_Toc489305136"><span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Upgrade</a></h1>
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Upgrade Controller</a></h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
