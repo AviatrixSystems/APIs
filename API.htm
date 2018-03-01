@@ -1527,9 +1527,9 @@ Response</a></h2>
   </td>
  </tr>
  <tr>
-  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>cloud_type</p>
+  <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  	<a name="_cloud_type_description"></a>
+    <p class=MsoNormal>cloud_type</p>
   </td>
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -5116,9 +5116,199 @@ color:#365F91'>&nbsp;</span></b></p>
 
 
 
-<!-- START: Create an Aviatrix Gateway -->
+<!-- START: List Public Subnets -->
+<h1 style='page-break-before:always'>
+  <a name="_list_public_subnets">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List Public Subnets
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<p class=MsoNormal>This API displays all the public subnets information (in the format of --> CIDR~~Zone~~Name) with the given VPC-ID.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_public_subnets"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: account_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>account_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>The name of controller cloud-account</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: cloud_type -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>cloud_type</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Please Refer <a href="#_cloud_type_description">Here</a></p>
+    </td>
+  </tr>
+
+  <!-- param: region -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>region</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Region of the resource in cloud provider(AWS/ARM/GCP)</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC ID</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    curl -k "https://CONTROLLER_IP/v1/api?action=list_public_subnets&amp;CID=XXXXX&amp;show_private_subnets=false&amp;account_name=my-aws&amp;cloud_type=1&amp;region=us-west-1&amp;vpc_id=vpc-abcd1234"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+  	<span style='font-family:"Courier New"'>
+      <pre>
+{
+  "return": true,
+   "results": [
+        "10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List Public Subnets -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Create an Aviatrix Gateway (Connect Legacy VPC/Vnet)) -->
 <h1 style='page-break-before:always'><a name="_connect_container"><span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create an Aviatrix Gateway (Connect Legacy VPC/Vnet)</a>)</h1>
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create an Aviatrix Gateway (Connect Legacy VPC/Vnet))</a>)</h1>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -7248,21 +7438,2778 @@ t2.micro.Congratulations!!"</span></p>
 
 
 
-<!--  Hi Stan, this space is reserved for your Transit Network API documentation. Thank you!
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: List Transit Gateway Supported Sizes -->
+<h1 style='page-break-before:always'>
+  <a name="_list_transit_gw_supported_sizes">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List Transit Gateway Supported Sizes
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<p class=MsoNormal>This API lists all Transit-Gateway supported sizes.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_transit_gw_supported_sizes"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    curl -k "https://CONTROLLER_IP/v1/api?action=list_transit_gw_supported_sizes&amp;CID=XXXXX"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "t2.micro",
+        "t2.medium",
+        "t2.large",
+        "m4.large",
+        "m4.xlarge",
+        "m4.2xlarge",
+        "m4.16xlarge",
+        "c5.large",
+        "c5.xlarge",
+        "c5.2xlarge",
+        "c5.4xlarge",
+        "c5.9xlarge",
+        "c5.18xlarge",
+        "c4.large",
+        "c4.xlarge",
+        "c4.2xlarge",
+        "c4.4xlarge",
+        "c4.8xlarge"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List Transit Gateway Supported Sizes -->
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
 
 
 
 
+<!-- START: Create Transit Gateway -->
+<h1 style='page-break-before:always'>
+  <a name="_create_transit_gw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Create Transit Gateway
+  </a>
+</h1>
 
-OXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
-OXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
-OXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<p class=MsoNormal>This API creates a Transit Network Gateway.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "create_transit_gw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: cloud_type -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>cloud_type</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Please Refer <a href="#_cloud_type_description">Here</a></p>
+    </td>
+  </tr>
+
+  <!-- param: account_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>account_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: region -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>region</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Region of cloud provider.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "us-east-1", ARM: "East US 2", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC-ID/VNet-Name of cloud provider.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "vpc-abcd1234", ARM: "VNet_Name:Resource_Group_Name", GCP: "mygooglecloudvpcname", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: public_subnet -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>public_subnet</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Public Subnet INFO.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the gateway which is going to be created.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_size -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_size</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Size of the gateway instance.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "t2.large", ARM: "Standard_D11", GCP: "n1-standard-2", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: dns_server -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>dns_server</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify the DNS IP</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <!-- param: tags -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>tags</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Instance tag of cloud provider</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
+      <p class=MsoNormal>Example: key1:value1,key002:value002</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=create_transit_gw" --data "account_name=my-aws" --data "cloud_type=1" --data "region=us-west-1" --data "vpc_alias=vpc-94e23cf3~~transit-vpc" --data "subnet_alias=10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub" --data "gw_name=my-transit-gw" --data "gw_size=t2.large" --data "dns_server=8.8.8.8" --data "tags=k1:v1,k2:v2" --data "CID=XXXX" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "Successfully created Gateway my-transit-gw. Congratulations!!"
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Create Transit Gateway -->
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
 
 
 
+<!-- START: List Transit Gateways -->
+<h1 style='page-break-before:always'>
+  <a name="_list_transit_gws">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List Transit Gateways
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<p class=MsoNormal>This API lists Transit gateways.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_transit_gws"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k "https://CONTROLLER_IP/v1/api?action=list_transit_gws&amp;CID=xxxxx"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "my-transit-gw"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List Transit Gateways -->
 
 
- -->
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Enable Transit HA -->
+<h1 style='page-break-before:always'>
+  <a name="_enable_transit_ha">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Enable Transit HA
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Enable Transit HA.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "enable_transit_ha"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the primary Transit gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: public_subnet -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>public_subnet</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Public Subnet INFO.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl  -k  --data  "action=enable_transit_ha"  --data  "gw_name=my-transit-gw"  --data  "public_subnet=10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub"  --data  "CID=VhblRhfn3J0e9xeY2lhe"  "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "my-transit-gw-hagw is successfully created..."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Enable Transit HA -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: List VGWs -->
+<h1 style='page-break-before:always'>
+  <a name="_list_vgws">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List VGWs
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>List VGWs.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_vgws"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: account_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>account_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: region -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>region</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Region of cloud provider.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "us-east-1", ARM: "East US 2", etc...</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k "https://CONTROLLER_IP/v1/api?action=list_vgws&amp;account_name=my-aws&amp;region=us-west-1&amp;CID=XXXXX"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "vgw-abcd1234~~my-vgw"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List VGWs -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Connect Transit Gateway to VGW -->
+<h1 style='page-break-before:always'>
+  <a name="_connect_transit_gw_to_vgw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Connect Transit Gateway to VGW
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Connect Transit Gateway to VGW.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "connect_transit_gw_to_vgw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: connection_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>connection_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>The name of connection which is going to be created.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: bgp_vgw_account_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>bgp_vgw_account_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller that owns the VGW instance.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: bgp_vgw_region -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>bgp_vgw_region</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Region where the VGW locates.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "us-east-1", ARM: "East US 2", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: vgw_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vgw_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VGW ID</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: transit_gw -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>transit_gw</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the Transit gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC-ID/VNet-Name where the Transit gateway locates.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "vpc-abcd1234", ARM: "VNet_Name:Resource_Group_Name", GCP: "mygooglecloudvpcname", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: bgp_local_as_number -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>bgp_local_as_number</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>BGW Local ASN (Autonomous System Number) in Transit VPC side.</p>
+      <p class=MsoNormal>Type: ingeter between 1-65535</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=connect_transit_gw_to_vgw" --data "CID=XXXXX" --data "connection_name=my-connection-vgw-to-tgw" --data "bgp_vgw_account_name=my-aws" --data "bgp_vgw_region=us-west-1" --data "vgw_id=vgw-abcd1234" --data "transit_gw=my-transit-gw" --data "vpc_id=vpc-abcd1234~~transit-vpc" --data "bgp_local_as_number=65001" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "Connection my-connection-vgw-to-tgw created successfully."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Connect Transit Gateway to VGW -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: List Spoke Gateway Supported Sizes -->
+<h1 style='page-break-before:always'>
+  <a name="_list_spoke_gw_supported_sizes">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List Spoke Gateway Supported Sizes
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- H2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>This API lists all spoke gateway supported sizes.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<!-- H2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_spoke_gw_supported_sizes"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k "https://CONTROLLER_IP/v1/api?action=list_spoke_gw_supported_sizes&amp;CID=XXXXX"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "t2.micro",
+        "t2.medium",
+        "t2.large",
+        "m4.large",
+        "m4.xlarge",
+        "m4.2xlarge",
+        "m4.16xlarge",
+        "c5.large",
+        "c5.xlarge",
+        "c5.2xlarge",
+        "c5.4xlarge",
+        "c5.9xlarge",
+        "c5.18xlarge",
+        "c4.large",
+        "c4.xlarge",
+        "c4.2xlarge",
+        "c4.4xlarge",
+        "c4.8xlarge"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List Spoke Gateway Supported Sizes -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Create Spoke Gateway -->
+<h1 style='page-break-before:always'>
+  <a name="_create_spoke_gw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Create Spoke Gateway
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>This API creates a spoke gateway.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "create_spoke_gw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: account_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>account_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: cloud_type -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>cloud_type</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Please Refer <a href="#_cloud_type_description">Here</a></p>
+    </td>
+  </tr>
+
+  <!-- param: region -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>region</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Region of cloud provider.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "us-east-1", ARM: "East US 2", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC-ID/VNet-Name of cloud provider.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "vpc-abcd1234", ARM: "VNet_Name:Resource_Group_Name", GCP: "mygooglecloudvpcname", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: public_subnet -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>public_subnet</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Public Subnet INFO.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the gateway which is going to be created.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_size -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_size</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Size of the gateway instance.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "t2.large", ARM: "Standard_D11", GCP: "n1-standard-2", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: dns_server -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>dns_server</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify the DNS IP</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <!-- param: nat_enabled -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>nat_enabled</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether enabling NAT feature on the gateway or not. (Please disable AWS NAT instance before enabling this feature) </p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: "no"</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <!-- param: tags -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>tags</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Instance tag of cloud provider</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
+      <p class=MsoNormal>Example: key1:value1,key002:value002</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=create_spoke_gw" --data "CID=XXXXXXXXXX" --data "account_name=my-aws" --data "cloud_type=1" --data "region=us-west-1" --data "vpc_id=vpc-abcd123~~spoke-vpc-01" --data "public_subnet=10.11.0.0/24~~us-west-1b~~spoke-vpc-01-pubsub" --data "gw_name=spoke-gw-01" --data "gw_size=t2.micro" --data "dns_server=8.8.8.8" --data "nat_enabled=no" --data "tags=k1:v1,k2:v2" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "Successfully created Gateway spoke-gw-01. Congratulations!!"
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Create Spoke Gateway -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: List Spoke Gateways -->
+<h1 style='page-break-before:always'>
+  <a name="_list_spoke_gws">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List Spoke Gateways
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>List Spoke Gateways.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_spoke_gws"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k "https://CONTROLLER_IP/v1/api?action=list_spoke_gws&amp;CID=XXXXX"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "spoke-gw-01",
+        "spoke-gw-02"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List Spoke Gateways -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Enable Spoke HA -->
+<h1 style='page-break-before:always'>
+  <a name="_enable_spoke_ha">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Enable Spoke HA
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Enable Spoke HA.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "enable_spoke_ha"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the primary Spoke gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: public_subnet -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>public_subnet</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Public Subnet INFO.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl --k --data "action=enable_spoke_ha" --data "gw_name=spoke-gw-01" --data "subnet_alias=10.11.0.0/24~~us-west-1b~~spoke-vpc-01-pubsub" --data "CID=XXXXX" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "spoke-gw-01-hagw is successfully created..."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Enable Spoke HA -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Disable Spoke HA -->
+<h1 style='page-break-before:always'>
+  <a name="_disable_spoke_ha">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Disable Spoke HA
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Disable Spoke HA.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "disable_spoke_ha"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: gw_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>gw_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the primary Spoke gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl --k --data "action=disable_spoke_ha" --data "gw_name=spoke-gw-01" --data "CID=XXXXX" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "spoke-gw-01 HA has been disabled"
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Disable Spoke HA -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Attach Spoke to Transit Gateway -->
+<h1 style='page-break-before:always'>
+  <a name="_attach_spoke_to_transit_gw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Attach Spoke to Transit Gateway
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Attach Spoke to Transit Gateway.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "attach_spoke_to_transit_gw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: spoke_gw -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>spoke_gw</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the Spoke gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: transit_gw -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>transit_gw</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the Transit gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=attach_spoke_to_transit_gw" --data "spoke_gw=spoke-gw-01" --data "transit_gw=my-transit-gw" --data "CID=XXXXX" "https://CONTROLLER_IP/v1/api?" _XXXXXXXXXX
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "Successfully joined spoke-gw-01 to my-transit-gw."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Attach Spoke to Transit Gateway -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Detach Spoke from Transit Gateway -->
+<h1 style='page-break-before:always'>
+  <a name="_detach_spoke_from_transit_gw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Detach Spoke from Transit Gateway
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Detach Spoke from Transit Gateway.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "detach_spoke_from_transit_gw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: spoke_gw -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>spoke_gw</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Name of the Spoke gateway.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=detach_spoke_from_transit_gw" --data "spoke_gw=spoke-gw-01" --data "CID=XXX" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "spoke-gw-01 has left Transit gateway..."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Detach Spoke from Transit Gateway -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: List VGW Connections -->
+<h1 style='page-break-before:always'>
+  <a name="_list_vgw_connections">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    List VGW Connections
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>List VGW Connections.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">GET</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "list_vgw_connections"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl --k "https://CONTROLLER_IP/v1/api?action=list_vgw_connections&amp;CID=XXXXX"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": [
+        "my-connection-vgw-to-tgw"
+    ]
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: List VGW Connections -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
+
+
+<!-- START: Disconnect Transit Gateway from VGW -->
+<h1 style='page-break-before:always'>
+  <a name="_disconnect_transit_gw_from_vgw">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Disconnect Transit Gateway from VGW
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Disconnect Transit Gateway from VGW.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
+<p class=MsoNormal>Request Method: <span style="color:#FF3300">POST</span></p>
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "disconnect_transit_gw_from_vgw"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: connection_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>connection_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>The name of connection between Transit gateway and VGW.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC-ID/VNet-Name where Transit gateway locates.</p>
+      <p class=MsoNormal>Type: string</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: YES</p>
+      <p class=MsoNormal>Example: AWS: "vpc-abcd1234", ARM: "VNet_Name:Resource_Group_Name", GCP: "mygooglecloudvpcname", etc...</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2: API Response Result -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Response Elements
+  </a>
+</h2>
+
+<!-- API Response Result -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>return</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API return</p>
+      <p class=MsoNormal>Type: String ("true" or "false")</p>
+      <p class=MsoNormal>Valid Values: true | false</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reason</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Reason of failed request when return is "false". </p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>results</p>
+    </td>
+    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API response results when return value is true</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    # curl -k --data "action=disconnect_transit_gw_from_vgw" --data "connection_name=my-connection-vgw-to-tgw" --data "vpc_id=vpc-abcd1234" --data "CID=XXX" "https://CONTROLLER_IP/v1/api"
+  </p>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <p class=MsoNormal style='border:none;padding:0in'>
+    <span style='font-family:"Courier New"'>
+      <pre>
+{
+    "return": true,
+    "results": "Connection my-connection-vgw-to-tgw deleted successfully."
+}
+      </pre>
+    </span>
+  </p>
+</div>
+<!-- END: Disconnect Transit Gateway from VGW -->
+
+
+
+<span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+  <br clear=all style='page-break-before:always'>
+</span>
+
 
 
 
