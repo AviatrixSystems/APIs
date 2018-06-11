@@ -901,10 +901,21 @@ ul
             </a>
         </p>
 
+
+        <!-- START: Get Gateway Information -->
+        <p id="link_to_get_gateway_info" class="MsoToc1 Gateway"> <!-- "action" Name = get_gateway_info -->
+              <a target="ifrm" href="API.htm#_get_gateway_info">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get Gateway Information
+              </a>
+        </p>
+        <!-- END: Get Gateway Information -->
+
+
         <p class=MsoToc1>
             <a target="ifrm" href="API.htm#_list_vpcs_summary">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                List Gateway info
+                List Gateways Information
             </a>
         </p>
 
@@ -970,23 +981,23 @@ ul
         </p>
         <!-- END: Replace Gateway -->
 
-        <!-- START: Enable NAT  -->
+        <!-- START: Enable SNAT  -->
         <p id="link_to_enable_nat" class="MsoToc1 Gateway">
-              <a target="ifrm" href="API.htm#_enable_nat">
+              <a target="ifrm" href="API.htm#_enable_snat">
                     <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable NAT
+                    Enable SNAT
               </a>
         </p>
-        <!-- END: Enable NAT -->
+        <!-- END: Enable SNAT -->
 
-        <!-- START: Disable NAT  -->
+        <!-- START: Disable SNAT  -->
         <p id="link_to_disable_nat" class="MsoToc1 Gateway">
-              <a target="ifrm" href="API.htm#_disable_nat">
+              <a target="ifrm" href="API.htm#_disable_snat">
                     <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable NAT
+                    Disable SNAT
               </a>
         </p>
-        <!-- END: Disable NAT -->
+        <!-- END: Disable SNAT -->
 
         <!-- START: Enable Monitor Gateway Subnets  -->
         <p id="link_to_enable_monitor_gateway_subnets" class="MsoToc1 Edit_Gateway">
@@ -1006,6 +1017,56 @@ ul
               </a>
         </p>
         <!-- END: Disable Monitor Gateway Subnets -->
+
+
+        <!-- START: List DNAT Supported Interfaces -->
+        <p id="link_to_list_dnat_supported_interfaces" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = list_dnat_supported_interfaces -->
+              <a target="ifrm" href="API.htm#_list_dnat_supported_interfaces">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    List DNAT Supported Interfaces
+              </a>
+        </p>
+        <!-- END: List DNAT Supported Interfaces -->
+
+
+        <!-- START: List DNAT Supported Protocols -->
+        <p id="link_to_list_dnat_supported_protocols" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = list_dnat_supported_protocols -->
+              <a target="ifrm" href="API.htm#_list_dnat_supported_protocols">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    List DNAT Supported Protocols
+              </a>
+        </p>
+        <!-- END: List DNAT Supported Protocols -->
+
+
+        <!-- START: Update DNAT Configuration -->
+        <p id="link_to_update_dnat_config" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = update_dnat_config -->
+              <a target="ifrm" href="API.htm#_update_dnat_config">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Update DNAT Configuration
+              </a>
+        </p>
+        <!-- END: Update DNAT Configuration -->
+
+
+        <!-- START: Get Gateway DNAT Configuration -->
+        <p id="link_to_get_gateway_dnat_config" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = get_gateway_dnat_config -->
+              <a target="ifrm" href="API.htm#_get_gateway_dnat_config">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get Gateway DNAT Configuration
+              </a>
+        </p>
+        <!-- END: Get Gateway DNAT Configuration -->
+
+
+        <!-- START: Set Designated Gateway Additional CIDR List -->
+        <p id="link_to_set_designated_gateway_cidrs" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = set_designated_gateway_cidrs -->
+              <a target="ifrm" href="API.htm#_set_designated_gateway_cidrs">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Set Designated Gateway Additional CIDR List
+              </a>
+        </p>
+        <!-- END: Set Designated Gateway Additional CIDR List -->
 
 
 
@@ -1199,6 +1260,15 @@ ul
         </p>
         <!-- END: Attach Spoke to Transit Gateway -->
 
+        <!-- START: List attached Spoke Gateways -->
+        <p id="link_to_list_attached_spoke_gateways" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_attached_spoke_gateways">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    List attached Spoke Gateways
+              </a>
+        </p>
+        <!-- END: List attached Spoke Gateways -->
+
         <!-- START: Detach Spoke from Transit Gateway  -->
         <p id="link_to_detach_spoke_from_transit_gw" class="MsoToc1 Transit_NetWork">
               <a target="ifrm" href="API.htm#_detach_spoke_from_transit_gw">
@@ -1380,6 +1450,47 @@ ul
               </a>
         </p>
         <!-- END: Run BGP Diagnostic -->
+
+
+        <!-- START: Enable BGP Overlapping Alert Email -->
+        <p id="link_to_enable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP"> <!-- "action" Name = enable_bgp_cidr_overlapping_alert_email -->
+              <a target="ifrm" href="API.htm#_enable_bgp_cidr_overlapping_alert_email">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Enable BGP Overlapping Alert Email
+              </a>
+        </p>
+        <!-- END: Enable BGP Overlapping Alert Email -->
+
+
+        <!-- START: Get BGP Overlapping Alert Email Status -->
+        <p id="link_to_get_bgp_cidr_overlapping_alert_email_status" class="MsoToc1 BGP"> <!-- "action" Name = get_bgp_cidr_overlapping_alert_email_status -->
+              <a target="ifrm" href="API.htm#_get_bgp_cidr_overlapping_alert_email_status">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get BGP Overlapping Alert Email Status
+              </a>
+        </p>
+        <!-- END: Get BGP Overlapping Alert Email Status -->
+
+
+        <!-- START: Disable BGP Overlapping Alert Email -->
+        <p id="link_to_disable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP"> <!-- "action" Name = disable_bgp_cidr_overlapping_alert_email -->
+              <a target="ifrm" href="API.htm#_disable_bgp_cidr_overlapping_alert_email">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Disable BGP Overlapping Alert Email
+              </a>
+        </p>
+        <!-- END: Disable BGP Overlapping Alert Email -->
+
+
+        <!-- START: Enable BGP Switch Over -->
+        <p id="link_to_enable_bgp_ha_switch_over" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_bgp_ha_switch_over -->
+              <a target="ifrm" href="API.htm#_enable_bgp_ha_switch_over">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Enable BGP Switch Over
+              </a>
+        </p>
+        <!-- END: Enable BGP Switch Over -->
+
 
 
         <hr>
@@ -1756,21 +1867,6 @@ ul
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <hr>
         <h2>
             <a name="api-doc-saml" class="Category" href="#api-doc-saml">SAML</a>
@@ -1843,6 +1939,109 @@ ul
                 List LB Names
             </a>
         </p>
+
+        <!-- START: List SAML Information -->
+        <p id="link_to_list_saml_info" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = list_saml_info -->
+              <a target="ifrm" href="API.htm#_list_saml_info">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    List SAML Information
+              </a>
+        </p>
+        <!-- END: List SAML Information -->
+
+        <!-- START: Get VPN Gateway Configuration -->
+        <p id="link_to_get_vpn_gateway_config" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_gateway_config -->
+              <a target="ifrm" href="API.htm#_get_vpn_gateway_config">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get VPN Gateway Configuration
+              </a>
+        </p>
+        <!-- END: Get VPN Gateway Configuration -->
+
+        <!-- START: Enable VPN Gateway PBR  -->
+        <p id="link_to_enable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_gateway_pbr -->
+              <a target="ifrm" href="API.htm#_enable_vpn_gateway_pbr">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Enable VPN Gateway PBR
+              </a>
+        </p>
+        <!-- END: Enable VPN Gateway PBR -->
+
+        <!-- START: Disable VPN Gateway PBR  -->
+        <p id="link_to_disable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_gateway_pbr -->
+              <a target="ifrm" href="API.htm#_disable_vpn_gateway_pbr">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Disable VPN Gateway PBR
+              </a>
+        </p>
+        <!-- END: Disable VPN Gateway PBR -->
+
+
+        <!-- START: Set VPN Max Connection  -->
+        <p id="link_to_set_vpn_max_connection" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_max_connection -->
+              <a target="ifrm" href="API.htm#_set_vpn_max_connection">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Set VPN Max Connection
+              </a>
+        </p>
+        <!-- END: Set VPN Max Connection -->
+
+
+        <!-- START: Set VPN Client CIDR  -->
+        <p id="link_to_set_vpn_client_cidr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_client_cidr -->
+              <a target="ifrm" href="API.htm#_set_vpn_client_cidr">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Set VPN Client CIDR
+              </a>
+        </p>
+        <!-- END: Set VPN Client CIDR -->
+
+        <!-- START: Enable VPN Client Certificate Sharing -->
+        <p id="link_to_enable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_client_certificate_sharing -->
+              <a target="ifrm" href="API.htm#_enable_vpn_client_certificate_sharing">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Enable VPN Client Certificate Sharing
+              </a>
+        </p>
+        <!-- END: Enable VPN Client Certificate Sharing -->
+
+        <!-- START: Get VPN Client Certificate Sharing Status -->
+        <p id="link_to_get_vpn_client_certificate_sharing_status" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_client_certificate_sharing_status -->
+              <a target="ifrm" href="API.htm#_get_vpn_client_certificate_sharing_status">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get VPN Client Certificate Sharing Status
+              </a>
+        </p>
+        <!-- END: Get VPN Client Certificate Sharing Status -->
+
+        <!-- START: Disable VPN Client Certificate Sharing -->
+        <p id="link_to_disable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = disable_vpn_client_certificate_sharing -->
+              <a target="ifrm" href="API.htm#_disable_vpn_client_certificate_sharing">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Disable VPN Client Certificate Sharing
+              </a>
+        </p>
+        <!-- END: Disable VPN Client Certificate Sharing -->
+
+
+        <!-- START: Set VPN Gateway Authentication -->
+        <p id="link_to_set_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_gateway_authentication -->
+              <a target="ifrm" href="API.htm#_set_vpn_gateway_authentication">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Set VPN Gateway Authentication
+              </a>
+        </p>
+        <!-- END: Set VPN Gateway Authentication -->
+
+
+        <!-- START: Get VPN Gateway Authentication Configuration -->
+        <p id="link_to_get_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_gateway_authentication -->
+              <a target="ifrm" href="API.htm#_get_vpn_gateway_authentication">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get VPN Gateway Authentication Configuration
+              </a>
+        </p>
+        <!-- END: Get VPN Gateway Authentication Configuration -->
 
 
 
@@ -2054,6 +2253,43 @@ ul
 
         <hr>
         <h2>
+            <a name="api-doc-fqdn-discovery" class="Category" href="#api-doc-fqdn-discovery">FQDN Discovery</a>
+        </h2>
+        <br>
+
+
+
+        <!-- START: Start FQDN Discovery -->
+        <p id="link_to_start_fqdn_discovery" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = start_fqdn_discovery -->
+              <a target="ifrm" href="API.htm#_start_fqdn_discovery">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Start FQDN Discovery
+              </a>
+        </p>
+        <!-- END: Start FQDN Discovery -->
+
+        <!-- START: Show FQDN Discovery Result -->
+        <p id="link_to_get_fqdn_discovery_result" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = get_fqdn_discovery_result -->
+              <a target="ifrm" href="API.htm#_get_fqdn_discovery_result">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Show FQDN Discovery Result
+              </a>
+        </p>
+        <!-- END: Show FQDN Discovery Result -->
+
+        <!-- START: Stop FQDN Discovery -->
+        <p id="link_to_stop_fqdn_discovery" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = stop_fqdn_discovery -->
+              <a target="ifrm" href="API.htm#_stop_fqdn_discovery">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Stop FQDN Discovery
+              </a>
+        </p>
+        <!-- END: Stop FQDN Discovery -->
+
+
+
+        <hr>
+        <h2>
             <a name="api-doc-controller" class="Category" href="#api-doc-controller">Controller</a>
         </h2>
         <br>
@@ -2118,6 +2354,46 @@ ul
               </a>
         </p>
         <!-- END: Migrate Controller IP -->
+
+
+        <!-- START: Enable Controller Security-Group Management  -->
+        <p id="link_to_enable_controller_security_group_management" class="MsoToc1 Controller"> <!-- "action" Name = enable_controller_security_group_management -->
+              <a target="ifrm" href="API.htm#_enable_controller_security_group_management">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Enable Controller Security-Group Management
+              </a>
+        </p>
+        <!-- END: Enable Controller Security-Group Management -->
+
+
+        <!-- START: Get Controller Security-Group Management Status  -->
+        <p id="link_to_get_controller_security_group_management_status" class="MsoToc1 Controller"> <!-- "action" Name = get_controller_security_group_management_status -->
+              <a target="ifrm" href="API.htm#_get_controller_security_group_management_status">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get Controller Security-Group Management Status
+              </a>
+        </p>
+        <!-- END: Get Controller Security-Group Management Status -->
+
+
+        <!-- START: Disable Controller Security-Group Management  -->
+        <p id="link_to_disable_controller_security_group_management" class="MsoToc1 Controller"> <!-- "action" Name = disable_controller_security_group_management -->
+              <a target="ifrm" href="API.htm#_disable_controller_security_group_management">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Disable Controller Security-Group Management
+              </a>
+        </p>
+        <!-- END: Disable Controller Security-Group Management -->
+
+
+        <!-- START: Get Controller Public IP -->
+        <p id="link_to_get_controller_public_ip" class="MsoToc1 Controller"> <!-- "action" Name = get_controller_public_ip -->
+              <a target="ifrm" href="API.htm#_get_controller_public_ip">
+                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    Get Controller Public IP
+              </a>
+        </p>
+        <!-- END: Get Controller Public IP -->
 
 
 
