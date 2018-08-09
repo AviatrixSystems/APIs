@@ -1,12 +1,11 @@
 ﻿<html>
-
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <title>Aviatrix Controller API Reference</title>
 <style>
 body {
-    margin: 0px;
+  margin: 0px;
 }
 .menu {
   float:left;
@@ -640,2226 +639,1902 @@ ul
     color: #0066cc;
 }
 
-
-
 </style>
-
 </head>
 
 <body lang=EN-US link=blue vlink=purple>
 <div class="menu">
-    <div class=WordSection1>
-
-    <!-- <div align=center>
-
-    <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
-    style='width:100.0%;border-collapse:collapse'>
-    <tr style='height:2.0in'>
-    <td width="100%" valign=top style='width:100.0%;padding:0in 5.4pt 0in 5.4pt;
-    height:2.0in'>
+  <div class=WordSection1>
+    <span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
+      <br clear=all style='page-break-before:always'>
+    </span>
     <p class=MsoNormal>&nbsp;</p>
-    <p class=MsoNormal style='text-indent:.5in'>&nbsp;</p>
-    </td>
-    </tr>
-    <tr style='height:1.0in'>
-    <td width="100%" style='width:100.0%;border:none;border-bottom:solid #4F81BD 1.0pt;
-    padding:0in 5.4pt 0in 5.4pt;height:1.0in'>
-    <p class=MsoNoSpacing align=center style='text-align:center'><span
-    style='font-size:40.0pt;font-family:"Cambria","serif"'>Aviatrix Cloud Services
-    Gateway Controller </span><span style='font-size:40.0pt;font-family:"Cambria","serif"'>API
-    Reference</span></p>
-    </td>
-    </tr>
-    <tr style='height:.5in'>
-    <td width="100%" style='width:100.0%;border:none;padding:0in 5.4pt 0in 5.4pt;
-    height:.5in'>
-    <p class=MsoNoSpacing align=center style='text-align:center'><span
-    style='font-size:16.0pt;font-family:"Cambria","serif"'>&nbsp;</span></p>
-    <p class=MsoNoSpacing align=center style='text-align:center'><span
-    style='font-size:16.0pt;font-family:"Cambria","serif"'>Version 07-31-2017</span></p>
-    <p class=MsoNoSpacing align=center style='text-align:center'><span
-    style='font-size:14.0pt;font-family:"Cambria","serif"'>Copyright &nbsp; 2014 &nbsp; 2017
-    </span><span style='font-size:14.0pt;font-family:"Cambria","serif"'>Aviatrix</span><span
-    style='font-size:14.0pt;font-family:"Cambria","serif"'> Systems, Inc. All
-    rights reserved.</span></p>
-    </td>
-    </tr>
-    </table>
-
-    </div> -->
-
-        <span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>
-            <br clear=all style='page-break-before:always'>
-        </span>
-
-        <p class=MsoNormal>&nbsp;</p>
-
-        <div align=center>
-
-        <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
-        style='width:100.0%;border-collapse:collapse'>
-
+    <div align=center>
+      <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse'>
         <tr style='height:.25in'>
-        <td width="100%" style='width:100.0%;padding:0in 5.4pt 0in 5.4pt;height:.25in'>
-
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-initial-setup" class="Category" href="#api-doc-initial-setup">Initial Setup</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_login">
+          <td width="100%" style='width:100.0%;padding:0in 5.4pt 0in 5.4pt;height:.25in'>
+            <hr>
+            <h2>
+              <a name="api-doc-initial-setup" class="Category" href="#api-doc-initial-setup">Initial Setup</a>
+            </h2>
+            <br>
+            
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_login">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Login
-            </a>
-        </p>
-
-
-        <!-- START: Forget Controller Password  -->
-        <p id="link_to_forget_controller_password" class="MsoToc1 initial_setup">
-              <a target="ifrm" href="API.htm#_forget_controller_password">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Forget Password
               </a>
-        </p>
-        <!-- END: Forget Controller Password -->
+            </p>
 
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_add_admin_email_addr">
+            <p id="link_to_forget_controller_password" class="MsoToc1 initial_setup">
+              <a target="ifrm" href="API.htm#_forget_controller_password">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Forget Password
+              </a>
+            </p>
+            
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_add_admin_email_addr">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Setup Admin E-mail Address
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_initial_setup">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_initial_setup">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Initial Setup
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_setup_customer_id">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_setup_customer_id">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Setup Customer ID
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_view_customer_id">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_view_customer_id">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 View Customer ID
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_az_get_storage_accounts">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_az_get_storage_accounts">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Get Azure Storage Accounts
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-account-and-account-users" class="Category" href="#api-doc-account-and-account-users">Account &amp; Account Users</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-account-and-account-users" class="Category" href="#api-doc-account-and-account-users">Account &amp; Account Users</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_upload_file">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_upload_file">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Upload GCloud Project Credential File
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_setup_account_profile">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_setup_account_profile">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Create Account
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_edit_account_profile">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_edit_account_profile">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Edit Account
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_account_profile">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_account_profile">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Delete Account
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_accounts">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_accounts">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 List Accounts
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_add_account_user">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_add_account_user">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Add Account User
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_edit_account_user">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_edit_account_user">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Edit Account User
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_account_user">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_account_user">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete Account User
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_account_users">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_account_users">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 List Account Users
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-gateway" class="Category" href="#api-doc-gateway">Gateway</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-gateway" class="Category" href="#api-doc-gateway">Gateway</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_get_gateway_supported_size">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_get_gateway_supported_size">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Get Supported Gateway Sizes
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_get_supported_region">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_get_supported_region">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Get Supported Regions
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_vpcs">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_vpcs">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List VPCs
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- START: List Public Subnets  -->
-        <p id="link_to_list_public_subnets" class="MsoToc1 Gateway">
+            <p id="link_to_list_public_subnets" class="MsoToc1 Gateway">
               <a target="ifrm" href="API.htm#_list_public_subnets">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Public Subnets
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Public Subnets
               </a>
-        </p>
-        <!-- END: List Public Subnets -->
+            </p>
 
-        <!-- START: List Private Subnets  -->
-        <p id="link_to_list_private_subnets" class="MsoToc1 Gateway">
+            <p id="link_to_list_private_subnets" class="MsoToc1 Gateway">
               <a target="ifrm" href="API.htm#_list_private_subnets">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Private Subnets
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Private Subnets
               </a>
-        </p>
-        <!-- END: List Private Subnets -->
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_connect_container" class="MsoToc1 Gateway">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_connect_container" class="MsoToc1 Gateway">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                Create an Aviatrix Gateway (Connect Legacy VPC/Vnet))
-            </a>
-        </p>
+                Create an Aviatrix Gateway (Connect Legacy VPC/Vnet)
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_container">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_container">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete Gateway
-            </a>
-        </p>
-
-
-        <!-- START: Get Gateway Information -->
-        <p id="link_to_get_gateway_info" class="MsoToc1 Gateway"> <!-- "action" Name = get_gateway_info -->
-              <a target="ifrm" href="API.htm#_get_gateway_info">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Gateway Information
               </a>
-        </p>
-        <!-- END: Get Gateway Information -->
+            </p>
 
+            <p id="link_to_get_gateway_info" class="MsoToc1 Gateway"> <!-- "action" Name = get_gateway_info -->
+              <a target="ifrm" href="API.htm#_get_gateway_info">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Gateway Information
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_vpcs_summary">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_vpcs_summary">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Gateways Information
-            </a>
-        </p>
-
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-edit-gateway" class="Category" href="#api-doc-edit-gateway">Edit Gateway</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Create Peering HA Gateway  -->
-        <p id="link_to_create_peering_ha_gateway" class="MsoToc1 Edit_Gateway">
-              <a target="ifrm" href="API.htm#_create_peering_ha_gateway">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create Peering HA Gateway
               </a>
-        </p>
-        <!-- END: Create Peering HA Gateway -->
+            </p>
 
-        <!-- START: Enable Gateway HA  -->
-        <p id="link_to_enable_vpc_ha" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_enable_vpc_ha">
+            <hr>
+            <h2>
+              <a name="api-doc-edit-gateway" class="Category" href="#api-doc-edit-gateway">Edit Gateway</a>
+            </h2>
+            <br>
+
+            <p id="link_to_create_peering_ha_gateway" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_create_peering_ha_gateway">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Create Peering HA Gateway
+              </a>
+            </p>
+
+            <p id="link_to_enable_vpc_ha" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_enable_vpc_ha">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Enable Gateway HA
-            </a>
-        </p>
-        <!-- END: Enable Gateway HA -->
+              </a>
+            </p>
 
-        <!-- START: Gateway HA Switch Over  -->
-        <p id="link_to_vpc_ha_switch_over" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_vpc_ha_switch_over">
+            <p id="link_to_vpc_ha_switch_over" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_vpc_ha_switch_over">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Gateway HA Switch Over
-            </a>
-        </p>
-        <!-- END: Gateway HA Switch Over -->
+              </a>
+            </p>
 
-        <!-- START: Disable Gateway HA  -->
-        <p id="link_to_disable_vpc_ha" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_disable_vpc_ha">
+            <p id="link_to_disable_vpc_ha" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_disable_vpc_ha">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Disable Gateway HA
-            </a>
-        </p>
-        <!-- END: Disable Gateway HA -->
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_edit_gw_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_edit_gw_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Resize Gateway
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- START: Replace Gateway  -->
-        <p id="link_to_replace_gateway" class="MsoToc1 Gateway">
+            <p id="link_to_replace_gateway" class="MsoToc1 Gateway">
               <a target="ifrm" href="API.htm#_replace_gateway">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Replace Gateway
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Replace Gateway
               </a>
-        </p>
-        <!-- END: Replace Gateway -->
+            </p>
 
-        <!-- START: Enable SNAT  -->
-        <p id="link_to_enable_nat" class="MsoToc1 Gateway">
+            <p id="link_to_enable_nat" class="MsoToc1 Gateway">
               <a target="ifrm" href="API.htm#_enable_snat">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable SNAT
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable SNAT
               </a>
-        </p>
-        <!-- END: Enable SNAT -->
+            </p>
 
-        <!-- START: Disable SNAT  -->
-        <p id="link_to_disable_nat" class="MsoToc1 Gateway">
+            <p id="link_to_disable_nat" class="MsoToc1 Gateway">
               <a target="ifrm" href="API.htm#_disable_snat">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable SNAT
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable SNAT
               </a>
-        </p>
-        <!-- END: Disable SNAT -->
+            </p>
 
-        <!-- START: Enable Monitor Gateway Subnets  -->
-        <p id="link_to_enable_monitor_gateway_subnets" class="MsoToc1 Edit_Gateway">
-              <a target="ifrm" href="API.htm#_enable_monitor_gateway_subnets">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Monitor Gateway Subnets
+            <p class="MsoToc1 Gateway">
+              <a target="ifrm" href="API.htm#_list_snat_supported_protocols">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List SNAT Supported Protocols
               </a>
-        </p>
-        <!-- END: Enable Monitor Gateway Subnets -->
-
-
-        <!-- START: Disable Monitor Gateway Subnets  -->
-        <p id="link_to_disable_monitor_gateway_subnets" class="MsoToc1 Edit_Gateway">
-              <a target="ifrm" href="API.htm#_disable_monitor_gateway_subnets">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Monitor Gateway Subnets
-              </a>
-        </p>
-        <!-- END: Disable Monitor Gateway Subnets -->
-
-
-        <!-- START: List DNAT Supported Interfaces -->
-        <p id="link_to_list_dnat_supported_interfaces" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = list_dnat_supported_interfaces -->
-              <a target="ifrm" href="API.htm#_list_dnat_supported_interfaces">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List DNAT Supported Interfaces
-              </a>
-        </p>
-        <!-- END: List DNAT Supported Interfaces -->
-
-
-        <!-- START: List DNAT Supported Protocols -->
-        <p id="link_to_list_dnat_supported_protocols" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = list_dnat_supported_protocols -->
-              <a target="ifrm" href="API.htm#_list_dnat_supported_protocols">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List DNAT Supported Protocols
-              </a>
-        </p>
-        <!-- END: List DNAT Supported Protocols -->
-
-
-        <!-- START: Update DNAT Configuration -->
-        <p id="link_to_update_dnat_config" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = update_dnat_config -->
-              <a target="ifrm" href="API.htm#_update_dnat_config">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Update DNAT Configuration
-              </a>
-        </p>
-        <!-- END: Update DNAT Configuration -->
-
-
-        <!-- START: Get Gateway DNAT Configuration -->
-        <p id="link_to_get_gateway_dnat_config" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = get_gateway_dnat_config -->
-              <a target="ifrm" href="API.htm#_get_gateway_dnat_config">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Gateway DNAT Configuration
-              </a>
-        </p>
-        <!-- END: Get Gateway DNAT Configuration -->
-
-
-        <!-- START: Set Designated Gateway Additional CIDR List -->
-        <p id="link_to_set_designated_gateway_cidrs" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = set_designated_gateway_cidrs -->
-              <a target="ifrm" href="API.htm#_set_designated_gateway_cidrs">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set Designated Gateway Additional CIDR List
-              </a>
-        </p>
-        <!-- END: Set Designated Gateway Additional CIDR List -->
-
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-single-az-ha" class="Category" href="#api-doc-single-az-ha">Single AZ HA</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Enable Single AZ HA  -->
-        <p id="link_to_enable_single_az_ha" class="MsoToc1 Single_AZ_HA">
-              <a target="ifrm" href="API.htm#_enable_single_az_ha">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Single AZ HA
-              </a>
-        </p>
-        <!-- END: Enable Single AZ HA -->
-
-        <!-- START: Disable Single AZ HA  -->
-        <p id="link_to_disable_single_az_ha" class="MsoToc1 Single_AZ_HA">
-              <a target="ifrm" href="API.htm#_disable_single_az_ha">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Single AZ HA
-              </a>
-        </p>
-        <!-- END: Disable Single AZ HA -->
-
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-gateway-resource-tag" class="Category" href="#api-doc-gateway-resource-tag">Gateway Resource Tag</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Add Resource Tags  -->
-        <p id="link_to_add_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
-              <a target="ifrm" href="API.htm#_add_resource_tags">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Add Resource Tags
-              </a>
-        </p>
-        <!-- END: Add Resource Tags -->
-
-        <!-- START: Update Resource Tags  -->
-        <p id="link_to_update_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
-              <a target="ifrm" href="API.htm#_update_resource_tags">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Update Resource Tags
-              </a>
-        </p>
-        <!-- END: Update Resource Tags -->
-
-        <!-- START: List Resource Tags  -->
-        <p id="link_to_list_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
-              <a target="ifrm" href="API.htm#_list_resource_tags">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Resource Tags
-              </a>
-        </p>
-        <!-- END: List Resource Tags -->
-
-        <!-- START: Delete Resource Tags  -->
-        <p id="link_to_delete_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
-              <a target="ifrm" href="API.htm#_delete_resource_tags">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete Resource Tags
-              </a>
-        </p>
-        <!-- END: Delete Resource Tags -->
-
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-transit-network" class="Category" href="#api-doc-transit-network">Transit Network</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: List Transit Gateway Supported Sizes  -->
-        <p id="link_to_list_transit_gw_supported_sizes" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_transit_gw_supported_sizes">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Transit Gateway Supported Sizes
-              </a>
-        </p>
-        <!-- END: List Transit Gateway Supported Sizes -->
-
-        <!-- START: Create Transit Gateway  -->
-        <p id="link_to_create_transit_gw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_create_transit_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create Transit Gateway
-              </a>
-        </p>
-        <!-- END: Create Transit Gateway -->
-
-        <!-- START: List Transit Gateways  -->
-        <p id="link_to_list_transit_gws" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_transit_gws">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Transit Gateways
-              </a>
-        </p>
-        <!-- END: List Transit Gateways -->
-
-        <!-- START: Enable Transit HA  -->
-        <p id="link_to_enable_transit_ha" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_enable_transit_ha">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Transit HA
-              </a>
-        </p>
-        <!-- END: Enable Transit HA -->
-
-        <!-- START: List VGWs  -->
-        <p id="link_to_list_vgws" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_vgws">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List VGWs
-              </a>
-        </p>
-        <!-- END: List VGWs -->
-
-        <!-- START: Connect Transit Gateway to VGW  -->
-        <p id="link_to_connect_transit_gw_to_vgw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_connect_transit_gw_to_vgw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Connect Transit Gateway to VGW
-              </a>
-        </p>
-        <!-- END: Connect Transit Gateway to VGW -->
-
-        <!-- START: List Spoke Gateway Supported Sizes  -->
-        <p id="link_to_list_spoke_gw_supported_sizes" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_spoke_gw_supported_sizes">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Spoke Gateway Supported Sizes
-              </a>
-        </p>
-        <!-- END: List Spoke Gateway Supported Sizes -->
-
-        <!-- START: Create Spoke Gateway  -->
-        <p id="link_to_create_spoke_gw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_create_spoke_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create Spoke Gateway
-              </a>
-        </p>
-        <!-- END: Create Spoke Gateway -->
-
-        <!-- START: List Spoke Gateways  -->
-        <p id="link_to_list_spoke_gws" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_spoke_gws">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Spoke Gateways
-              </a>
-        </p>
-        <!-- END: List Spoke Gateways -->
-
-        <!-- START: Enable Spoke HA  -->
-        <p id="link_to_enable_spoke_ha" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_enable_spoke_ha">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Spoke HA
-              </a>
-        </p>
-        <!-- END: Enable Spoke HA -->
-
-        <!-- START: Disable Spoke HA  -->
-        <p id="link_to_disable_spoke_ha" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_disable_spoke_ha">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Spoke HA
-              </a>
-        </p>
-        <!-- END: Disable Spoke HA -->
-
-        <!-- START: Attach Spoke to Transit Gateway -->
-        <p id="link_to_attach_spoke_to_transit_gw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_attach_spoke_to_transit_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Attach Spoke to Transit Gateway
-              </a>
-        </p>
-        <!-- END: Attach Spoke to Transit Gateway -->
-
-        <!-- START: List attached Spoke Gateways -->
-        <p id="link_to_list_attached_spoke_gateways" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_attached_spoke_gateways">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List attached Spoke Gateways
-              </a>
-        </p>
-        <!-- END: List attached Spoke Gateways -->
-
-        <!-- START: Detach Spoke from Transit Gateway  -->
-        <p id="link_to_detach_spoke_from_transit_gw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_detach_spoke_from_transit_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Detach Spoke from Transit Gateway
-              </a>
-        </p>
-        <!-- END: Detach Spoke from Transit Gateway -->
-
-        <!-- START: List VGW Connections  -->
-        <p id="link_to_list_vgw_connections" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_list_vgw_connections">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List VGW Connections
-              </a>
-        </p>
-        <!-- END: List VGW Connections -->
-
-        <!-- START: Disconnect Transit Gateway from VGW  -->
-        <p id="link_to_disconnect_transit_gw_from_vgw" class="MsoToc1 Transit_NetWork">
-              <a target="ifrm" href="API.htm#_disconnect_transit_gw_from_vgw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disconnect Transit Gateway from VGW
-              </a>
-        </p>
-        <!-- END: Disconnect Transit Gateway from VGW -->
+            </p>
         
+            <p class="MsoToc1 Gateway">
+              <a target="ifrm" href="API.htm#_list_snat_supported_interfaces">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List SNAT Supported Interfaces
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Gateway">
+              <a target="ifrm" href="API.htm#_get_gateway_snat_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Gateway SNAT Configuration
+              </a>
+            </p>
+        
+            <p id="link_to_enable_monitor_gateway_subnets" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_enable_monitor_gateway_subnets">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Monitor Gateway Subnets
+              </a>
+            </p>
+
+            <p id="link_to_disable_monitor_gateway_subnets" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_disable_monitor_gateway_subnets">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Monitor Gateway Subnets
+              </a>
+            </p>
+
+            <p id="link_to_list_dnat_supported_interfaces" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_list_dnat_supported_interfaces">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List DNAT Supported Interfaces
+              </a>
+            </p>
+
+            <p id="link_to_list_dnat_supported_protocols" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_list_dnat_supported_protocols">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List DNAT Supported Protocols
+              </a>
+            </p>
+
+            <p id="link_to_update_dnat_config" class="MsoToc1 Edit_Gateway"> <!-- "action" Name = update_dnat_config -->
+              <a target="ifrm" href="API.htm#_update_dnat_config">
+                  <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  Update DNAT Configuration
+              </a>
+            </p>
+
+            <p id="link_to_get_gateway_dnat_config" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_get_gateway_dnat_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Gateway DNAT Configuration
+              </a>
+            </p>
+
+            <p id="link_to_set_designated_gateway_cidrs" class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_set_designated_gateway_cidrs">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set Designated Gateway Additional CIDR List
+              </a>
+            </p>
+
+            <p class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_enable_vpc_dns_server">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable VPC DNS Server
+              </a>
+            </p>
+        
+            <p class="MsoToc1 Edit_Gateway">
+              <a target="ifrm" href="API.htm#_disable_vpc_dns_server">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable VPC DNS Server
+              </a>
+            </p>
+
+            <hr>
+            <h2>
+              <a name="api-doc-single-az-ha" class="Category" href="#api-doc-single-az-ha">Single AZ HA</a>
+            </h2>
+            <br>
+
+            <p id="link_to_enable_single_az_ha" class="MsoToc1 Single_AZ_HA">
+              <a target="ifrm" href="API.htm#_enable_single_az_ha">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Single AZ HA
+              </a>
+            </p>
+
+            <p id="link_to_disable_single_az_ha" class="MsoToc1 Single_AZ_HA">
+              <a target="ifrm" href="API.htm#_disable_single_az_ha">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Single AZ HA
+              </a>
+            </p>
+
+            <hr>
+            <h2>
+              <a name="api-doc-gateway-resource-tag" class="Category" href="#api-doc-gateway-resource-tag">Gateway Resource Tag</a>
+            </h2>
+            <br>
+
+            <p id="link_to_add_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
+              <a target="ifrm" href="API.htm#_add_resource_tags">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Add Resource Tags
+              </a>
+            </p>
+
+            <p id="link_to_update_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
+              <a target="ifrm" href="API.htm#_update_resource_tags">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Update Resource Tags
+              </a>
+            </p>
+
+            <p id="link_to_list_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
+              <a target="ifrm" href="API.htm#_list_resource_tags">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Resource Tags
+              </a>
+            </p>
+
+            <p id="link_to_delete_resource_tags" class="MsoToc1 Gateway_Resource_Tag">
+              <a target="ifrm" href="API.htm#_delete_resource_tags">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Delete Resource Tags
+              </a>
+            </p>
+
+            <hr>
+            <h2>
+              <a name="api-doc-transit-network" class="Category" href="#api-doc-transit-network">Transit Network</a>
+            </h2>
+            <br>
+
+            <p id="link_to_list_transit_gw_supported_sizes" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_transit_gw_supported_sizes">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Transit Gateway Supported Sizes
+              </a>
+            </p>
+
+            <p id="link_to_create_transit_gw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_create_transit_gw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Create Transit Gateway
+              </a>
+            </p>
+
+            <p id="link_to_list_transit_gws" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_transit_gws">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Transit Gateways
+              </a>
+            </p>
+
+            <p id="link_to_enable_transit_ha" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_enable_transit_ha">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Transit HA
+              </a>
+            </p>
+
+            <p id="link_to_list_vgws" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_vgws">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List VGWs
+              </a>
+            </p>
+
+            <p id="link_to_connect_transit_gw_to_vgw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_connect_transit_gw_to_vgw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Connect Transit Gateway to VGW
+              </a>
+            </p>
+
+            <p id="link_to_list_spoke_gw_supported_sizes" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_spoke_gw_supported_sizes">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Spoke Gateway Supported Sizes
+              </a>
+            </p>
+
+            <p id="link_to_create_spoke_gw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_create_spoke_gw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Create Spoke Gateway
+              </a>
+            </p>
+
+            <p id="link_to_list_spoke_gws" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_spoke_gws">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Spoke Gateways
+              </a>
+            </p>
+
+            <p id="link_to_enable_spoke_ha" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_enable_spoke_ha">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Spoke HA
+              </a>
+            </p>
+
+            <p id="link_to_disable_spoke_ha" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_disable_spoke_ha">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Spoke HA
+              </a>
+            </p>
+
+            <p id="link_to_attach_spoke_to_transit_gw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_attach_spoke_to_transit_gw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Attach Spoke to Transit Gateway
+              </a>
+            </p>
+
+            <p id="link_to_list_attached_spoke_gateways" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_attached_spoke_gateways">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List attached Spoke Gateways
+              </a>
+            </p>
+
+            <p id="link_to_detach_spoke_from_transit_gw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_detach_spoke_from_transit_gw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Detach Spoke from Transit Gateway
+              </a>
+            </p>
+
+            <p id="link_to_list_vgw_connections" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_list_vgw_connections">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List VGW Connections
+              </a>
+            </p>
+
+            <p id="link_to_disconnect_transit_gw_from_vgw" class="MsoToc1 Transit_NetWork">
+              <a target="ifrm" href="API.htm#_disconnect_transit_gw_from_vgw">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disconnect Transit Gateway from VGW
+              </a>
+            </p>
+
+            <hr>
+            <h2>
+              <a name="api-doc-transit-network-advanced" class="Category" href="#api-doc-transit-network-advanced">Transit NetWork (Advanced)</a>
+            </h2>
+            <br>
 
 
-        <hr>
-        <h2>
-            <a name="api-doc-transit-network-advanced" class="Category" href="#api-doc-transit-network-advanced">Transit NetWork (Advanced)</a>
-        </h2>
-        <br>
 
-
-
-        <!-- START: Enable Peer Deletion with Spoke Attached  -->
-        <p id="link_to_enable_peer_deletion_with_spoke_attached" class="MsoToc1 Transit_NetWork">
+            <p id="link_to_enable_peer_deletion_with_spoke_attached" class="MsoToc1 Transit_NetWork">
               <a target="ifrm" href="API.htm#_enable_peer_deletion_with_spoke_attached">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Peer Deletion with Spoke Attached
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Peer Deletion with Spoke Attached
               </a>
-        </p>
-        <!-- END: Enable Peer Deletion with Spoke Attached -->
+            </p>
 
-        <!-- START: Get Status of  Peer Deletion with Spoke Attached  -->
-        <p id="link_to_get_peer_deletion_with_spoke_attached_status" class="MsoToc1 Transit_NetWork">
+            <p id="link_to_get_peer_deletion_with_spoke_attached_status" class="MsoToc1 Transit_NetWork">
               <a target="ifrm" href="API.htm#_get_peer_deletion_with_spoke_attached_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Status of  Peer Deletion with Spoke Attached
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Status of  Peer Deletion with Spoke Attached
               </a>
-        </p>
-        <!-- END: Get Status of  Peer Deletion with Spoke Attached -->
+            </p>
 
-        <!-- START: Disable Peer Deletion with spoke attached  -->
-        <p id="link_to_disable_peer_deletion_with_spoke_attached" class="MsoToc1 Transit_NetWork"> <!-- "action" Name = disable_peer_deletion_with_spoke_attached -->
+            <p id="link_to_disable_peer_deletion_with_spoke_attached" class="MsoToc1 Transit_NetWork">
               <a target="ifrm" href="API.htm#_disable_peer_deletion_with_spoke_attached">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Peer Deletion with spoke attached
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Peer Deletion with spoke attached
               </a>
-        </p>
-        <!-- END: Disable Peer Deletion with spoke attached -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-bgp" class="Category" href="#api-doc-bgp">BGP</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-bgp" class="Category" href="#api-doc-bgp">BGP</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Create BGP Site2Cloud Connection  -->
-        <p id="link_to_bgp_add_site2cloud_conn" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_bgp_add_site2cloud_conn">
+            <p id="link_to_bgp_add_site2cloud_conn" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_bgp_add_site2cloud_conn">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Create BGP Site2Cloud Connection
-            </a>
-        </p>
-        <!-- END: Create BGP Site2Cloud Connection -->
+              </a>
+            </p>
 
-        <!-- START: Edit BGP Advertised Networks of Site2Cloud Connection  -->
-        <p id="link_to_edit_site2cloud_conn_bgp_advertised_networks" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_edit_site2cloud_conn_bgp_advertised_networks">
-                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                Edit BGP Advertised Networks of Site2Cloud Connection
-            </a>
-        </p>
-        <!-- END: Edit BGP Advertised Networks of Site2Cloud Connection -->
-
-        <!-- START: Modify BGP Gateway's ASN  -->
-        <p id="link_to_config_bgp_gw_asn" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_config_bgp_gw_asn">
+            <p id="link_to_config_bgp_gw_asn" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_config_bgp_gw_asn">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Modify BGP Gateway's ASN
-            </a>
-        </p>
-        <!-- END: Modify BGP Gateway's ASN -->
+              </a>
+            </p>
 
-        <!-- START: Enable BGP Configuration  -->
-        <p id="link_to_enable_bgp_config" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_enable_bgp_config">
+            <p id="link_to_enable_bgp_config" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_enable_bgp_config">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Enable BGP Configuration
-            </a>
-        </p>
-        <!-- END: Enable BGP Configuration -->
+              </a>
+            </p>
 
-        <!-- START: List BGP Gateways  -->
-        <p id="link_to_list_bgp_gws" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_list_bgp_gws">
+            <p id="link_to_list_bgp_gws" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_list_bgp_gws">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 List BGP Gateways
-            </a>
-        </p>
-        <!-- END: List BGP Gateways -->
+              </a>
+            </p>
 
-        <!-- START: Disable BGP Configuration  -->
-        <p id="link_to_disable_bgp_config" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_disable_bgp_config">
+            <p id="link_to_disable_bgp_config" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_disable_bgp_config">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Disable BGP Configuration
-            </a>
-        </p>
-        <!-- END: Disable BGP Configuration -->
+              </a>
+            </p>
 
-        <!-- START: Enable BGP Dampening  -->
-        <p id="link_to_enable_bgp_dampening" class="MsoToc1 BGP">
+            <p id="link_to_enable_bgp_dampening" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_enable_bgp_dampening">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable BGP Dampening
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable BGP Dampening
               </a>
-        </p>
-        <!-- END: Enable BGP Dampening -->
+            </p>
 
-        <!-- START: Disable BGP Dampening  -->
-        <p id="link_to_disable_bgp_dampening" class="MsoToc1 BGP">
+            <p id="link_to_disable_bgp_dampening" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_disable_bgp_dampening">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable BGP Dampening
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable BGP Dampening
               </a>
-        </p>
-        <!-- END: Disable BGP Dampening -->
+            </p>
 
-        <!-- START: Show BGP Learned Routes  -->
-        <p id="link_to_show_bgp_learned_routes" class="MsoToc1 BGP">
+            <p id="link_to_show_bgp_learned_routes" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_show_bgp_learned_routes">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Show BGP Learned Routes
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Show BGP Learned Routes
               </a>
-        </p>
-        <!-- END: Show BGP Learned Routes -->
+            </p>
 
-        <!-- START: Show BGP Advertised Networks  -->
-        <p id="link_to_show_bgp_advertised_networks" class="MsoToc1 BGP">
+            <p id="link_to_show_bgp_advertised_networks" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_show_bgp_advertised_networks">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Show BGP Advertised Networks
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Show BGP Advertised Networks
               </a>
-        </p>
-        <!-- END: Show BGP Advertised Networks -->
+            </p>
 
-        <!-- START: List BGP Diagnostic Commands  -->
-        <p id="link_to_list_bgp_diag_commands" class="MsoToc1 BGP">
+            <p id="link_to_list_bgp_diag_commands" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_list_bgp_diag_commands">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List BGP Diagnostic Commands
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List BGP Diagnostic Commands
               </a>
-        </p>
-        <!-- END: List BGP Diagnostic Commands -->
+            </p>
 
-        <!-- START: Run BGP Diagnostic  -->
-        <p id="link_to_run_bgp_diag" class="MsoToc1 BGP">
+            <p id="link_to_run_bgp_diag" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_run_bgp_diag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Run BGP Diagnostic
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Run BGP Diagnostic
               </a>
-        </p>
-        <!-- END: Run BGP Diagnostic -->
+            </p>
 
-
-        <!-- START: Enable BGP Overlapping Alert Email -->
-        <p id="link_to_enable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP"> <!-- "action" Name = enable_bgp_cidr_overlapping_alert_email -->
+            <p id="link_to_enable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP"> 
               <a target="ifrm" href="API.htm#_enable_bgp_cidr_overlapping_alert_email">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable BGP Overlapping Alert Email
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable BGP Overlapping Alert Email
               </a>
-        </p>
-        <!-- END: Enable BGP Overlapping Alert Email -->
+            </p>
 
-
-        <!-- START: Get BGP Overlapping Alert Email Status -->
-        <p id="link_to_get_bgp_cidr_overlapping_alert_email_status" class="MsoToc1 BGP"> <!-- "action" Name = get_bgp_cidr_overlapping_alert_email_status -->
+            <p id="link_to_get_bgp_cidr_overlapping_alert_email_status" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_get_bgp_cidr_overlapping_alert_email_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get BGP Overlapping Alert Email Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get BGP Overlapping Alert Email Status
               </a>
-        </p>
-        <!-- END: Get BGP Overlapping Alert Email Status -->
+            </p>
 
-
-        <!-- START: Disable BGP Overlapping Alert Email -->
-        <p id="link_to_disable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP"> <!-- "action" Name = disable_bgp_cidr_overlapping_alert_email -->
+            <p id="link_to_disable_bgp_cidr_overlapping_alert_email" class="MsoToc1 BGP">
               <a target="ifrm" href="API.htm#_disable_bgp_cidr_overlapping_alert_email">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable BGP Overlapping Alert Email
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable BGP Overlapping Alert Email
               </a>
-        </p>
-        <!-- END: Disable BGP Overlapping Alert Email -->
+            </p>
 
-
-        <!-- START: Enable BGP Switch Over -->
-        <p id="link_to_enable_bgp_ha_switch_over" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_bgp_ha_switch_over -->
+            <p id="link_to_enable_bgp_ha_switch_over" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_enable_bgp_ha_switch_over">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable BGP Switch Over
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable BGP Switch Over
               </a>
-        </p>
-        <!-- END: Enable BGP Switch Over -->
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_set_bgp_manual_spoke_advertised_networks">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set BGP Manual Spoke Advertised Networks
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_disable_bgp_manual_spoke_advertised_networks">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable BGP Manual Spoke Advertised Networks
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-encrypted-peering" class="Category" href="#api-doc-encrypted-peering">Encrypted Peering</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-encrypted-peering" class="Category" href="#api-doc-encrypted-peering">Encrypted Peering</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_peer_vpc_pair">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_peer_vpc_pair">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Create Encrypted Peering
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_unpeer_vpc_pair">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_unpeer_vpc_pair">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete Encrypted Peering
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_peer_vpc_pairs">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_peer_vpc_pairs">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Encrypted Peerings
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_peer_ha_switch_over">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_peer_ha_switch_over">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Encrypted Peering HA Switch Over
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-transitive-peering" class="Category" href="#api-doc-transitive-peering">Transitive Peering</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-transitive-peering" class="Category" href="#api-doc-transitive-peering">Transitive Peering</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Create Transitive Peering  -->
-        <p id="link_to_add_extended_vpc_peer" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_add_extended_vpc_peer">
+            <p id="link_to_add_extended_vpc_peer" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_add_extended_vpc_peer">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Create Transitive Peering
-            </a>
-        </p>
-        <!-- END: Create Transitive Peering -->
+              </a>
+            </p>
 
-        <!-- START: List Transitive Peering  -->
-        <p id="link_to_list_extended_vpc_peer" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_list_extended_vpc_peer">
+            <p id="link_to_list_extended_vpc_peer" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_list_extended_vpc_peer">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 List Transitive Peering
-            </a>
-        </p>
-        <!-- END: List Transitive Peering -->
+              </a>
+            </p>
 
-        <!-- START: Delete Transitive Peering  -->
-        <p id="link_to_delete_extended_vpc_peer" class="MsoToc1 bgp">
-            <a target="ifrm" href="API.htm#_delete_extended_vpc_peer">
+            <p id="link_to_delete_extended_vpc_peer" class="MsoToc1 bgp">
+              <a target="ifrm" href="API.htm#_delete_extended_vpc_peer">
                 <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 Delete Transitive Peering
-            </a>
-        </p>
-        <!-- END: Delete Transitive Peering -->
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-aws-peering" class="Category" href="#api-doc-aws-peering">AWS Peering</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-aws-peering" class="Category" href="#api-doc-aws-peering">AWS Peering</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Create AWS Peering  -->
-        <p id="link_to_create_aws_peering" class="MsoToc1 AWS_Peering">
+            <p id="link_to_create_aws_peering" class="MsoToc1 AWS_Peering">
               <a target="ifrm" href="API.htm#_create_aws_peering">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create AWS Peering
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Create AWS Peering
               </a>
-        </p>
-        <!-- END: Create AWS Peering -->
+            </p>
 
-        <!-- START: Delete AWS Peering  -->
-        <p id="link_to_delete_aws_peering" class="MsoToc1 AWS_Peering">
+            <p id="link_to_delete_aws_peering" class="MsoToc1 AWS_Peering">
               <a target="ifrm" href="API.htm#_delete_aws_peering">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete AWS Peering
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Delete AWS Peering
               </a>
-        </p>
-        <!-- END: Delete AWS Peering -->
+            </p>
 
-        <!-- START: List AWS Peerings -->
-        <p id="link_to_list_aws_peerings" class="MsoToc1 AWS_Peering">
+            <p id="link_to_list_aws_peerings" class="MsoToc1 AWS_Peering">
               <a target="ifrm" href="API.htm#_list_aws_peerings">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List AWS Peerings
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List AWS Peerings
               </a>
-        </p>
-        <!-- END: List AWS Peerings -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-site2cloud" class="Category" href="#api-doc-site2cloud">Site2Cloud</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-site2cloud" class="Category" href="#api-doc-site2cloud">Site2Cloud</a>
-        </h2>
-        <br>
-
-
-        <!-- START: Add Site2Cloud Connection  -->
-        <p id="link_to_add_site2cloud" class="MsoToc1 Site2Cloud">
+            <p id="link_to_add_site2cloud" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_add_site2cloud">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Add Site2Cloud Connection
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Add Site2Cloud Connection
               </a>
-        </p>
-        <!-- END: Add Site2Cloud Connection -->
-
-        <!-- START: Get / Download S2C config  -->
-        <p id="link_to_get_site2cloud_config" class="MsoToc1 Site2Cloud">
+            </p>
+        
+            <p id="link_to_get_site2cloud_config" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_get_site2cloud_config">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get / Download S2C config
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get / Download S2C config
               </a>
-        </p>
-        <!-- END: Get / Download S2C config -->
+            </p>
 
-        <!-- START: List Site2Cloud Connections  -->
-        <p id="link_to_list_site2cloud" class="MsoToc1 Site2Cloud">
+            <p id="link_to_list_site2cloud" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_list_site2cloud">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Site2Cloud Connections
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Site2Cloud Connections
               </a>
-        </p>
-        <!-- END: List Site2Cloud Connections -->
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_vpcs_association">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_vpcs_association">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List VPC Association
-            </a>
-        </p>
+              </a>
+            </p>
 
-
-        <!-- START: Delete Site2Cloud Connection  -->
-        <p id="link_to_delete_site2cloud" class="MsoToc1 Site2Cloud">
+            <p id="link_to_delete_site2cloud" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_delete_site2cloud">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-                    Delete Site2Cloud Connection
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                Delete Site2Cloud Connection
               </a>
-        </p>
-        <!-- END: Delete Site2Cloud Connection -->
+            </p>
 
-
-        <!-- START: Run Site2Cloud Diagnostic  -->
-        <p id="link_to_run_site2cloud_diag" class="MsoToc1 Site2Cloud">
+            <p id="link_to_run_site2cloud_diag" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_run_site2cloud_diag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Run Site2Cloud Diagnostic
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Run Site2Cloud Diagnostic
               </a>
-        </p>
-        <!-- END: Run Site2Cloud Diagnostic -->
+            </p>
 
-
-        <!-- START: Get S2C Connection Key  -->
-        <p id="link_to_get_site2cloud_connection_key" class="MsoToc1 Site2Cloud">
+            <p id="link_to_get_site2cloud_connection_key" class="MsoToc1 Site2Cloud">
               <a target="ifrm" href="API.htm#_get_site2cloud_connection_key">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get S2C Connection Key
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get S2C Connection Key
               </a>
-        </p>
-        <!-- END: Get S2C Connection Key -->
+            </p>
+            
+            <p class="MsoToc1 Site2Cloud">
+              <a target="ifrm" href="API.htm#_enable_dpd_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable DPD Config
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Site2Cloud">
+              <a target="ifrm" href="API.htm#_disable_dpd_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable DPD Config
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-vpn-users-and-profiles" class="Category" href="#api-doc-vpn-users-and-profiles">VPN Users &amp; Profiles</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-vpn-users-and-profiles" class="Category" href="#api-doc-vpn-users-and-profiles">VPN Users &amp; Profiles</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a href="API.htm#_list_vpn_users" target="ifrm">
+            <p class=MsoToc1>
+              <a href="API.htm#_list_vpn_users" target="ifrm">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List VPN Users
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_live_vpn_users">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_live_vpn_users">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Live VPN Users
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_add_vpn_user">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_add_vpn_user">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Add VPN User and attach it to Profile
-            </a>
-        </p>
-
-        <!-- START: Download/Get VPN Configuration  -->
-        <p id="link_to_get_vpn_ssl_ca_configuration" class="MsoToc1 VPN_User">
-              <a target="ifrm" href="API.htm#_get_vpn_ssl_ca_configuration">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Download/Get VPN Configuration
               </a>
-        </p>
-        <!-- END: Download/Get VPN Configuration -->
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_vpn_user">
+            <p id="link_to_get_vpn_ssl_ca_configuration" class="MsoToc1 VPN_User">
+              <a target="ifrm" href="API.htm#_get_vpn_ssl_ca_configuration">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Download/Get VPN Configuration
+              </a>
+            </p>
+
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_vpn_user">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete VPN User
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_profile_policies">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_profile_policies">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Profile Policies
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_update_profile_policy">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_update_profile_policy">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Update Profile Policy
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_add_user_profile">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_add_user_profile">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Add User Profile
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_del_user_profile">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_del_user_profile">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete User Profile
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_add_profile_member">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_add_profile_member">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Add Profile Member
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_del_profile_member">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_del_profile_member">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete Profile Member
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- List Profiles & Members -->
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_user_profile_names">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_user_profile_names">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Profiles &amp; Members
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- START: Attach VPN User  -->
-        <p id="link_to_attach_vpn_user" class="MsoToc1 VPN_User">
+            <p id="link_to_attach_vpn_user" class="MsoToc1 VPN_User">
               <a target="ifrm" href="API.htm#_attach_vpn_user">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Attach VPN User
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Attach VPN User
               </a>
-        </p>
-        <!-- END: Attach VPN User -->
+            </p>
 
-        <!-- START: Detach VPN User  -->
-        <p id="link_to_detach_vpn_user" class="MsoToc1 VPN_User">
+            <p id="link_to_detach_vpn_user" class="MsoToc1 VPN_User">
               <a target="ifrm" href="API.htm#_detach_vpn_user">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Detach VPN User
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Detach VPN User
               </a>
-        </p>
-        <!-- END: Detach VPN User -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-advanced-vpn" class="Category" href="#api-doc-advanced-vpn">Advanced VPN</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-advanced-vpn" class="Category" href="#api-doc-advanced-vpn">Advanced VPN</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Enable GEO VPN  -->
-        <p id="link_to_enable_geo_vpn" class="MsoToc1 GEO_VPN">
+            <p id="link_to_enable_geo_vpn" class="MsoToc1 GEO_VPN">
               <a target="ifrm" href="API.htm#_enable_geo_vpn">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable GEO VPN
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable GEO VPN
               </a>
-        </p>
-        <!-- END: Enable GEO VPN -->
+            </p>
 
-        <!-- START: Disable GEO VPN  -->
-        <p id="link_to_disable_geo_vpn" class="MsoToc1 GEO_VPN">
+            <p id="link_to_disable_geo_vpn" class="MsoToc1 GEO_VPN">
               <a target="ifrm" href="API.htm#_disable_geo_vpn">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable GEO VPN
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable GEO VPN
               </a>
-        </p>
-        <!-- END: Disable GEO VPN -->
+            </p>
 
 
-        <!-- START: Create UDP LoadBalancer  -->
-        <p id="link_to_create_udp_loadbalancer" class="MsoToc1 UDP_LoadBalancer">
+            <p id="link_to_create_udp_loadbalancer" class="MsoToc1 UDP_LoadBalancer">
               <a target="ifrm" href="API.htm#_create_udp_loadbalancer">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create UDP LoadBalancer
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Create UDP LoadBalancer
               </a>
-        </p>
-        <!-- END: Create UDP LoadBalancer -->
+            </p>
 
-        <!-- START: List UDP LoadBalancers  -->
-        <p id="link_to_list_udp_loadbalancers" class="MsoToc1 UDP_LoadBalancer">
+            <p id="link_to_list_udp_loadbalancers" class="MsoToc1 UDP_LoadBalancer">
               <a target="ifrm" href="API.htm#_list_udp_loadbalancers">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List UDP LoadBalancers
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List UDP LoadBalancers
               </a>
-        </p>
-        <!-- END: List UDP LoadBalancers -->
+            </p>
 
-        <!-- START: Delete UDP LoadBalancer  -->
-        <p id="link_to_delete_udp_loadbalancer" class="MsoToc1 UDP_LoadBalancer">
+            <p id="link_to_delete_udp_loadbalancer" class="MsoToc1 UDP_LoadBalancer">
               <a target="ifrm" href="API.htm#_delete_udp_loadbalancer">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete UDP LoadBalancer
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Delete UDP LoadBalancer
               </a>
-        </p>
-        <!-- END: Delete UDP LoadBalancer -->
+            </p>
 
-        <!-- START: Set User Defined Email Notification  -->
-        <p id="link_to_set_user_defined_email_notification" class="MsoToc1 Advanced_VPN">
+            <p id="link_to_set_user_defined_email_notification" class="MsoToc1 Advanced_VPN">
               <a target="ifrm" href="API.htm#_set_user_defined_email_notification">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set User Defined Email Notification
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set User Defined Email Notification
               </a>
-        </p>
-        <!-- END: Set User Defined Email Notification -->
+            </p>
 
-        <!-- START: Set User VPN License Threshold Notification  -->
-        <p id="link_to_set_user_vpn_license_threshold_notification" class="MsoToc1 VPN">
+            <p id="link_to_set_user_vpn_license_threshold_notification" class="MsoToc1 VPN">
               <a target="ifrm" href="API.htm#_set_user_vpn_license_threshold_notification">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set User VPN License Threshold Notification
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set User VPN License Threshold Notification
               </a>
-        </p>
-        <!-- END: Set User VPN License Threshold Notification -->
+            </p>
 
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-saml" class="Category" href="#api-doc-saml">SAML</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Create SAML Endpoint  -->
-        <p id="link_to_create_saml_endpoint" class="MsoToc1 SAML">
+            <hr>
+            <h2>
+              <a name="api-doc-saml" class="Category" href="#api-doc-saml">SAML</a>
+            </h2>
+            <br>
+            
+            <p id="link_to_create_saml_endpoint" class="MsoToc1 SAML">
               <a target="ifrm" href="API.htm#_create_saml_endpoint">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Create SAML Endpoint
+                  <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  Create SAML Endpoint
               </a>
-        </p>
-        <!-- END: Create SAML Endpoint -->
+            </p>
 
-        <!-- START: List SAML Endpoints  -->
-        <p id="link_to_list_saml_endpoints" class="MsoToc1 SAML">
+            <p id="link_to_list_saml_endpoints" class="MsoToc1 SAML">
               <a target="ifrm" href="API.htm#_list_saml_endpoints">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List SAML Endpoints
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List SAML Endpoints
               </a>
-        </p>
-        <!-- END: List SAML Endpoints -->
+            </p>
 
-        <!-- START: Delete SAML Endpoint  -->
-        <p id="link_to_delete_saml_endpoint" class="MsoToc1 SAML">
+            <p id="link_to_delete_saml_endpoint" class="MsoToc1 SAML">
               <a target="ifrm" href="API.htm#_delete_saml_endpoint">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete SAML Endpoint
+                  <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  Delete SAML Endpoint
               </a>
-        </p>
-        <!-- END: Delete SAML Endpoint -->
+            </p>
+            
+            <hr>
+            <h2>
+              <a name="api-doc-edit-vpn-config" class="Category" href="#api-doc-edit-vpn-config">Edit VPN Config</a>
+            </h2>
+            <br>
 
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-edit-vpn-config" class="Category" href="#api-doc-edit-vpn-config">Edit VPN Config</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_modify_split_tunnel">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_modify_split_tunnel">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Modify Split Tunnel
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_edit_vpn_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_edit_vpn_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Edit VPN Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_reload_dhcp_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_reload_dhcp_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Reload DHCP Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_vpc_lb_names">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_vpc_lb_names">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List LB Names
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- START: List SAML Information -->
-        <p id="link_to_list_saml_info" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = list_saml_info -->
+            <p id="link_to_list_saml_info" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = list_saml_info -->
               <a target="ifrm" href="API.htm#_list_saml_info">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List SAML Information
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List SAML Information
               </a>
-        </p>
-        <!-- END: List SAML Information -->
+            </p>
 
-        <!-- START: Get VPN Gateway Configuration -->
-        <p id="link_to_get_vpn_gateway_config" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_gateway_config -->
+            <p id="link_to_get_vpn_gateway_config" class="MsoToc1 Edit_VPN_Config"> 
               <a target="ifrm" href="API.htm#_get_vpn_gateway_config">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get VPN Gateway Configuration
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get VPN Gateway Configuration
               </a>
-        </p>
-        <!-- END: Get VPN Gateway Configuration -->
+            </p>
 
-        <!-- START: Enable VPN Gateway PBR  -->
-        <p id="link_to_enable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_gateway_pbr -->
+            <p id="link_to_enable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_enable_vpn_gateway_pbr">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable VPN Gateway PBR
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable VPN Gateway PBR
               </a>
-        </p>
-        <!-- END: Enable VPN Gateway PBR -->
+            </p>
 
-        <!-- START: Disable VPN Gateway PBR  -->
-        <p id="link_to_disable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_gateway_pbr -->
+            <p id="link_to_disable_vpn_gateway_pbr" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_disable_vpn_gateway_pbr">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable VPN Gateway PBR
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable VPN Gateway PBR
               </a>
-        </p>
-        <!-- END: Disable VPN Gateway PBR -->
+            </p>
 
-
-        <!-- START: Set VPN Max Connection  -->
-        <p id="link_to_set_vpn_max_connection" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_max_connection -->
+            <p id="link_to_set_vpn_max_connection" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_set_vpn_max_connection">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set VPN Max Connection
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set VPN Max Connection
               </a>
-        </p>
-        <!-- END: Set VPN Max Connection -->
+            </p>
 
-
-        <!-- START: Set VPN Client CIDR  -->
-        <p id="link_to_set_vpn_client_cidr" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_client_cidr -->
+            <p id="link_to_set_vpn_client_cidr" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_set_vpn_client_cidr">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set VPN Client CIDR
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set VPN Client CIDR
               </a>
-        </p>
-        <!-- END: Set VPN Client CIDR -->
+            </p>
 
-        <!-- START: Enable VPN Client Certificate Sharing -->
-        <p id="link_to_enable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = enable_vpn_client_certificate_sharing -->
+            <p id="link_to_enable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_enable_vpn_client_certificate_sharing">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable VPN Client Certificate Sharing
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable VPN Client Certificate Sharing
               </a>
-        </p>
-        <!-- END: Enable VPN Client Certificate Sharing -->
+            </p>
 
-        <!-- START: Get VPN Client Certificate Sharing Status -->
-        <p id="link_to_get_vpn_client_certificate_sharing_status" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_client_certificate_sharing_status -->
+            <p id="link_to_get_vpn_client_certificate_sharing_status" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_get_vpn_client_certificate_sharing_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get VPN Client Certificate Sharing Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get VPN Client Certificate Sharing Status
               </a>
-        </p>
-        <!-- END: Get VPN Client Certificate Sharing Status -->
+            </p>
 
-        <!-- START: Disable VPN Client Certificate Sharing -->
-        <p id="link_to_disable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = disable_vpn_client_certificate_sharing -->
+            <p id="link_to_disable_vpn_client_certificate_sharing" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_disable_vpn_client_certificate_sharing">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable VPN Client Certificate Sharing
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable VPN Client Certificate Sharing
               </a>
-        </p>
-        <!-- END: Disable VPN Client Certificate Sharing -->
+            </p>
 
-
-        <!-- START: Set VPN Gateway Authentication -->
-        <p id="link_to_set_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = set_vpn_gateway_authentication -->
+            <p id="link_to_set_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_set_vpn_gateway_authentication">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set VPN Gateway Authentication
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set VPN Gateway Authentication
               </a>
-        </p>
-        <!-- END: Set VPN Gateway Authentication -->
+            </p>
 
-
-        <!-- START: Get VPN Gateway Authentication Configuration -->
-        <p id="link_to_get_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config"> <!-- "action" Name = get_vpn_gateway_authentication -->
+            <p id="link_to_get_vpn_gateway_authentication" class="MsoToc1 Edit_VPN_Config">
               <a target="ifrm" href="API.htm#_get_vpn_gateway_authentication">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get VPN Gateway Authentication Configuration
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get VPN Gateway Authentication Configuration
               </a>
-        </p>
-        <!-- END: Get VPN Gateway Authentication Configuration -->
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_get_duo_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Duo Config
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_edit_duo_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Edit Duo Config
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_get_okta_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Okta Config
+              </a>
+            </p>
+            
+            <p class="MsoToc1 Edit_VPN_Config">
+              <a target="ifrm" href="API.htm#_edit_okta_config">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Edit Okta Config
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-ldap" class="Category" href="#api-doc-ldap">LDAP</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-ldap" class="Category" href="#api-doc-ldap">LDAP</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_test_ldap_bind">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_test_ldap_bind">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Test LDAP Bind
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_modify_ldap">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_modify_ldap">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Modify LDAP Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_show_ldap_conf">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_show_ldap_conf">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Show LDAP Conf
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-stateful-firewall-tag" class="Category" href="#api-doc-stateful-firewall-tag">Stateful Firewall Tag</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-stateful-firewall-tag" class="Category" href="#api-doc-stateful-firewall-tag">Stateful Firewall Tag</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Add Policy Tag  -->
-        <p id="link_to_add_policy_tag" class="MsoToc1 Stateful_Firewall_Tag">
+            <p id="link_to_add_policy_tag" class="MsoToc1 Stateful_Firewall_Tag">
               <a target="ifrm" href="API.htm#_add_policy_tag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Add Policy Tag
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Add Policy Tag
               </a>
-        </p>
-        <!-- END: Add Policy Tag -->
+            </p>
 
-        <!-- START: Update Policy Members  -->
-        <p id="link_to_update_policy_members" class="MsoToc1 Stateful_Firewall_Tag">
+            <p id="link_to_update_policy_members" class="MsoToc1 Stateful_Firewall_Tag">
               <a target="ifrm" href="API.htm#_update_policy_members">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Update Policy Members
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Update Policy Members
               </a>
-        </p>
-        <!-- END: Update Policy Members -->
+            </p>
 
-        <!-- START: List Policy Members  -->
-        <p id="link_to_list_policy_members" class="MsoToc1 Stateful_Firewall_Tag">
+            <p id="link_to_list_policy_members" class="MsoToc1 Stateful_Firewall_Tag">
               <a target="ifrm" href="API.htm#_list_policy_members">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Policy Members
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Policy Members
               </a>
-        </p>
-        <!-- END: List Policy Members -->
+            </p>
 
-        <!-- START: Delete Policy Tag  -->
-        <p id="link_to_del_policy_tag" class="MsoToc1 Stateful_Firewall_Tag">
+            <p id="link_to_del_policy_tag" class="MsoToc1 Stateful_Firewall_Tag">
               <a target="ifrm" href="API.htm#_del_policy_tag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete Policy Tag
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Delete Policy Tag
               </a>
-        </p>
-        <!-- END: Delete Policy Tag -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-stateful-firewall-policy" class="Category" href="#api-doc-stateful-firewall-policy">Stateful Firewall Policy</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-stateful-firewall-policy" class="Category" href="#api-doc-stateful-firewall-policy">Stateful Firewall Policy</a>
-        </h2>
-        <br>
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#vpc_access_policy">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#vpc_access_policy">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 VPC Access Policy
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#set_vpc_base_policy">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#set_vpc_base_policy">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Set VPC Access Base Policy
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#update_access_policy">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#update_access_policy">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Update VPC Access Policy
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-fqdn-filter-tag" class="Category" href="#api-doc-fqdn-filter-tag">FQDN Filter Tag</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-fqdn-filter-tag" class="Category" href="#api-doc-fqdn-filter-tag">FQDN Filter Tag</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Add FQDN Filter Tag  -->
-        <p id="link_to_add_fqdn_filter_tag" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_add_fqdn_filter_tag" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_add_fqdn_filter_tag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Add FQDN Filter Tag
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Add FQDN Filter Tag
               </a>
-        </p>
-        <!-- END: Add FQDN Filter Tag -->
+            </p>
 
-        <!-- START: Set FQDN Filter Tag Domain Names  -->
-        <p id="link_to_set_fqdn_filter_tag_domain_names" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_set_fqdn_filter_tag_domain_names" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_set_fqdn_filter_tag_domain_names">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set FQDN Filter Tag Domain Names
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set FQDN Filter Tag Domain Names
               </a>
-        </p>
-        <!-- END: Set FQDN Filter Tag Domain Names -->
+            </p>
 
-        <!-- START: List FQDN Filter Tag Domain Names  -->
-        <p id="link_to_list_fqdn_filter_tag_domain_names" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_list_fqdn_filter_tag_domain_names" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_list_fqdn_filter_tag_domain_names">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List FQDN Filter Tag Domain Names
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List FQDN Filter Tag Domain Names
               </a>
-        </p>
-        <!-- END: List FQDN Filter Tag Domain Names -->
+            </p>
 
-        <!-- START: Set FQDN Filter Tag Color  -->
-        <p id="link_to_set_fqdn_filter_tag_color" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_set_fqdn_filter_tag_color" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_set_fqdn_filter_tag_color">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set FQDN Filter Tag Color
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set FQDN Filter Tag Color
               </a>
-        </p>
-        <!-- END: Set FQDN Filter Tag Color -->
+            </p>
 
-        <!-- START: Enable/Disable FQDN Tag  -->
-        <p id="link_to_set_fqdn_filter_tag_state" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_set_fqdn_filter_tag_state" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_set_fqdn_filter_tag_state">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable/Disable FQDN Tag
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable/Disable FQDN Tag
               </a>
-        </p>
-        <!-- END: Enable/Disable FQDN Tag -->
+            </p>
 
-        <!-- START: Attach FQDN Filter Tag To Gateway  -->
-        <p id="link_to_attach_fqdn_filter_tag_to_gw" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_attach_fqdn_filter_tag_to_gw" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_attach_fqdn_filter_tag_to_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Attach FQDN Filter Tag To Gateway
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Attach FQDN Filter Tag To Gateway
               </a>
-        </p>
-        <!-- END: Attach FQDN Filter Tag To Gateway -->
+            </p>
 
-        <!-- START: List FQDN Filter Tag Attached Gateways  -->
-        <p id="link_to_list_fqdn_filter_tag_attached_gws" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_list_fqdn_filter_tag_attached_gws" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_list_fqdn_filter_tag_attached_gws">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List FQDN Filter Tag Attached Gateways
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List FQDN Filter Tag Attached Gateways
               </a>
-        </p>
-        <!-- END: List FQDN Filter Tag Attached Gateways -->
+            </p>
 
-        <!-- START: List FQDN Filter Tags  -->
-        <p id="link_to_list_fqdn_filter_tags" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_list_fqdn_filter_tags" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_list_fqdn_filter_tags">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List FQDN Filter Tags
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List FQDN Filter Tags
               </a>
-        </p>
-        <!-- END: List FQDN Filter Tags -->
+            </p>
 
-        <!-- START: Detach FQDN Filter Tag From Gateway  -->
-        <p id="link_to_detach_fqdn_filter_tag_from_gw" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_detach_fqdn_filter_tag_from_gw" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_detach_fqdn_filter_tag_from_gw">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Detach FQDN Filter Tag From Gateway
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Detach FQDN Filter Tag From Gateway
               </a>
-        </p>
-        <!-- END: Detach FQDN Filter Tag From Gateway -->
+            </p>
 
-        <!-- START: Delete FQDN Filter Tag  -->
-        <p id="link_to_del_fqdn_filter_tag" class="MsoToc1 FQDN_Filter_Tag">
+            <p id="link_to_del_fqdn_filter_tag" class="MsoToc1 FQDN_Filter_Tag">
               <a target="ifrm" href="API.htm#_del_fqdn_filter_tag">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Delete FQDN Filter Tag
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Delete FQDN Filter Tag
               </a>
-        </p>
-        <!-- END: Delete FQDN Filter Tag -->
+            </p>
+            
+            <p class="MsoToc1 FQDN_Filter_Tag">
+              <a target="ifrm" href="API.htm#_get_fqdn_exception_rule_status">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get FQDN Exception Rule Status
+              </a>
+            </p>
+            
+            <p class="MsoToc1 FQDN_Filter_Tag">
+              <a target="ifrm" href="API.htm#_enable_fqdn_exception_rule">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable FQDN Exception Rule
+              </a>
+            </p>
+            
+            <p class="MsoToc1 FQDN_Filter_Tag">
+              <a target="ifrm" href="API.htm#_disable_fqdn_exception_rule">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable FQDN Exception Rule
+              </a>
+            </p>
+        
+            <hr>
+            <h2>
+              <a name="api-doc-fqdn-discovery" class="Category" href="#api-doc-fqdn-discovery">FQDN Discovery</a>
+            </h2>
+            <br>
 
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-fqdn-discovery" class="Category" href="#api-doc-fqdn-discovery">FQDN Discovery</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Start FQDN Discovery -->
-        <p id="link_to_start_fqdn_discovery" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = start_fqdn_discovery -->
+            <p id="link_to_start_fqdn_discovery" class="MsoToc1 FQDN_Discovery">
               <a target="ifrm" href="API.htm#_start_fqdn_discovery">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Start FQDN Discovery
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Start FQDN Discovery
               </a>
-        </p>
-        <!-- END: Start FQDN Discovery -->
+            </p>
 
-        <!-- START: Show FQDN Discovery Result -->
-        <p id="link_to_get_fqdn_discovery_result" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = get_fqdn_discovery_result -->
+            <p id="link_to_get_fqdn_discovery_result" class="MsoToc1 FQDN_Discovery">
               <a target="ifrm" href="API.htm#_get_fqdn_discovery_result">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Show FQDN Discovery Result
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Show FQDN Discovery Result
               </a>
-        </p>
-        <!-- END: Show FQDN Discovery Result -->
+            </p>
 
-        <!-- START: Stop FQDN Discovery -->
-        <p id="link_to_stop_fqdn_discovery" class="MsoToc1 FQDN_Discovery"> <!-- "action" Name = stop_fqdn_discovery -->
+            <p id="link_to_stop_fqdn_discovery" class="MsoToc1 FQDN_Discovery">
               <a target="ifrm" href="API.htm#_stop_fqdn_discovery">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Stop FQDN Discovery
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Stop FQDN Discovery
               </a>
-        </p>
-        <!-- END: Stop FQDN Discovery -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-controller" class="Category" href="#api-doc-controller">Controller</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-controller" class="Category" href="#api-doc-controller">Controller</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_version_info">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_version_info">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Version Info
-            </a>
-        </p>
-
-        <!-- START: Get Controller Auto Upgrade on Reboot Config  -->
-        <p id="link_to_get_controller_info" class="MsoToc1 Controller">
-              <a target="ifrm" href="API.htm#_get_controller_info">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Controller Auto Upgrade on Reboot Config
               </a>
-        </p>
-        <!-- END: Get Controller Auto Upgrade on Reboot Config -->
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_upgrade">
+            <p id="link_to_get_controller_info" class="MsoToc1 Controller">
+              <a target="ifrm" href="API.htm#_get_controller_info">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Controller Auto Upgrade on Reboot Config
+              </a>
+            </p>
+
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_upgrade">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Upgrade Controller
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <!-- START: Enable Upgrade on Reboot  -->
-        <p id="link_to_enable_controller_upgrade_on_reboot" class="MsoToc1 Controller">
+            <p id="link_to_enable_controller_upgrade_on_reboot" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_enable_controller_upgrade_on_reboot">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Upgrade on Reboot
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Upgrade on Reboot
               </a>
-        </p>
-        <!-- END: Enable Upgrade on Reboot -->
+            </p>
 
-        <!-- START: Disable Upgrade on Reboot  -->
-        <p id="link_to_disable_controller_upgrade_on_reboot" class="MsoToc1 Controller">
+            <p id="link_to_disable_controller_upgrade_on_reboot" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_disable_controller_upgrade_on_reboot">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Upgrade on Reboot
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Upgrade on Reboot
               </a>
-        </p>
-        <!-- END: Disable Upgrade on Reboot -->
+            </p>
 
-        <!-- START: Set Status Change Event Email  -->
-        <p id="link_to_set_status_change_event_email" class="MsoToc1 Controller">
+            <p id="link_to_set_status_change_event_email" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_set_status_change_event_email">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set Status Change Event Email
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set Status Change Event Email
               </a>
-        </p>
-        <!-- END: Set Status Change Event Email -->
+            </p>
 
-        <!-- START: Migrate Controller IP  -->
-        <p id="link_to_migrate_controller_ip" class="MsoToc1 Controller"> <!-- "action" Name = migrate_controller_ip -->
+            <p id="link_to_migrate_controller_ip" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_migrate_controller_ip">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Migrate Controller IP
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Migrate Controller IP
               </a>
-        </p>
-        <!-- END: Migrate Controller IP -->
+            </p>
 
-
-        <!-- START: Enable Controller Security-Group Management  -->
-        <p id="link_to_enable_controller_security_group_management" class="MsoToc1 Controller"> <!-- "action" Name = enable_controller_security_group_management -->
+            <p id="link_to_enable_controller_security_group_management" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_enable_controller_security_group_management">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Controller Security-Group Management
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Controller Security-Group Management
               </a>
-        </p>
-        <!-- END: Enable Controller Security-Group Management -->
+            </p>
 
-
-        <!-- START: Get Controller Security-Group Management Status  -->
-        <p id="link_to_get_controller_security_group_management_status" class="MsoToc1 Controller"> <!-- "action" Name = get_controller_security_group_management_status -->
+            <p id="link_to_get_controller_security_group_management_status" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_get_controller_security_group_management_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Controller Security-Group Management Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Controller Security-Group Management Status
               </a>
-        </p>
-        <!-- END: Get Controller Security-Group Management Status -->
+            </p>
 
-
-        <!-- START: Disable Controller Security-Group Management  -->
-        <p id="link_to_disable_controller_security_group_management" class="MsoToc1 Controller"> <!-- "action" Name = disable_controller_security_group_management -->
+            <p id="link_to_disable_controller_security_group_management" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_disable_controller_security_group_management">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Controller Security-Group Management
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Controller Security-Group Management
               </a>
-        </p>
-        <!-- END: Disable Controller Security-Group Management -->
+            </p>
 
-
-        <!-- START: Get Controller Public IP -->
-        <p id="link_to_get_controller_public_ip" class="MsoToc1 Controller"> <!-- "action" Name = get_controller_public_ip -->
+            <p id="link_to_get_controller_public_ip" class="MsoToc1 Controller">
               <a target="ifrm" href="API.htm#_get_controller_public_ip">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Controller Public IP
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Controller Public IP
               </a>
-        </p>
-        <!-- END: Get Controller Public IP -->
+            </p>
+            
+            <p class="MsoToc1 Controller">
+              <a target="ifrm" href="API.htm#_get_ctrl_aws_acct_num">
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Controller AWS Account Number
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-controller-backup-and-restore" class="Category" href="#api-doc-controller-backup-and-restore">Controller Backup &amp; Restore</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-controller-backup-and-restore" class="Category" href="#api-doc-controller-backup-and-restore">Controller Backup &amp; Restore</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_get_cloudn_backup_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_get_cloudn_backup_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Get Backup Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_disable_cloudn_backup_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_disable_cloudn_backup_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Disable Backup Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_enable_cloudn_backup_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_enable_cloudn_backup_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Enable Backup Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_restore_cloudx_config">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_restore_cloudx_config">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Restore Configuration
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-patches" class="Category" href="#api-doc-patches">Patches</a>
+            </h2>
+            <br>
 
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-patches" class="Category" href="#api-doc-patches">Patches</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: List Patches  -->
-        <p id="link_to_list_patches" class="MsoToc1 Patches">
+            <p id="link_to_list_patches" class="MsoToc1 Patches">
               <a target="ifrm" href="API.htm#_list_patches">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    List Patches
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                List Patches
               </a>
-        </p>
-        <!-- END: List Patches -->
+            </p>
 
-        <!-- START: Apply Patch  -->
-        <p id="link_to_apply_patch" class="MsoToc1 Patches">
+            <p id="link_to_apply_patch" class="MsoToc1 Patches">
               <a target="ifrm" href="API.htm#_apply_patch">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Apply Patch
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Apply Patch
               </a>
-        </p>
-        <!-- END: Apply Patch -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-logging" class="Category" href="#api-doc-logging">Logging</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-logging" class="Category" href="#api-doc-logging">Logging</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Enable Splunk Logging  -->
-        <p id="link_to_enable_splunk_logging" class="MsoToc1 Logging">
+            <p id="link_to_enable_splunk_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_enable_splunk_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Splunk Logging
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Splunk Logging
               </a>
-        </p>
-        <!-- END: Enable Splunk Logging -->
+            </p>
 
-        <!-- START: Get Splunk Logging Status  -->
-        <p id="link_to_get_splunk_logging_status" class="MsoToc1 Logging">
+            <p id="link_to_get_splunk_logging_status" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_get_splunk_logging_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Splunk Logging Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Splunk Logging Status
               </a>
-        </p>
-        <!-- END: Get Splunk Logging Status -->
+            </p>
 
-        <!-- START: Disable Splunk Logging  -->
-        <p id="link_to_disable_splunk_logging" class="MsoToc1 Logging">
+            <p id="link_to_disable_splunk_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_disable_splunk_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Splunk Logging
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Splunk Logging
               </a>
-        </p>
-        <!-- END: Disable Splunk Logging -->
+            </p>
 
-        <!-- START: Enable LogStash Forwarder  -->
-        <p id="link_to_enable_logstash_logging" class="MsoToc1 Logging">
+            <p id="link_to_enable_logstash_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_enable_logstash_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable LogStash Forwarder
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable LogStash Forwarder
               </a>
-        </p>
-        <!-- END: Enable LogStash Forwarder -->
+            </p>
 
-        <!-- START: Get LogStash Forwarder Status  -->
-        <p id="link_to_get_logstash_logging_status" class="MsoToc1 Logging">
+            <p id="link_to_get_logstash_logging_status" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_get_logstash_logging_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get LogStash Forwarder Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get LogStash Forwarder Status
               </a>
-        </p>
-        <!-- END: Get LogStash Forwarder Status -->
+            </p>
 
-        <!-- START: Disable LogStash Forwarder  -->
-        <p id="link_to_disable_logstash_logging" class="MsoToc1 Logging">
+            <p id="link_to_disable_logstash_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_disable_logstash_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable LogStash Forwarder
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable LogStash Forwarder
               </a>
-        </p>
-        <!-- END: Disable LogStash Forwarder -->
+            </p>
 
-        <!-- START: Enable Sumologic Logging  -->
-        <p id="link_to_enable_sumologic_logging" class="MsoToc1 Logging">
+            <p id="link_to_enable_sumologic_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_enable_sumologic_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Sumologic Logging
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Sumologic Logging
               </a>
-        </p>
-        <!-- END: Enable Sumologic Logging -->
+            </p>
 
-        <!-- START: Get Sumologic Logging Status  -->
-        <p id="link_to_get_sumologic_logging_status" class="MsoToc1 Logging">
+            <p id="link_to_get_sumologic_logging_status" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_get_sumologic_logging_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Sumologic Logging Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Sumologic Logging Status
               </a>
-        </p>
-        <!-- END: Get Sumologic Logging Status -->
+            </p>
 
-        <!-- START: Disable Sumologic Logging  -->
-        <p id="link_to_disable_sumologic_logging" class="MsoToc1 Logging">
+            <p id="link_to_disable_sumologic_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_disable_sumologic_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Sumologic Logging
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Sumologic Logging
               </a>
-        </p>
-        <!-- END: Disable Sumologic Logging -->
+            </p>
 
-        <!-- START: Enable Remote Syslog  -->
-        <p id="link_to_enable_remote_syslog_logging" class="MsoToc1 Logging">
+            <p id="link_to_enable_remote_syslog_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_enable_remote_syslog_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Remote Syslog
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Remote Syslog
               </a>
-        </p>
-        <!-- END: Enable Remote Syslog -->
+            </p>
 
-        <!-- START: Get Remote Syslog Status  -->
-        <p id="link_to_get_remote_syslog_logging_status" class="MsoToc1 Logging">
+            <p id="link_to_get_remote_syslog_logging_status" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_get_remote_syslog_logging_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Remote Syslog Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Remote Syslog Status
               </a>
-        </p>
-        <!-- END: Get Remote Syslog Status -->
+            </p>
 
-        <!-- START: Disable Remote Syslog  -->
-        <p id="link_to_disable_remote_syslog_logging" class="MsoToc1 Logging">
+            <p id="link_to_disable_remote_syslog_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_disable_remote_syslog_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Remote Syslog
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Remote Syslog
               </a>
-        </p>
-        <!-- END: Disable Remote Syslog -->
+            </p>
 
-        <!-- START: Enable Datadog Agent  -->
-        <p id="link_to_enable_datadog_agent_logging" class="MsoToc1 Logging">
+            <p id="link_to_enable_datadog_agent_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_enable_datadog_agent_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Datadog Agent
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Datadog Agent
               </a>
-        </p>
-        <!-- END: Enable Datadog Agent -->
+            </p>
 
-        <!-- START: Get Datadog Agent Status  -->
-        <p id="link_to_get_datadog_agent_logging_status" class="MsoToc1 Logging">
+            <p id="link_to_get_datadog_agent_logging_status" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_get_datadog_agent_logging_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Datadog Agent Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Datadog Agent Status
               </a>
-        </p>
-        <!-- END: Get Datadog Agent Status -->
+            </p>
 
-        <!-- START: Disable Datadog Agent  -->
-        <p id="link_to_disable_datadog_agent_logging" class="MsoToc1 Logging">
+            <p id="link_to_disable_datadog_agent_logging" class="MsoToc1 Logging">
               <a target="ifrm" href="API.htm#_disable_datadog_agent_logging">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Datadog Agent
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Datadog Agent
               </a>
-        </p>
-        <!-- END: Disable Datadog Agent -->
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-advanced_settings" class="Category" href="#api-doc-advanced_setting">Advanced Settings</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-advanced_settings" class="Category" href="#api-doc-advanced_setting">Advanced Settings</a>
-        </h2>
-        <br>
-
-
-
-        <!-- START: Set Keepalive Speed  -->
-        <p id="link_to_set_keep_alive_speed" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = set_keep_alive_speed -->
+            <p id="link_to_set_keep_alive_speed" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_set_keep_alive_speed">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Set Keepalive Speed
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Set Keepalive Speed
               </a>
-        </p>
-        <!-- END: Set Keepalive Speed -->
+            </p>
 
-        <!-- START: Get Status of Keepalive Speed  -->
-        <p id="link_to_get_keep_alive_speed" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = get_keep_alive_speed -->
+            <p id="link_to_get_keep_alive_speed" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_get_keep_alive_speed">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Status of Keepalive Speed
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Status of Keepalive Speed
               </a>
-        </p>
-        <!-- END: Get Status of Keepalive Speed -->
+            </p>
 
-        <!-- START: Import Certificate Signing Request  -->
-        <p id="link_to_create_certificate_signing_request" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = create_certificate_signing_request -->
+            <p id="link_to_create_certificate_signing_request" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_create_certificate_signing_request">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Import Certificate Signing Request
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Import Certificate Signing Request
               </a>
-        </p>
-        <!-- END: Import Certificate Signing Request -->
+            </p>
 
-        <!-- START: Enable Certificate Checking  -->
-        <p id="link_to_enable_certificate_checking" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = enable_certificate_checking -->
+            <p id="link_to_enable_certificate_checking" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_enable_certificate_checking">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Enable Certificate Checking
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Enable Certificate Checking
               </a>
-        </p>
-        <!-- END: Enable Certificate Checking -->
+            </p>
 
-        <!-- START: Get Certificate Checking Status  -->
-        <p id="link_to_get_certificate_checking_status" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = get_certificate_checking_status -->
+            <p id="link_to_get_certificate_checking_status" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_get_certificate_checking_status">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Get Certificate Checking Status
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Get Certificate Checking Status
               </a>
-        </p>
-        <!-- END: Get Certificate Checking Status -->
+            </p>
 
-        <!-- START: Disable Certificate Checking  -->
-        <p id="link_to_disable_certificate_checking" class="MsoToc1 Advanced_Settings"> <!-- "action" Name = disable_certificate_checking -->
+            <p id="link_to_disable_certificate_checking" class="MsoToc1 Advanced_Settings">
               <a target="ifrm" href="API.htm#_disable_certificate_checking">
-                    <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    Disable Certificate Checking
+                <span style='font-family:"Trebuchet MS","sans-serif";color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                Disable Certificate Checking
               </a>
-        </p>
-        <!-- END: Disable Certificate Checking -->
+            </p>
+            
+            <hr>
+            <h2>
+              <a name="api-doc-troubleshoot" class="Category" href="#api-doc-troubleshoot">Useful Tools</a>
+            </h2>
+            <br>
 
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_cloud_network_info">
+                <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                Cloud Network Info
+              </a>
+            </p>
+            
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_test_cidr_overlap">
+                <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                Test CIDR Overlap
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-troubleshoot" class="Category" href="#api-doc-troubleshoot">Troubleshoot</a>
+            </h2>
+            <br>
 
-        <hr>
-        <h2>
-            <a name="api-doc-troubleshoot" class="Category" href="#api-doc-troubleshoot">Troubleshoot</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_upload_cloudx_command_log">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_upload_cloudx_command_log">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Upload Trace Log
-            </a>
-        </p>
+              </a>
+            </p>
+            
+            <hr>
+            <h2>
+              <a name="api-doc-troubleshoot" class="Category" href="#api-doc-troubleshoot">Flightpath</a>
+            </h2>
+            <br>
 
-
-
-        <hr>
-        <h2>
-            <a name="api-doc-cloud-ops" class="Category" href="#api-doc-cloud-ops">Cloud OPS</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_cloudops_vpc_pool">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_flightpath_source_instances">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                List CloudOps VPC Pool
-            </a>
-        </p>
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_cloudops_vpc_pool">
+                List Flightpath Source Instances
+              </a>
+            </p>
+            
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_flightpath_destination_instances">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                Delete CloudOps VPC Pool
-            </a>
-        </p>
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_create_cloudops_vpc_pool">
+                List Flightpath Destination Instances
+              </a>
+            </p>
+            
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_flightpath_connection_test">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                Create CloudOps VPC Pool
-            </a>
-        </p>
+                Flightpath Connection Test
+              </a>
+            </p>
+            
+            <hr>
+            <h2>
+              <a name="api-doc-cloud-ops" class="Category" href="#api-doc-cloud-ops">Cloud OPS</a>
+            </h2>
+            <br>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_global_address_pool_cidr">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_custom_vpcs">
+                <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                List Custom VPCs
+              </a>
+            </p>
+
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_custom_vpc">
+                <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                Delete a Custom VPC
+              </a>
+            </p>
+
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_create_custom_vpc">
+                <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                Create a Custom VPC
+              </a>
+            </p>
+
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_global_address_pool_cidr">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Access Address Pool CIDR
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_dns_cname_action">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_dns_cname_action">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 DNS Cname Action
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_access_address_pool">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_access_address_pool">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Access Address Pool
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_aws_domain_name_system">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_aws_domain_name_system">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 AWS Domain Name System
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_non_management_vpcs">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_non_management_vpcs">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Non-Management VPCs
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_setup_access_address_pool">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_setup_access_address_pool">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Setup Access Address Pool
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_cloudops_unmapped_instances">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_cloudops_unmapped_instances">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List CloudOps Unmapped Instances
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_cloudops_scan_map_target">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_cloudops_scan_map_target">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 CloudOps Scan Map Target
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_cloudops_map_target_single_instance">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_cloudops_map_target_single_instance">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 CloudOps Map Target Single Instance
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_cloudops_unmap_target_single_instance">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_cloudops_unmap_target_single_instance">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 CloudOps Unmap Target Single Instance
-            </a>
-        </p>
+              </a>
+            </p>
 
+            <hr>
+            <h2>
+              <a name="api-doc-cloudn" class="Category" href="#api-doc-cloudn">CloudN</a>
+            </h2>
+            <br>
 
-
-        <hr>
-        <h2>
-            <a name="api-doc-cloudn" class="Category" href="#api-doc-cloudn">CloudN</a>
-        </h2>
-        <br>
-
-
-
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_setup_max_vpc_containers">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_setup_max_vpc_containers">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Setup Maximum number of VPC/Vnets
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_max_vpc_containers">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_max_vpc_containers">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Maximum number of VPC/Vnets
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_cidr_of_available_vpcs">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_cidr_of_available_vpcs">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Available CIDRs
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_allow_subnet">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_allow_subnet">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Allow Subnets to VPC
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_delete_subnet">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_delete_subnet">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Delete Subnets from VPC
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_list_allowed_subnet">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_list_allowed_subnet">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 List Allowed Subnets for VPC
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoToc1>
-            <a target="ifrm" href="API.htm#_create_container">
+            <p class=MsoToc1>
+              <a target="ifrm" href="API.htm#_create_container">
                 <span style='font-family:"Trebuchet MS","sans-serif"; color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
                 Create Datacenter Extension
-            </a>
-        </p>
+              </a>
+            </p>
 
-        <p class=MsoNoSpacing><b>&nbsp;</b></p>
-        </td>
+            <p class=MsoNoSpacing><b>&nbsp;</b></p>
+          </td>
         </tr>
-        </table>
-
-        </div> <!-- END  <div align=center> -->
-
-    </div> <!-- END <div class=WordSection1> -->
-
-</div> <!-- END <div class="menu"> -->
+      </table>
+    </div>
+  </div>
+</div>
 <iframe class="mainContent" src="API.htm" name="ifrm"></iframe>
-
 </body>
-
 </html>
