@@ -17362,7 +17362,7 @@ curl --request POST \
 </div>
 
 <h1 style='page-break-before:always'>
-  <a name="_deatch_vpc_from_tgw">
+  <a name="_detach_vpc_from_tgw">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
     Detach VPC From AWS TGW
   </a>
@@ -17395,7 +17395,7 @@ curl --request POST \
     <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
       <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid value: "deatch_vpc_from_tgw"</p>
+      <p class=MsoNormal>Valid value: "detach_vpc_from_tgw"</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
     </td>
@@ -17520,7 +17520,7 @@ curl --request POST \
     <pre>
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
-  --form "action=deatch_vpc_from_tgw" \
+  --form "action=detach_vpc_from_tgw" \
   --form "region=us-east-1" \
   --form "account_name=tgw_acct" \
   --form "tgw_name=tgw1" \
