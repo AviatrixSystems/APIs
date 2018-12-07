@@ -15623,24 +15623,13 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>region</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
+      <p class=MsoNormal>AWS region.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
 </table>
@@ -15698,7 +15687,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=list_tgw_names" \
-  --form "account_name=tgw_acct" \
   --form "region=us-east-1" \
   --form "CID={{CID}}"</pre>
   </p>
@@ -15777,32 +15765,10 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>tgw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>TGW name.</p>
+      <p class=MsoNormal>Name of AWS TGW.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -15863,8 +15829,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=list_route_domain_names" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "CID={{CID}}"</pre>
   </p>
@@ -15938,28 +15902,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -16042,8 +15984,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=list_connected_route_domains" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
@@ -16122,28 +16062,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -16237,8 +16155,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=add_connection_between_route_domains" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "source_route_domain_name=rd1" \
   --form "destination_route_domain_name=rd2" \
@@ -16310,28 +16226,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -16425,8 +16319,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=delete_connection_between_route_domains" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "source_route_domain_name=rd1" \
   --form "destination_route_domain_name=rd2" \
@@ -16499,28 +16391,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -16603,8 +16473,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=add_route_domain" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
@@ -16676,28 +16544,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -16780,8 +16626,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=delete_route_domain" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
@@ -16860,28 +16704,6 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Region of cloud provider.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>tgw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -16946,8 +16768,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=delete_aws_tgw" \
-  --form "account_name=tgw_acct" \
-  --form "region=us-east-1" \
   --form "tgw_name=tgw1" \
   --form "CID={{CID}}"</pre>
   </p>
@@ -17068,17 +16888,6 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>tgw_account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>AWS account name for TGW.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>tgw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -17157,7 +16966,6 @@ curl --request POST \
   --form "region=us-east-1" \
   --form "vpc_account_name=acct1" \
   --form "vpc_name=vpc1" \
-  --form "tgw_account_name=tgw_acct" \
   --form "tgw_name=tgw1" \
   --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
@@ -17235,28 +17043,6 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Name of AWS region.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>AWS account name for TGW.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>tgw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -17274,7 +17060,7 @@ curl --request POST \
       <p class=MsoNormal>Name of route domain.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
 </table>
@@ -17332,10 +17118,7 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=list_attached_vpc_names_to_route_domain" \
-  --form "region=us-east-1" \
-  --form "account_name=tgw_acct" \
   --form "tgw_name=tgw1" \
-  --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
   </p>
 </div>
@@ -17413,28 +17196,6 @@ curl --request POST \
   </tr>
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Name of AWS region.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>AWS account name for TGW.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>tgw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -17452,7 +17213,7 @@ curl --request POST \
       <p class=MsoNormal>Name of route domain.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
   <tr>
@@ -17521,10 +17282,7 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=detach_vpc_from_tgw" \
-  --form "region=us-east-1" \
-  --form "account_name=tgw_acct" \
   --form "tgw_name=tgw1" \
-  --form "route_domain_name=rd1" \
   --form "vpc_name=vpc1" \
   --form "CID={{CID}}"</pre>
   </p>
@@ -17543,7 +17301,7 @@ curl --request POST \
       <pre>
 {
     "return": true,
-    "results": "Successfully deleted vpc1 from tgw1 Route Domain rd1."
+    "results": "Successfully deleted vpc1 from tgw1."
 }</pre>
     </span>
   </p>
@@ -17595,28 +17353,6 @@ curl --request POST \
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>API session ID</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>region</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Name of AWS region.</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>account_name</p>
-    </td>
-    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>AWS account name for TGW.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
@@ -17699,8 +17435,6 @@ curl --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=view_route_domain_details" \
-  --form "region=us-east-1" \
-  --form "account_name=tgw_acct" \
   --form "tgw_name=tgw1" \
   --form "route_domain_name=rd1" \
   --form "CID={{CID}}"</pre>
