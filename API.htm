@@ -40800,7 +40800,7 @@ curl -k --request POST \
 
 <!-- API Description -->
 <p class=MsoNormal>Migrate Controller IP.</p>
-<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.3</span> or later releases.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.0</span> or later releases.</p>
 
 
 <!-- h2 Request Parameters -->
@@ -40861,6 +40861,7 @@ curl -k --request POST \
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>Specifying whether forcing to use the given IP or not</p>
       <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid values: "yes", "no"</p>
       <p class=MsoNormal>Default: "no"</p>
       <p class=MsoNormal>Required: No</p>
     </td>
@@ -40924,8 +40925,7 @@ curl -k --request POST \
 # curl -k --request POST \
   --url  "https://{{controller_ip}}/v1/api" \
   --form "action=migrate_controller_ip" \
-  --form "CID={{CID}}" 
-    </pre>
+  --form "CID={{CID}}" </pre>
   </p>
 </div>
 
@@ -40943,10 +40943,9 @@ curl -k --request POST \
     <span style='font-family:"Courier New"'>
       <pre>
 {
-  "return": "true",
-   "results": "Success"
-}
-      </pre>
+  "return": false,
+  "reason": "Controller's stored_ip[52.41.237.237] and current_ip[52.41.237.237] addresses are same or non-applicable."
+}</pre>
     </span>
   </p>
 </div>
