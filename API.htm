@@ -7167,7 +7167,7 @@ Parameters</a></h2>
   <p class=MsoNormal>Valid Values:  a valid account name in the system such as
   "admin" or "joe"</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: No</p>
+  <p class="MsoNormal" style="color:#FF3300">Required: Yes if controller is 4.0 or earlier version</p>
   </td>
  </tr>
  <tr>
@@ -12249,15 +12249,18 @@ curl --request POST \
       <p class=MsoNormal>Required: Yes when cloud_type is 1 </p></td>
   </tr>
 
-  <!-- param: vpc_id -->
+  <!-- param: vnet_and_resource_group_names -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>vnet_and_resource_group_names</p>    </td>
+      <p class=MsoNormal>vnet_and_resource_group_names</p>
+    </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>VNet name for ARM cloud type. </p>
+      <p class=MsoNormal>A string is consisted of VNet and Resource Group names.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes when cloud_type is 8 </p>      </td>
+      <p class=MsoNormal>Required: Yes if cloud type is ARM</p>
+      <p class=MsoNormal>Example: "vnet-centralus:rg-centralus"</p>
+    </td>
   </tr>
 
   <!-- param: public_subnet -->
@@ -12362,53 +12365,38 @@ curl --request POST \
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
-    Response Elements
-  </a>
-</h2>
-
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
-  <tr>
-    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>return</p>
-    </td>
-    <td width=510 valign=top style='width:382.25pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>API return</p>
-      <p class=MsoNormal>Type: String ("true" or "false")</p>
-      <p class=MsoNormal>Valid Values: true | false</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>reason</p>
-    </td>
-    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Reason of failed request when return is "false". </p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid Values: This field is an empty string when return is "true"</p>
-    </td>
-  </tr>
-  <tr>
-    <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>results</p>
-    </td>
-    <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>API response results when return value is true</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid Values: This field is an empty string when return value is "false"</p>
-    </td>
-  </tr>
-</table>
-
-<h2>
-  <a name="_Toc123456789">
-    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Example Request
   </a>
 </h2>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
   <p class=MsoNormal style='border:none;padding:0in'>
-    # curl -k --data "action=create_transit_gw" --data "account_name=my-aws" --data "cloud_type=1" --data "region=us-west-1" --data "vpc_alias=vpc-94e23cf3~~transit-vpc" --data "subnet_alias=10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub" --data "gw_name=my-transit-gw" --data "gw_size=t2.large" --data "dns_server=8.8.8.8" --data "tags=k1:v1,k2:v2" --data "CID=XXXX" "https://CONTROLLER_IP/v1/api"
+  	<pre>
+Example 01: Create Aviatrix Transit Gateway in AWS
+# curl -k --data "action=create_transit_gw" \
+          --data "account_name=my-aws" \
+          --data "cloud_type=1" \
+          --data "region=us-west-1" \
+          --data "vpc_id=vpc-94e23cf3~~transit-vpc" \
+          --data "public_subnet=10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub" \
+          --data "gw_name=my-transit-gw" \
+          --data "gw_size=t2.large" \
+          --data "dns_server=8.8.8.8" \
+          --data "tags=k1:v1,k2:v2" \
+          --data "CID=XXXX" \
+          "https://CONTROLLER_IP/v1/api"
+
+Example 02: Create Aviatrix Transit Gateway in ARM
+# curl -k --data "action=create_transit_gw" \
+          --data cloud_type=8" \
+          --data "region=Central US" \
+          --data "vnet_and_resource_group_names=vnet-centralus:rg-centralus" \
+          --data "public_subnet=10.9.0.0/24" \
+          --data "gw_name=arm-transit-gw" \
+          --data "gw_size=Standard_B1s" \
+          --data "CID=ZmEPWPIKcq6lNFnx61in" \
+          "https://CONTROLLER_IP/v1/api"
+    </pre>
   </p>
 </div>
 
@@ -54173,6 +54161,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create a Custom V
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: No</p>  </td>
  </tr>
+
  <tr>
   <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
@@ -54186,6 +54175,21 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create a Custom V
   <p class=MsoNormal>Required: No</p>  </td>
  </tr>
  <tr>
+
+ <!-- param: aviatrix_transit_vpc -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>aviatrix_transit_vpc</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>If specifying the value to this parameter to be "yes". The VPC will have Aviatrix Transit VPC configurations/attributes</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: "no"</p>
+      <p class=MsoNormal>Valid Value: "yes" || "no"</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
   <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal>security_url</p>  </td>
@@ -54244,17 +54248,19 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Create a Custom V
  </tr>
 </table>
 
-<h2><a name="_Toc489305260"><span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span>Example Request</a></h2>
-
-<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
-
-<p class=MsoNormal style='border:none;padding:0in'><a
-href="https://52.25.2.137/v1/api?CID=55e7af8e4beb8&amp;action=create_custom_vpc&amp;pool_name=qwd&amp;account_name=users&amp;vpc_counts=3&amp;vpc_cidr=10.10.10.10/24&amp;cloud_type=1"><span
-style='font-family:"Courier New"'>https://52.25.2.137/v1/api?CID=55e7af8e4beb8&amp;action=create_custom_vpc&amp;pool_name=qwd&amp;account_name=users&amp;vpc_counts=3&amp;vpc_dir=<span style="font-family:
-&quot;Courier New&quot;">10.0.0.0\/20</span>&amp;cloud_type=1</span></a></p>
-
-</div>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=create_custom_vpc"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type=1"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "pool_name=testvpctrans"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "account_name=aws-primary"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_counts=1"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_cidr=10.99.0.0/24"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "aviatrix_transit_vpc=yes"
+  </div>
 
 <h2><a name="_Toc489305261"><span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span>Example Response</a></h2>
