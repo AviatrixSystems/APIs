@@ -8007,10 +8007,10 @@ name="_Toc479233499"><span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Ex
 	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
 	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
 		# curl -k --request POST<br/>
-	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=list_gce_zone_by_subnet"
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID=XXXXXXXXXX" \
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "subnet=10.202.0.0/24"
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=list_gce_zone_by_subnet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID=XXXXXXXXXX"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "subnet=10.202.0.0/24"<br/>
   </div>
 	
 	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
@@ -8021,6 +8021,246 @@ name="_Toc479233499"><span style='font:7.0pt "Times New Roman"'>&nbsp; </span>Ex
 	}
   </div>
 </div>
+
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_edit_gateway_custom_routes"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Edit Gateway Custom routes
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Edit Gateway custom routes.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "edit_gateway_custom_routes"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>cidr</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CIDR</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_gateway_custom_routes" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=my-vpn-gw" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cidr=192.168.77.0/24"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_edit_gateway_filter_routes"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Edit Gateway Filter routes
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Edit Gateway filter routes.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "edit_gateway_filter_routes"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>cidr</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CIDR</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_gateway_filter_routes" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=my-vpn-gw" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cidr=192.168.77.0/24"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_encrypt_gateway_volume"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Encrypt Gateway Volume
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Encrypt Gateway Volume.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "encrypt_gateway_volume"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>customer_managed_keys</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Customer managed keys</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=encrypt_gateway_volume" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=my-vpn-gw"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+
+
 
 
 <!-- START: Create Peering HA Gateway -->
@@ -19884,6 +20124,155 @@ Example 02: Create Aviatrix Transit Gateway in ARM
   </div>
 </div>
 
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_enable_egress_on_tgw_route_domain"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Enable Engress on TGW route domain
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Enable Engress on TGW route domain.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "enable_egress_on_tgw_route_domain"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>tgw_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>TGW name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>route_domain_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Route domain name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=enable_egress_on_tgw_route_domain"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "tgw_name=Test-TGW"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "route_domain_name=rd1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_disable_egress_on_tgw_route_domain"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Disable Engress on TGW route domain
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Disable Engress on TGW route domain.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "_disable_egress_on_tgw_route_domain"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>tgw_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>TGW name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>route_domain_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Route domain name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=_disable_egress_on_tgw_route_domain"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "tgw_name=Test-TGW"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "route_domain_name=rd1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
 <div class="api">
 	<h1 style='page-break-before:always'>
 	  <a name="_prepare_transit_gateway_for_dmz"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
@@ -20420,6 +20809,72 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 	}
   </div>
 </div>
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_list_firewall_images"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    List Firewall Images
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>List firewall images.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "list_firewall_images"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=list_firewall_images"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type=1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": ["Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1","Palo Alto Networks VM-Series Next-Generation Firewall Bundle 2"]<br/>
+	}
+  </div>
+</div>
+
+
 
 <div class="api">
 	<h1 style='page-break-before:always'>
@@ -21410,6 +21865,315 @@ Example 02: Create Aviatrix Transit Gateway in ARM
   </div>
 </div>
 
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_launch_firewall_instance"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Launch Firewall Instance
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Launch firewall instance.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "launch_firewall_instance"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>account_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Account name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>region</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Region</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>instance_name</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Instance name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>vpc_id</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>VPC ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>firewall_image</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Firewall Image</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>management_subnet</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Management Subnet</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>egress_subnet</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Engress subnet</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>main_interface_subnet</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Main Interface Subnet</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>companion_interface_subnet</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Companion Interface Subnet</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=launch_firewall_instance"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type=1"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "account_name=my-aws1"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "region=us-east-1 (N. Virginia)"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "instance_name=Instance1"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-17cae573~~Virginia DevOps"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_image=Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "management_subnet=10.12.0.0/24~~us-east-1c~~Public subnet"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "egress_subnet=10.12.0.0/24~~us-east-1c~~Public subnet"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "main_interface_subnet=10.12.0.0/24"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "companion_interface_subnet=10.12.0.0/24"<br/>
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_list_firewall_instances"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    List Firewall Instances
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>List firewall instances.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "list_firewall_instances"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=list_firewall_instances"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": []<br/>
+	}
+  </div>
+</div>
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_delete_firewall_instance"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Delete Firewall Instance
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Delete firewall instance.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "delete_firewall_instance"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>vpc_id</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>VPC ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>instance_id</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Instance ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=delete_firewall_instance"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-17cae573~~Virginia DevOps"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "instance_id=instance_1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": []<br/>
+	}
+  </div>
+</div>
 
 
 
@@ -52086,6 +52850,300 @@ curl -k --request POST \
 <span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'><br clear=all style='page-break-before:always'>
 </span>
 
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_scan_aws_iam_policy"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Scan AWS IAM policy
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Scan AWS IAM policy.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "scan_aws_iam_policy"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: access_account_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>access_account_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Name of access account in the controller</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=scan_aws_iam_policy" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "access_account_name=my-controller-user-1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": ""<br/>
+	}
+  </div>
+</div>
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_get_iam_policy_auto_update_status"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Get AWS IAM policy Auto Update Status
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Get AWS IAM policy Auto Update Status.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "get_iam_policy_auto_update_status"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=get_iam_policy_auto_update_status" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": {"enable_update":true,"skip_release_update":true}<br/>
+	}
+  </div>
+</div>
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_enable_access_account_iam_policy_update"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Enable Access Account IAM Policy Update
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Enable Access Account IAM Policy Update.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "enable_access_account_iam_policy_update"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=enable_access_account_iam_policy_update" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Sucessfully enabled automatic IAM role policy update."<br/>
+	}
+  </div>
+</div>
+
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_disable_auto_aws_iam_policy_update"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Disable Auto AWS IAM Policy Update
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Disable Auto AWS IAM Policy Update.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "disable_auto_aws_iam_policy_update"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=disable_auto_aws_iam_policy_update" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Sucessfully disabled automatic IAM role policy update."<br/>
+	}
+  </div>
+</div>
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_get_iam_policy_update_record"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    GET IAM Policy Update Record
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Get IAM policy update record.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "get_iam_policy_update_record"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=get_iam_policy_update_record" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": []<br/>
+	}
+  </div>
+</div>
+
+
+<!-----  Useful Tools  ------>
 <h1 style='page-break-before:always'>
   <a name="_cloud_network_info">    
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
@@ -53780,6 +54838,284 @@ curl -k "https://CONTROLLER_IP/v1/api?
 	}
   </div>
 </div>
+
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_validate_instances"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Validate Instances
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Validate instances base on Cloud type, Account name, Region, VPC ID.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "validate_instances"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type1</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud Type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>cloud_type2</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Cloud Type</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>account_name1</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Account Name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>account_name2</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Account Name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>region1</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Region</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>region2</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Region</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>vpc_id1</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>VPC ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>vpc_id2</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>VPC ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>public_subnet1</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Public Subnet</p>
+	      <p class=MsoNormal>Type: Integer</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>public_subnet2</p>
+	  	</td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>Public Subnet</p>
+	      <p class=MsoNormal>Type: Integer</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=validate_instances"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type1=1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type2=1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "account_name1=my-aws1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "account_name2=my-aws2"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "region1=us-west-1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "region2=us-west-1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id1=vpc-abcd1234"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id2=vpc-abcd12345"<br/>
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_terminate_instances"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Terminate Instances
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Terminate instances on Controller.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "terminate_instances"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=terminate_instances"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_get_connectivity_test_step"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Get Connectivity Test Step
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Get connectivity test step.</p>
+	<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.2</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "get_connectivity_test_step"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>CID</p>
+	    </td>
+	    <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	    	<p class=MsoNormal>API session ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=get_connectivity_test_step"<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"
+  </div>
+
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;"results": ""<br/>
+	}
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 <h1 style='page-break-before:always'>
   <a name="_list_bell_notifications">
