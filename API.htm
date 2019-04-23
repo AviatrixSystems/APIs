@@ -16773,6 +16773,1193 @@ Example 02: Create Aviatrix Transit Gateway in ARM
   </p>
 </div>
 
+<!------  Firewall Network  ------>
+<!--  Enable transit gateway FireNet interfaces  -->
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_enable_gateway_firenet_interfaces"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Enable Transit Gateway FireNet Interfaces
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Enable transit gateway FireNet interfaces.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "enable_gateway_firenet_interfaces"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: gateway_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Name of gateway in the VPC</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=enable_gateway_firenet_interfaces"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=gw1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully enabled gateway gw1 interfaces."<br/>
+	}
+  </div>
+</div>
+<!-- / Enable transit gateway FireNet interfaces  -->
+
+
+<!-- List FireNets  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_list_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    List FireNets
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>List FireNets according to parameters.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "list_firenet"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: subaction -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>subaction</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>The subaction to determine what FireNets to be listed.</p>
+        <p class=MsoNormal>Valid value: "instance", "dmz", "firewall" or "subnet"</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No(It's required if subaction is "instance", "firewall" or "subnet")</p>
+      </td>
+    </tr>
+    <!-- param: firewall_instance -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_instance</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify attaching firewall instances or not when list instances(use only in case subaction is "instance").</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: detail -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>detail</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify attaching detailed information or not when list firewalls(use only in case subaction is "firewall")</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=list_firenet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "subaction=dmz"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": {dmz_list: []}<br/>
+	}
+  </div>
+</div>
+<!-- / List FireNets  -->
+
+
+<!-- Insert firewall to FireNet  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_insert_firewall_to_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Insert Firewall to FireNet
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Insert firewall to FireNet</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "insert_firewall_to_firenet"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: gateway_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall ID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: lan_interface -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>lan_interface</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Lan Interface</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: egress_subnet -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>egress_subnet</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Engress Subnet/p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: management_subnet -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>management_subnet</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Management Subnet</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=insert_firewall_to_firenet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=gw1"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=firewall1"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "lan_interface=10.12.0.0/24"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "egress_subnet=10.12.0.0/24~~us-east-1c~~Public subnet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "management_subnet=10.12.0.0/24~~us-east-1c~~Public subnet"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": {dmz_list: []}<br/>
+	}
+  </div>
+</div>
+<!-- / Insert firewall to FireNet  -->
+
+
+
+<!-- Connect FireNet to TGW  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_connect_firenet_with_tgw"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Connect FireNet to TGW
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Connect FireNet to TGW.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "connect_firenet_with_tgw"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: tgw_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>tgw_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>TGW Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: domain_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>domain_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall Domain Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=connect_firenet_with_tgw"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "tgw_name=tgw1"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "domain_name=avx.com"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully attached TGW"<br/>
+	}
+  </div>
+</div>
+<!-- / Connect FireNet to TGW  -->
+
+
+
+<!-- Disconnect FireNet with TGW  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_disconnect_firenet_with_tgw"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Disconnect FireNet with TGW
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Disconnect FireNet with TGW.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "disconnect_firenet_with_tgw"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=connect_firenet_with_tgw"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully detached TGW"<br/>
+	}
+  </div>
+</div>
+<!-- / Disconnect FireNet with TGW  -->
+
+
+
+<!-- Delete firewall instance  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_delete_firenet_firewall_instance"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Delete Firewall Instance
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Delete firewall instance.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "delete_firenet_firewall_instance"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=delete_firenet_firewall_instance"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=firewall1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully deleted!"<br/>
+	}
+  </div>
+</div>
+<!-- / Delete firewall instance  -->
+
+
+
+<!-- Remove Firewall from FireNet  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_remove_firewall_from_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Remove Firewall from FireNet
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Remove firewall from FireNet.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "remove_firewall_from_firenet"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=remove_firewall_from_firenet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=firewall1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully removed!"<br/>
+	}
+  </div>
+</div>
+<!-- / Remove Firewall from FireNet  -->
+
+
+
+<!-- Disable Transit Gateway FireNet Interfaces  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_disable_gateway_firenet_interfaces"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Disable Transit Gateway FireNet Interfaces
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Disable Transit Gateway FireNet Interfaces.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "disable_gateway_firenet_interfaces"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: gateway -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=disable_gateway_firenet_interfaces"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway=gw1"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully disabled!"<br/>
+	}
+  </div>
+</div>
+<!-- / Disable Transit Gateway FireNet Interfaces  -->
+
+
+
+<!-- Show Detail Information of FireNet  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_show_firenet_detail"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Show Detail Information of FireNet
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Show Detail Information of FireNet.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "show_firenet_detail"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=show_firenet_detail"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-abcd123"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully removed!"<br/>
+	}
+  </div>
+</div>
+<!-- / Show Detail Information of FireNet  -->
+
+
+
+
+<!-- Force switchover transit gateway in firewall network  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_switchover_firenet_gateway"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Force Switchover Transit Gateway in Firewall Network
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Force switchover transit gateway in firewall network.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "switchover_firenet_gateway"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: gateway_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=switchover_firenet_gateway"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=tran-fw"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Successfully switchover transit gateway tran-fw to backup."<br/>
+	}
+  </div>
+</div>
+<!-- / Force switchover transit gateway in firewall network  -->
+
+
+
+
+<!-- Enable/Disable Firewall Egress and Inspection  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_edit_firenet_firewall_dmz"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Enable/Disable Firewall Egress and Inspection
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Enable/Disable Firewall Egress and Inspection.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "edit_firenet_firewall_dmz"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: inspection -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>inspection</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify whether to enable or disable firewall inspection</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: firewall_egress -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_egress</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify whether to enable or disable firewall egress</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_firenet_firewall_dmz"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-abcd123"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_egress=yes"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": ""<br/>
+	}
+  </div>
+</div>
+<!-- / Enable/Disable Firewall Egress and Inspection  -->
+
+
+
+
+<!-- Edit Firewall Vendor Integration Info  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_edit_firenet_firewall_vendor_info"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Edit Firewall Vendor Integration Info
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Edit Firewall Vendor Integration Info.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "edit_firenet_firewall_vendor_info"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall ID</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: firewall_vendor -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_vendor</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall Vendor</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: user -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>user</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>UserName</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: password -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>password</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Password</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: public_ip -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>public_ip</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Public IP Address</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: route_table -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>route_table</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall route table</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_firenet_firewall_vendor_info"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-abcd123"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=i-082486db1f6f79881"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_vendor=PAN"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "user=admin"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "password=password"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "public_ip=54.183.20.144"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "route_table=default"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": ""<br/>
+	}
+  </div>
+</div>
+<!-- / Edit Firewall Vendor Integration Info  -->
+
+
+
+
+
+<!-- Show and Sync Firewall Vendor Configurations  -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_show_firenet_firewall_vendor_config"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Show and Sync Firewall Vendor Configurations
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<p class=MsoNormal>Show and Sync Firewall Vendor Configurations.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "show_firenet_firewall_vendor_config"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: vpc_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>vpc_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>VPC ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: firewall_id -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>firewall_id</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall ID</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <!-- param: sync -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>sync</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify wheter to show or sync</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+  </table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=show_firenet_firewall_vendor_config"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-abcd123"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "user=admin"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "password=password"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "public_ip=54.183.20.144"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "route_table=default"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": ""<br/>
+	}
+  </div>
+</div>
+<!-- / Show and Sync Firewall Vendor Configurations  -->
+
+
+
+
+<!-----------  TGW  ----------->
+<!--  Add AWS TGW  -->
+
 <h1 style='page-break-before:always'>
   <a name="_add_aws_tgw">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
