@@ -17038,6 +17038,30 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>Required: Yes</p>
       </td>
     </tr>
+    <!-- param: main -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>main</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Firewall Subnet</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: main_ha -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>main_ha</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>HAGW Firewall Subnet</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
 	</table>
 	
 	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
@@ -17124,7 +17148,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>firewall_instance</p>
       </td>
       <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Specify attaching firewall instances or not when list instances(use only in case subaction is "instance").</p>
+        <p class=MsoNormal>Specify whether attaching firewall instances or not when list instances(use only in case subaction is "instance").</p>
         <p class=MsoNormal>Type: Boolean</p>
         <p class=MsoNormal>Default: False</p>
         <p class=MsoNormal>Required: No</p>
@@ -17136,10 +17160,33 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>detail</p>
       </td>
       <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Specify attaching detailed information or not when list firewalls(use only in case subaction is "firewall")</p>
+        <p class=MsoNormal>Specify whether attaching detailed information or not when list firewalls(use only in case subaction is "firewall")</p>
         <p class=MsoNormal>Type: Boolean</p>
         <p class=MsoNormal>Default: False</p>
         <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: detail -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>private</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Specify whether attaching private subnets or not when list subnets(use only in case subaction is "subnet")</p>
+        <p class=MsoNormal>Type: private</p>
+        <p class=MsoNormal>Default: False</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: detail -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gateway_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Required: Yes</p>
       </td>
     </tr>
 	</table>
@@ -32310,6 +32357,100 @@ style='font-family:"Courier New"'>https://10.123.123.123/v1/api?action=add_vpn_u
 
 <p class=MsoNormal>&nbsp;</p>
 <!-- END: Add VPN User and attach it to Profile -->
+
+
+
+
+<!-- START: Get VPN User By Name -->
+<h1 style='page-break-before:always'><a name="_get_vpn_user_by_name"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Get VPN User By Name</a></h1>
+
+<h2><a name="_Toc489305017"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Description</a></h2>
+
+<p class=MsoNormal>Get VPN User By Name.</p>
+
+<h2><a name="_Toc489305018"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Request Parameters</a></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>action</p>
+  </td>
+  <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Indicating type of API to call.</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Valid value: "get_vpn_user_by_name"</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CID</p>
+  </td>
+  <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>API session ID</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Default: None</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>user_name</p>
+  </td>
+  <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>User Name</p>
+  <p class=MsoNormal>Type: String</p>
+  <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc489305020"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Example Request</a></h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><a
+href="https://54.164.39.64/v1/api?CID=57030512b75b9&amp;action=get_vpn_user_by_name&amp;username=test_user"><span
+style='font-family:"Courier New"'>https://10.123.123.123/v1/api?action=get_vpn_user_by_name&amp;username=test_user</span></a></p>
+
+</div>
+
+<h2><a name="_Toc489305021"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Example Response</a></h2>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>&nbsp; "return": true,</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>&nbsp; "results": vpn_user: {}</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>}</span></p>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+<!-- END: Get VPN User By Name -->
+
 
 
 
