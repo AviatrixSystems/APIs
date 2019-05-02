@@ -17214,10 +17214,10 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 <!-- Insert firewall to FireNet  -->
 <div class="api">
 	<h1 style='page-break-before:always'>
-	  <a name="_insert_firewall_to_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	  <a name="_associate_firewall_with_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
 	    Insert Firewall to FireNet
 	  </a>
-  </h1>
+  	</h1>
 	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
 	<p class=MsoNormal>Insert firewall to FireNet</p>
 	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
@@ -17231,7 +17231,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
 	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
 	      <p class=MsoNormal>Type: String</p>
-	      <p class=MsoNormal>Valid value: "insert_firewall_to_firenet"</p>
+	      <p class=MsoNormal>Valid value: "associate_firewall_with_firenet"</p>
 	      <p class=MsoNormal>Required: Yes</p>
 	    </td>
 	  </tr>
@@ -17330,7 +17330,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 		# curl -k --request POST<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=insert_firewall_to_firenet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=associate_firewall_with_firenet"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "gateway_name=gw1"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=firewall1"\<br/>
@@ -17594,7 +17594,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 <!-- Remove Firewall from FireNet  -->
 <div class="api">
 	<h1 style='page-break-before:always'>
-	  <a name="_remove_firewall_from_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	  <a name="_disassociate_firewall_with_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
 	    Remove Firewall from FireNet
 	  </a>
   </h1>
@@ -17611,7 +17611,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
 	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
 	      <p class=MsoNormal>Type: String</p>
-	      <p class=MsoNormal>Valid value: "remove_firewall_from_firenet"</p>
+	      <p class=MsoNormal>Valid value: "disassociate_firewall_with_firenet"</p>
 	      <p class=MsoNormal>Required: Yes</p>
 	    </td>
 	  </tr>
@@ -17654,7 +17654,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 		# curl -k --request POST<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=remove_firewall_from_firenet"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=disassociate_firewall_with_firenet"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-8bdb90e3~~Transit VPC"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_id=firewall1"
   </div>
@@ -17880,7 +17880,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 <!-- Enable/Disable Firewall Egress and Inspection  -->
 <div class="api">
 	<h1 style='page-break-before:always'>
-	  <a name="_edit_firenet_firewall_dmz"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	  <a name="_edit_firenet"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
 	    Enable/Disable Firewall Egress and Inspection
 	  </a>
   </h1>
@@ -17897,7 +17897,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
 	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
 	      <p class=MsoNormal>Type: String</p>
-	      <p class=MsoNormal>Valid value: "edit_firenet_firewall_dmz"</p>
+	      <p class=MsoNormal>Valid value: "edit_firenet"</p>
 	      <p class=MsoNormal>Required: Yes</p>
 	    </td>
 	  </tr>
@@ -17953,7 +17953,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 		# curl -k --request POST<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api"\<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"\<br/>
-	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_firenet_firewall_dmz"\<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=edit_firenet"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=vpc-abcd123"\<br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;--form "firewall_egress=yes"
   </div>
@@ -30963,6 +30963,249 @@ curl -k --request GET --url 'https://{{controller_ip}}/v1/api?
 </div>
 <!-- END: Get S2C Connection Key -->
 
+
+
+<!-- START: Get S2C Connection Detail -->
+<h1 style='page-break-before:always'>
+  <a name="_get_site2cloud_conn_detail">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Get S2C Connection Detail
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Get S2C Connection Detail.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.3</span> or later releases.</p>
+
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "get_site2cloud_conn_detail"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: vpc_id -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>vpc_id</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>VPC-ID/VNet-Name of cloud provider.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+      <p class=MsoNormal>Example: AWS: "vpc-abcd1234", ARM: "VNet_Name:Resource_Group_Name", GCP: "mygooglecloudvpcname", etc...</p>
+    </td>
+  </tr>
+
+  <!-- param: conn_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>conn_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Site2Cloud Connection Name</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <pre>
+curl -k --request GET --url 'https://{{controller_ip}}/v1/api?
+    action=get_site2cloud_conn_detail&amp;
+    CID={{CID}}&amp;
+    vpc_id=vpc-abcd1234~~aws_vpc_california&amp;
+    conn_name=s2c'</pre>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <span style='font-family:"Courier New"'>
+    <pre>
+{
+  "return": true,
+  "results": {
+  }
+}</pre>
+  </span>
+</div>
+<!-- END: Get S2C Connection Detail -->
+
+
+<!-- START: Get VGW Connection Detail -->
+<h1 style='page-break-before:always'>
+  <a name="_get_vgw_conn">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+    Get VGW Connection Detail
+  </a>
+</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<!-- h2 Description -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Description
+  </a>
+</h2>
+
+<!-- API Description -->
+<p class=MsoNormal>Get VGW Connection Detail.</p>
+<p class=MsoNormal>This API is available in version <span style="color:#FF3300">4.3</span> or later releases.</p>
+
+
+<!-- h2 Request Parameters -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Request Parameters
+  </a>
+</h2>
+
+<!-- API Request Parameter List -->
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+  <!-- param: action -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>action</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid value: "get_vgw_conn"</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: CID -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>CID</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>API session ID</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+
+  <!-- param: conn_name -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>conn_name</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Site2Cloud Connection Name</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes</p>
+    </td>
+  </tr>
+</table>
+
+<!-- h2 Linux curl Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Request
+  </a>
+</h2>
+
+<!-- Linux curl Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <pre>
+curl -k --request GET --url 'https://{{controller_ip}}/v1/api?
+    action=get_vgw_conn&amp;
+    CID={{CID}}&amp;
+    conn_name=s2c'</pre>
+</div>
+
+<!-- h2 API Response Result Example -->
+<h2>
+  <a name="_Toc123456789">
+    <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
+    Example Response
+  </a>
+</h2>
+
+<!-- API Response Result Example -->
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+  <span style='font-family:"Courier New"'>
+    <pre>
+{
+  "return": true,
+  "results": {
+  }
+}</pre>
+  </span>
+</div>
+<!-- END: Get VGW Connection Detail -->
+
+
 <h1 style='page-break-before:always'>
   <a name="_enable_dpd_config">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
@@ -32216,7 +32459,7 @@ profile is possible as well.</p>
   <p class=MsoNormal>VPC ID to where the user will be added</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
  <tr>
@@ -32276,6 +32519,20 @@ profile is possible as well.</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dns</p>
+  </td>
+  <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Specify whether DNS enabled or not.</p>
+  <p class=MsoNormal>Type: Boolean</p>
+  <p class=MsoNormal>Default: false</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
 </table>
@@ -32712,7 +32969,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
   <p class=MsoNormal>VPC ID from where the user will be deleted</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: Yes</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
  <tr>
@@ -32727,6 +32984,20 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
   <p class=MsoNormal>Required: Yes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>dns</p>
+  </td>
+  <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Specify whether DNS enabled or not.</p>
+  <p class=MsoNormal>Type: Boolean</p>
+  <p class=MsoNormal>Default: false</p>
+  <p class=MsoNormal>Required: No</p>
   </td>
  </tr>
 </table>
@@ -32796,14 +33067,10 @@ style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&
 "Courier New"'>{</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp; "return": false,</span></p>
+"Courier New"'>&nbsp; "return": true,</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp; "reason": "command delete_vpn_user failed due to exception
-errors &nbsp;vpc_region&nbsp;&lt;p&gt;&lt;/p&gt; An email notification with exception
-reason and trace log has been sent to support@aviatrix.com for troubleshooting.
-Feel free to contact Aviatrix support engineers. Sorry about the problem and
-thanks for your support!"</span></p>
+"Courier New"'>&nbsp; "results": ""</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>}</span></p>
