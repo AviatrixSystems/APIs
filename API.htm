@@ -32761,7 +32761,7 @@ profile is possible as well.</p>
   <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Specify whether DNS enabled or not.</p>
+  <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
   <p class=MsoNormal>Type: Boolean</p>
   <p class=MsoNormal>Default: false</p>
   <p class=MsoNormal>Required: No</p>
@@ -33049,10 +33049,11 @@ style='font-family:"Courier New"'>https://10.123.123.123/v1/api?action=get_vpn_u
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>dns</p>    </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: No </p>    </td>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
+      <p class=MsoNormal>Required: No</p>
+  	</td>
   </tr>
 </table>
 
@@ -33201,7 +33202,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
   <p class=MsoNormal>VPC ID from where the user will be deleted</p>
   <p class=MsoNormal>Type: String</p>
   <p class=MsoNormal>Default: None</p>
-  <p class=MsoNormal>Required: No</p>
+  <p class=MsoNormal>Required: Yes</p>
   </td>
  </tr>
  <tr>
@@ -33226,7 +33227,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
   <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Specify whether DNS enabled or not.</p>
+  <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
   <p class=MsoNormal>Type: Boolean</p>
   <p class=MsoNormal>Default: false</p>
   <p class=MsoNormal>Required: No</p>
@@ -33280,8 +33281,9 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Delete VPN User</
 </table>
 
 <h2><a name="_Toc489305026"><span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span>Example Request</a></h2>
+</span>Example Requests</a></h2>
 
+<br />
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
 <p class=MsoNormal style='border:none;padding:0in'><a
@@ -33290,8 +33292,38 @@ style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&
 
 </div>
 
-<h2><a name="_Toc489305027"><span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span>Example Response</a></h2>
+<h3><a name="_Toc489305027"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Example Response</a></h3>
+
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>&nbsp; "return": true,</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>&nbsp; "results": ""</span></p>
+
+<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
+"Courier New"'>}</span></p>
+
+</div>
+
+
+<br />
+<br />
+<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoNormal style='border:none;padding:0in'><a
+href="https://54.164.39.64/v1/api?CID=57030512b75b9&amp;action=delete_vpn_user&amp;vpc_id=vpc1&amp;username=user1&amp;dns=true"><span
+style='font-family:"Courier New"'>https://54.164.39.64/v1/api?CID=57030512b75b9&amp;action=delete_vpn_user&amp;vpc_id=vpc1&amp;username=user1&amp;dns=true</span></a></p>
+
+</div>
+
+<h3><a name="_Toc489305027"><span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Example Response</a></h3>
 
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
 
@@ -33441,10 +33473,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 "Courier New"'>&nbsp; "return": true,</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp; "results": {</span></p>
-
-<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp;&nbsp;&nbsp; "policies": [</span></p>
+"Courier New"'>&nbsp; "results": [</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
@@ -33501,10 +33530,7 @@ style='font-family:"Courier New"'>https://54.197.89.96/v1/api?CID=57dfd1214b83f&
 "Courier New"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp;&nbsp;&nbsp; ]</span></p>
-
-<p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
-"Courier New"'>&nbsp; }</span></p>
+"Courier New"'>&nbsp; ]</span></p>
 
 <p class=MsoNormal style='border:none;padding:0in'><span style='font-family:
 "Courier New"'>}</span></p>
@@ -33915,7 +33941,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Update Profile Po
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal>New security policy for the profile.</p>
-  <p class=MsoNormal>Type: String (valid JSON)</p>
+  <p class=MsoNormal>Type: String (string of valid JSON)</p>
   <p class=MsoNormal>4 fields are required for each policy item: protocol,
   target, port and action.</p>
   <p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>Valid values
@@ -34848,8 +34874,8 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS</p>
-      <p class=MsoNormal>Type: boolean</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
       <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
     </td>
@@ -35114,7 +35140,7 @@ style='font-family:"Courier New"'>https://192.168.0.251/v1/api?CID=54557b087a48a
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
@@ -40053,7 +40079,7 @@ color:#365F91'>&nbsp;</span></b></p>
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: No</p>
@@ -40594,10 +40620,9 @@ color:#365F91'>&nbsp;</span></b></p>
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS flag</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid values: "true" or "false"</p>
-      <p class=MsoNormal>Default: "false"</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
@@ -40816,10 +40841,9 @@ color:#365F91'>&nbsp;</span></b></p>
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS flag</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid values: "true" or "false"</p>
-      <p class=MsoNormal>Default: "false"</p>
+	  <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
@@ -40980,10 +41004,9 @@ color:#365F91'>&nbsp;</span></b></p>
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS flag</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid values: "true" or "false"</p>
-      <p class=MsoNormal>Default: "false"</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
@@ -41189,10 +41212,9 @@ color:#365F91'>&nbsp;</span></b></p>
       <p class=MsoNormal>dns</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>DNS flag</p>
-      <p class=MsoNormal>Type: String</p>
-      <p class=MsoNormal>Valid values: "true" or "false"</p>
-      <p class=MsoNormal>Default: "false"</p>
+      <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
@@ -41435,9 +41457,9 @@ color:#365F91'>&nbsp;</span></b></p>
         <p class=MsoNormal>dns</p>
       </td>
       <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Specify whether DNS or not</p>
+        <p class=MsoNormal>Boolean to control whether DNS based VPN such as GeoVPN/UDP load balancer is enabled</p>
         <p class=MsoNormal>Type: Boolean</p>
-        <p class=MsoNormal>Default: None</p>
+	    <p class=MsoNormal>Default: false</p>
         <p class=MsoNormal>Required: No</p>
       </td>
     </tr>
