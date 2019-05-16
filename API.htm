@@ -1996,7 +1996,6 @@ Response</a></h2>
  </tr>
  <tr>
   <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  	<a name="_cloud_type_description"></a>
     <p class=MsoNormal>cloud_type</p>
   </td>
   <td width=510 valign=top style='width:382.25pt;border-top:none;border-left:
@@ -2413,6 +2412,7 @@ Parameters</a></h2>
   <td width=460 valign=top style='width:345.25pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
+  <a name="_cloud_type_description"></a>
   <p class=MsoNormal>Type of cloud service provider.</p>
   <p class=MsoNormal>Method: POST</p>
   <p class=MsoNormal>Type: integer</p>
@@ -27835,6 +27835,455 @@ successfully switched to Oregon-DevOps-VPC.Asia-Prod-VPC.peer"</span></p>
 
 </div>
 <!-- END: Encrypted Peering HA Switch Over -->
+
+
+
+
+
+
+<!-- START: Launch Peering Cluster -->
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_launch_peering_cluster"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Launch Peering Cluster
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<br />
+	<p class=MsoNormal>Launch Peering Cluster.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.6</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "launch_peering_cluster"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    
+	  <!-- param: cloud_type -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cloud_type</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Please Refer <a href="#_cloud_type_description">Here</a></p>
+	    </td>
+	  </tr>
+
+	  <!-- param: account_name -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>account_name</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter represents the name of a Cloud-Account in Aviatrix controller.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+	  <!-- param: vpc_reg -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>vpc_reg</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>VPC Region</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+	  <!-- param: vpc_id -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>vpc_id</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>VPC ID</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+	  <!-- param: public_subnet -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>public_subnet</p>
+	  	</td>
+    	<td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Public Subnet INFO.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+	  	</td>
+	  </tr>
+		<!-- param: gw_list -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>gw_list</p>
+	  	</td>
+    	<td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Gateway names list(String sparated with comma)</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	      <p class=MsoNormal>Example: "gw_name1,gw_name2" </p>
+	  	</td>
+	  </tr>
+	  <!-- param: cluster_name -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cluster_name</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Cluster Name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+	  <!-- param: max_peer_inst -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>max_peer_inst</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Demux Instance Size</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	      <p class=MsoNormal>Example: "c4.large" </p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=launch_peering_cluster" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cloud_type=1" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "account_name=admin" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_reg=us-east-1 (N. Virginia)" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "vpc_id=my-vpc-df797ca6~~vpc-east-de" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "public_subnet=172.31.16.0/20~~us-east-1c~~No Name" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "gw_list=gw_name1,gw_name2" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cluster_name=cluster_name" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "max_peer_inst=c4.large"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+<!-- END: Launch Peering Cluster -->
+
+
+
+<!-- START: Terminate Peering Cluster -->
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_terminate_peering_cluster"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Terminate Peering Cluster
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<br />
+	<p class=MsoNormal>Terminate Peering Cluster.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.6</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "terminate_peering_cluster"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+
+	  <!-- param: cluster_name -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cluster_name</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Cluster Name</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=terminate_peering_cluster" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "cluster_name=cluster_name"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": "Success"<br/>
+	}
+  </div>
+</div>
+
+<!-- END: Terminate Peering Cluster -->
+
+<!-- START: Peering Cluster Action -->
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_peering_cluster_action"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Peering Cluster Action
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<br />
+	<p class=MsoNormal>Peering Cluster Actions like List, Add, Delete gateways for existing Peering Cluster.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.6</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "peering_cluster_action"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    
+	  <!-- param: subaction -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>subaction</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>The subaction whether to add or list or delete</p>
+	      <p class=MsoNormal>Valid value: "list-all", "add-gw", "del-gw"</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <!-- param: cluster_name -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cluster_name</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Cluster Name. Required for "add-gw", "del-gw" subactions only.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+
+	  <!-- param: gw_list -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>gw_list</p>
+	  	</td>
+    	<td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Gateway names list(String sparated with comma). Required for "add-gw" subaction only.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Default: None</p>
+	      <p class=MsoNormal>Required: No</p>
+	      <p class=MsoNormal>Example: "gw_name1,gw_name2" </p>
+	  	</td>
+	  </tr>
+
+	  <!-- param: num_gw_del -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>num_gw_del</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Number of gateways to be deleted. Required for "del-gw" subaction only.</p>
+	      <p class=MsoNormal>Type: Number</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=peering_cluster_action" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "subaction=list-all"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": []<br/>
+	}
+  </div>
+</div>
+
+<!-- END: Peering Cluster Action -->
+
+<!-- START: Peering Cluster Pair Action -->
+
+<div class="api">
+	<h1 style='page-break-before:always'>
+	  <a name="_peering_cluster_pair_action"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+	    Peering Cluster Pair Action
+	  </a>
+  </h1>
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+	<br />
+	<p class=MsoNormal>Cluster Peering Pair Actions like List or Peer, Unpeer for cluster pair.</p>
+	<p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.6</span> or later releases.</p>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+	<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>action</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Valid value: "peering_cluster_pair_action"</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    
+	  <!-- param: subaction -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>subaction</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>The subaction whether to list or peer or unpeer</p>
+	      <p class=MsoNormal>Valid value: "list", "peer", "unpeer"</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: Yes</p>
+	    </td>
+	  </tr>
+	  <!-- param: cluster_name1 -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cluster_name1</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Cluster Name. Required for "peer", "unpeer" subactions only.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	  <!-- param: cluster_name1 -->
+	  <tr>
+	    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>cluster_name2</p>
+	    </td>
+	    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+	      <p class=MsoNormal>Cluster Name. Required for "peer", "unpeer" subactions only.</p>
+	      <p class=MsoNormal>Type: String</p>
+	      <p class=MsoNormal>Required: No</p>
+	    </td>
+	  </tr>
+	</table>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+		# curl -k --request POST<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+	  &nbsp;&nbsp;&nbsp;&nbsp;--form "action=peering_cluster_pair_action" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "subaction=list"
+  </div>
+	
+	<h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+	<div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+	{<br/>
+	  &nbsp;&nbsp;"return": true,<br/>
+	  &nbsp;&nbsp;"results": []<br/>
+	}
+  </div>
+</div>
+
+<!-- END: Peering Cluster Pair Action -->
+
+
 
 
 
