@@ -6824,6 +6824,20 @@ style='font:7.0pt "Times New Roman"'>&nbsp; </span>Request Parameters</a></h2>
   <p class=MsoNormal>Valid values: &quot;on&quot;</p>
   <p class=MsoNormal>Required: No</p>  </td>
  </tr>
+
+<!-- param: reuse_resource_group -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reuse_resource_group</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to reuse the vnet resource group instead of adding a new one.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.3 or later release</span></p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
+      <p class=MsoNormal>Valid values: &quot;true&quot;, &quot;false&quot;</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
 </table>
 
 <h2><a name="_Toc489305086"></a><a name="_Toc469202800"><span
@@ -13021,6 +13035,20 @@ curl --request POST \
       <p class=MsoNormal>Required: No</p>
       <p class=MsoNormal>Example: key1:value1,key002:value002</p>    </td>
   </tr>
+
+  <!-- param: reuse_resource_group -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reuse_resource_group</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to reuse the vnet resource group instead of adding a new one.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.3 or later release</span></p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
+      <p class=MsoNormal>Valid values: &quot;true&quot;, &quot;false&quot;</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
 </table>
 
 <h2>
@@ -14751,6 +14779,34 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: No</p>
       <p class=MsoNormal>Example: key1:value1,key002:value002</p>
+    </td>
+  </tr>
+
+  <!-- param: skip_rfc1918 -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>skip_rfc1918</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to create gateway without RFC1918 routes <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 3.1.5 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Valid Value: yes</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+<!-- param: reuse_resource_group -->
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reuse_resource_group</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to reuse the vnet resource group instead of adding a new one.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.3 or later release</span></p>
+      <p class=MsoNormal>Type: Boolean</p>
+      <p class=MsoNormal>Default: false</p>
+      <p class=MsoNormal>Valid values: &quot;true&quot;, &quot;false&quot;</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
 </table>
@@ -58807,6 +58863,17 @@ curl -k "https://CONTROLLER_IP/v1/api?
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: No </p>    </td>
+  </tr>
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>log_type</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Log Type of commandlog.(This parameter is available in version <span style="color:#FF3300">5.0</span> or later releases)</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No </p>
+    </td>
   </tr>
 </table>
 
