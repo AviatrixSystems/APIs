@@ -11705,6 +11705,77 @@ curl --request POST \
 
 
 
+
+<div class="api">
+  <h1 style='page-break-before:always'>
+    <a name="_disable_skip_rfc1918_routes"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
+      Disable SKIP_RFC1918 Routes 
+    </a>
+  </h1>
+  <h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Description</a></h2>
+  <p class=MsoNormal>Disable SKIP_RFC1918 Routes.</p>
+  <p class=MsoNormal>This API is available in version <span style="color: #FF3300;">4.3</span> or later releases.</p>
+  
+  <h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Request Parameters</a></h2>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>action</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border:solid windowtext 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>This parameter indicates which Aviatrix API is being invoked.</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Valid value: "disable_skip_rfc1918_routes"</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>CID</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>API session ID</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gw_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: Yes</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
+  <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+    # curl -k --request POST<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--url  "https://{{controller_ip}}/v1/api" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "action=disable_skip_rfc1918_routes" \<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "gw_name=my-gw"
+  </div>
+  
+  <h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Response</a></h2>
+  <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
+  {<br/>
+    &nbsp;&nbsp;"return": true,<br/>
+    &nbsp;&nbsp;"results": "Success"<br/>
+  }
+  </div>
+</div>
+
+
+
+
+
+
+
 <!-- START: Enable Single AZ HA -->
 <h1 style='page-break-before:always'>
   <a name="_enable_single_az_ha">
@@ -12997,7 +13068,7 @@ curl --request POST \
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>Cloud provider type.</p>
       <p class=MsoNormal>Type: Integer</p>
-      <p class=MsoNormal>Valid values: 1 for AWS, 8 for ARM, 256 for AWS GOV</p>
+      <p class=MsoNormal>Valid values: 1 for AWS, 8 for ARM, 256 for AWS GOV, 1024 for AWS China</p>
       <p class=MsoNormal>Required: Yes <a href="#_cloud_type_description"></a></p></td>
   </tr>
 
@@ -13129,6 +13200,31 @@ curl --request POST \
       <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Valid values: &quot;true&quot;, &quot;false&quot;</p>
       <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reuse_eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to reuse eip or not.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid values: "on", "off"</p>
+      <p class=MsoNormal>Default: "off"</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Elastic IP address.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No.</p>
     </td>
   </tr>
 </table>
@@ -14903,6 +14999,31 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Default: false</p>
       <p class=MsoNormal>Valid values: &quot;true&quot;, &quot;false&quot;</p>
       <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>reuse_eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Specify whether to reuse eip or not.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Valid values: "on", "off"</p>
+      <p class=MsoNormal>Default: "off"</p>
+      <p class=MsoNormal>Required: No</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Elastic IP address.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No.</p>
     </td>
   </tr>
 </table>
@@ -17498,7 +17619,54 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>Required: Yes</p>
       </td>
     </tr>
-    
+    <!-- param: key_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>key_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Key Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: attach -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>attach</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Key Name</p>
+        <p class=MsoNormal>Type: Boolean</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: iam_role -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>iam_role</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>IAM Role</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
+    <!-- param: bootstrap_bucket_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>bootstrap_bucket_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Bootstrap Bucket Name</p>
+        <p class=MsoNormal>Type: String</p>
+        <p class=MsoNormal>Default: None</p>
+        <p class=MsoNormal>Required: No</p>
+      </td>
+    </tr>
   </table>
   
   <h2><a><span style='font:7.0pt "Times New Roman"'>&nbsp;</span>Example Request</a></h2>
@@ -17729,7 +17897,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       </td>
       <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
         <p class=MsoNormal>The subaction to determine what FireNets to be listed.</p>
-        <p class=MsoNormal>Valid value: "instance", "dmz", "firewall" or "subnet"</p>
+        <p class=MsoNormal>Valid value: "instance", "dmz", "firewall", "subnet" or "firewall_manager"</p>
         <p class=MsoNormal>Type: String</p>
         <p class=MsoNormal>Required: Yes</p>
       </td>
@@ -18860,7 +19028,18 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
         <p class=MsoNormal>Firewall ID</p>
         <p class=MsoNormal>Type: string</p>
-        <p class=MsoNormal>Required: Yes</p>
+        <p class=MsoNormal>Required: firewall_id/gw_name is required</p>
+      </td>
+    </tr>
+    <!-- param: gw_name -->
+    <tr>
+      <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>gw_name</p>
+      </td>
+      <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal>Gateway Name (This parameter is available in version <span style="color:#FF3300">4.7</span> or later releases)</p>
+        <p class=MsoNormal>Type: string</p>
+        <p class=MsoNormal>Required: firewall_id/gw_name is required</p>
       </td>
     </tr>
     <!-- param: sync -->
@@ -22588,7 +22767,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>inside_ip_cidr_tun_1</p>
       </td>
       <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Inside IP CIDR for Tunnel 1. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+        <p class=MsoNormal>Inside IP CIDR for Tunnel 1. A /30 CIDR in 169/254.0.0/16 <br /><span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
         <p class=MsoNormal>Type: String</p>
         <p class=MsoNormal>Default: None</p>
         <p class=MsoNormal>Required: No</p>
@@ -22599,7 +22778,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>pre_shared_key_tun_1</p>
       </td>
       <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Pre-Shared Key for Tunnel 1. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+        <p class=MsoNormal>Pre-Shared Key for Tunnel 1. A 8-64 character string with alphanumeric, underscore(_) and dot(.). It cannot start with 0. <br /><span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
         <p class=MsoNormal>Type: String</p>
         <p class=MsoNormal>Default: None</p>
         <p class=MsoNormal>Required: No</p>
@@ -22610,7 +22789,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>inside_ip_cidr_tun_2</p>
       </td>
       <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Inside IP CIDR for Tunnel 2. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+        <p class=MsoNormal>Inside IP CIDR for Tunnel 2. A /30 CIDR in 169/254.0.0/16 <br /><span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
         <p class=MsoNormal>Type: String</p>
         <p class=MsoNormal>Default: None</p>
         <p class=MsoNormal>Required: No</p>
@@ -22621,7 +22800,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
         <p class=MsoNormal>pre_shared_key_tun_2</p>
       </td>
       <td valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-        <p class=MsoNormal>Pre-Shared Key for Tunnel 2. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+        <p class=MsoNormal>Pre-Shared Key for Tunnel 2. A 8-64 character string with alphanumeric, underscore(_) and dot(.). It cannot start with 0. <br /><span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
         <p class=MsoNormal>Type: String</p>
         <p class=MsoNormal>Default: None</p>
         <p class=MsoNormal>Required: No</p>
@@ -22636,7 +22815,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
     &nbsp;&nbsp;&nbsp;&nbsp;--form "action=attach_edge_vpn_to_tgw"<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "CID={{CID}}"<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "tgw_name=Test-TGW"<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;--form "route_domain_name=rd1"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;--form "route_domain_name=Default_Domain"<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "connection_name=connection1"<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "public_ip=10.10.1.1"<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;--form "onprem_asn=123"
@@ -22646,7 +22825,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
   <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;font-family: Courier New;font-size: 13px;'>
   {<br/>
     &nbsp;&nbsp;"return": true,<br/>
-    &nbsp;&nbsp;"results": "Success"<br/>
+    &nbsp;&nbsp;"results": { text: "Success", vpn_id: "vpn-05096e3c4d20530e6" }<br/>
   }
   </div>
 </div>
