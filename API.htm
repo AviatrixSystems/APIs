@@ -13475,36 +13475,28 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 
 
 
-<!-- START: Enable Transit HA -->
 <h1 style='page-break-before:always'>
   <a name="_enable_transit_ha">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
     Enable Transit HA
   </a>
 </h1>
-
 <p class=MsoNormal>&nbsp;</p>
-
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Description
   </a>
 </h2>
-
-<!-- API Description -->
 <p class=MsoNormal>Enable Transit HA.</p>
 <p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
-
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Request Parameters
   </a>
 </h2>
-
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
-  <!-- param: action -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>action</p>
@@ -13517,8 +13509,6 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: CID -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>CID</p>
@@ -13530,21 +13520,17 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: gw_name -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>gw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Name of the primary Transit gateway.</p>
+      <p class=MsoNormal>Name of the primary transit gateway.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: public_subnet -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>public_subnet</p>
@@ -13553,19 +13539,40 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Public Subnet INFO.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+      <p class=MsoNormal>Required: Yes when gateway is not GCE.</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", etc...</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>new_zone</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>GCE Zone INFO.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes when gateway is GCE.</p>
+      <p class=MsoNormal>Example: GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Elastic IP address. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
 </table>
-
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Response Elements
   </a>
 </h2>
-
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
   <tr>
     <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -13598,27 +13605,23 @@ Example 02: Create Aviatrix Transit Gateway in ARM
     </td>
   </tr>
 </table>
-
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Example Request
   </a>
 </h2>
-
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
   <p class=MsoNormal style='border:none;padding:0in'>
     # curl  -k  --data  "action=enable_transit_ha"  --data  "gw_name=my-transit-gw"  --data  "public_subnet=10.88.0.0/24~~us-west-1b~~transit-vpc-pubsub"  --data  "CID=VhblRhfn3J0e9xeY2lhe"  "https://CONTROLLER_IP/v1/api"
   </p>
 </div>
-
 <h2>
   <a name="_Toc123456789">
     <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Example Response
   </a>
 </h2>
-
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
   <p class=MsoNormal style='border:none;padding:0in'>
     <span style='font-family:"Courier New"'>
@@ -13626,12 +13629,10 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 {
     "return": true,
     "results": "my-transit-gw-hagw is successfully created..."
-}
-      </pre>
+}</pre>
     </span>
   </p>
 </div>
-<!-- END: Enable Transit HA -->
 
 
 
@@ -15020,7 +15021,7 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>eip</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Elastic IP address.  <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Elastic IP address. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: No.</p>
@@ -15267,39 +15268,28 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 
 
 
-<!-- START: Enable Spoke HA -->
 <h1 style='page-break-before:always'>
   <a name="_enable_spoke_ha">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>
     Enable Spoke HA
   </a>
 </h1>
-
 <p class=MsoNormal>&nbsp;</p>
-
-<!-- h2 Description -->
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Description
   </a>
 </h2>
-
-<!-- API Description -->
 <p class=MsoNormal>Enable Spoke HA.</p>
 <p class=MsoNormal>This API is available in version <span style="color:#FF3300">3.1</span> or later releases.</p>
-
-<!-- h2 Request Parameters -->
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Request Parameters
   </a>
 </h2>
-
-<!-- API Request Parameter List -->
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
-  <!-- param: action -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>action</p>
@@ -15312,8 +15302,6 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: CID -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>CID</p>
@@ -15325,21 +15313,17 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: gw_name -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>gw_name</p>
     </td>
     <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
-      <p class=MsoNormal>Name of the primary Spoke gateway.</p>
+      <p class=MsoNormal>Name of the primary spoke gateway.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
       <p class=MsoNormal>Required: Yes</p>
     </td>
   </tr>
-
-  <!-- param: public_subnet -->
   <tr>
     <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
       <p class=MsoNormal>public_subnet</p>
@@ -15348,21 +15332,40 @@ Example 02: Create Aviatrix Transit Gateway in ARM
       <p class=MsoNormal>Public Subnet INFO.</p>
       <p class=MsoNormal>Type: String</p>
       <p class=MsoNormal>Default: None</p>
-      <p class=MsoNormal>Required: Yes</p>
-      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+      <p class=MsoNormal>Required: Yes when gateway is not GCE.</p>
+      <p class=MsoNormal>Example: AWS: "CIDR~~ZONE~~SubnetName", ARM: "CIDR~~SubnetName", etc...</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>new_zone</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>GCE Zone INFO.</p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: Yes when gateway is GCE.</p>
+      <p class=MsoNormal>Example: GCP: "CIDR~~ZONE~~VpcName", etc...</p>
+    </td>
+  </tr>
+  <tr>
+    <td width=161 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>eip</p>
+    </td>
+    <td width=478 valign=top style='width:358.35pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal>Elastic IP address. <span style='font-size:9.0pt;font-family: Consolas;color:#DF5000; background:white'>Available in 4.7 or later release</span></p>
+      <p class=MsoNormal>Type: String</p>
+      <p class=MsoNormal>Default: None</p>
+      <p class=MsoNormal>Required: No</p>
     </td>
   </tr>
 </table>
-
-<!-- h2: API Response Result -->
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Response Elements
   </a>
 </h2>
-
-<!-- API Response Result -->
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;border:none'>
   <tr>
     <td width=114 valign=top style='width:85.25pt;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
@@ -15395,31 +15398,23 @@ Example 02: Create Aviatrix Transit Gateway in ARM
     </td>
   </tr>
 </table>
-
-<!-- h2 Linux curl Example -->
 <h2>
   <a name="_Toc123456789">
     <span style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Example Request
   </a>
 </h2>
-
-<!-- Linux curl Example -->
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
   <p class=MsoNormal style='border:none;padding:0in'>
     # curl --k --data "action=enable_spoke_ha" --data "gw_name=spoke-gw-01" --data "subnet_alias=10.11.0.0/24~~us-west-1b~~spoke-vpc-01-pubsub" --data "CID=XXXXX" "https://CONTROLLER_IP/v1/api"
   </p>
 </div>
-
-<!-- h2 API Response Result Example -->
 <h2>
   <a name="_Toc123456789">
     <span class="api_rtn_res" style='font:7.0pt "Times New Roman"'>&nbsp;</span>
     Example Response
   </a>
 </h2>
-
-<!-- API Response Result Example -->
 <div style='border:solid #A6A6A6 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
   <p class=MsoNormal style='border:none;padding:0in'>
     <span style='font-family:"Courier New"'>
@@ -15427,12 +15422,10 @@ Example 02: Create Aviatrix Transit Gateway in ARM
 {
     "return": true,
     "results": "spoke-gw-01-hagw is successfully created..."
-}
-      </pre>
+}</pre>
     </span>
   </p>
 </div>
-<!-- END: Enable Spoke HA -->
 
 
 
